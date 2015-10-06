@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var tableView: UITableView = UITableView()
     
-    var items: [String] = [ "Chemistry" , "Mathematics", "Computer Science"]
+    var items: [String] = [ "blahblah" , "Mathematics", "Computer Science"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
