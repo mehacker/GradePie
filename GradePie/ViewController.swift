@@ -1,4 +1,3 @@
-//
 //  ViewController.swift
 //  GradePie
 //
@@ -8,18 +7,22 @@
 
 import UIKit
 
-
-
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
+    @IBOutlet weak var rightPickerTableView: UITableView!
     var tableView: UITableView = UITableView()
     
-    var items: [String] = [ "blahblah" , "Mathematics", "Computer Science"]
+    var items: [String] = [ "Biology" , "Mathematics", "Computer Science", "Accounting", "Computer Information System", "Nursing", "Physics", "Anatomy", "Education" ]
+    
+//    override func viewWillAppear(animated: Bool) {
+//        AnimateTable()
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.frame = CGRectMake(50, 50, 120, 300)
+        tableView.frame = CGRectMake(200, 50, 120, 300)
         tableView.delegate = self
         
         tableView.dataSource = self
@@ -33,23 +36,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return self.items.count
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell")!
-        
-        
-   
         
         let rightPickerImageView = UIImageView(frame: CGRectMake(10, 10, 120, 60))
         let rightPicker : UIImage = UIImage(named: "rightarrow")!
         rightPickerImageView.image = rightPicker
         
+        cell.backgroundView = rightPickerImageView
         
-        cell.backgroundView = UIView()
-        cell.backgroundView?.addSubview(rightPickerImageView)
-        
-        //cell.imageView!.image = image
-        
+        //cell.backgroundView = UIView()
+        4
+        //cell.backgroundView?.addSubview(rightPickerImageView)
         
         cell.textLabel?.text = items[indexPath.row]
         
@@ -57,22 +60,44 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("You selected cell #\(indexPath.row)!")
-    }
-        
-        
-                // Do any additional setup after loading the view, typically from a nib.
-        
-
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-        // Dispose of any resources that can be recreated.
-    }
-
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    let firstRow = NSIndexPath(forRow: 0, inSection: 0)
   
+        
+        let curvedArrowImageView = UIImageView(frame: CGRectMake(10, 10, 120, 60))
+        let curvedArrow : UIImage = UIImage(named: "curved right arrow")!
+        curvedArrowImageView.image = curvedArrow
+        
+        tableView .cellForRowAtIndexPath(firstRow)?.backgroundView = curvedArrowImageView
+        
+    }
+    
+    
+    
+//    func AnimateTable() {
+//    tableView.reloadData()
+//    
+//    let cells = tableView.visibleCells
+//    let tableHeight: CGFloat = tableView.bounds.size.height
+//        
+//        for i in cells {
+//            let cell: UITableViewCell = i as UITableViewCell
+//            cell.transform = CGAffineTransformMakeTranslation(0, tableHeight)
+//        }
+//        
+//        var index = 0
+//        
+//        for a in cells {
+//            let cell: UITableViewCell = a as UITableViewCell
+//         UIView.animateWithDuration(1.5, delay: 0.05 * Double(index), usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options:UIViewAnimationOptions.ShowHideTransitionViews, animations: {
+//                cell.transform = CGAffineTransformMakeTranslation(0, 0);
+//                }, completion: nil)
+//            
+//            index += 1
+//        }
+//        
+//    }
+    
     
 
 
