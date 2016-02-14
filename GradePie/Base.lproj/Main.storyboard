@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4SE-zS-1sY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dva-eI-HHV">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,12 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u4U-3i-sAD">
-                                <rect key="frame" x="20" y="28" width="235" height="552"/>
-                                <animations/>
+                                <rect key="frame" x="345" y="28" width="235" height="552"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
@@ -31,7 +30,249 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TG1-vG-vX3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="885" y="311"/>
+            <point key="canvasLocation" x="399" y="299"/>
+        </scene>
+        <!--Chart View Controller-->
+        <scene sceneID="PfV-BO-gPU">
+            <objects>
+                <viewController id="v8c-I1-Ycb" customClass="ChartViewController" customModule="GradePie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mLp-sC-7hz"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZQE-Uh-sl0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ict-rt-NE8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="7fh-kZ-Myo" customClass="testSlice" customModule="GradePie" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="560" height="560"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="counter">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
+                                        <color key="value" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="counterColor">
+                                        <color key="value" red="0.77647058820000003" green="0.047058823530000002" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7fh-kZ-Myo" firstAttribute="top" secondItem="mLp-sC-7hz" secondAttribute="bottom" id="3KV-0w-C2E"/>
+                            <constraint firstItem="7fh-kZ-Myo" firstAttribute="leading" secondItem="Ict-rt-NE8" secondAttribute="leading" constant="20" id="BVF-8V-XVL"/>
+                            <constraint firstItem="ZQE-Uh-sl0" firstAttribute="top" secondItem="7fh-kZ-Myo" secondAttribute="bottom" constant="20" id="SWc-nv-JRU"/>
+                            <constraint firstItem="7fh-kZ-Myo" firstAttribute="centerX" secondItem="Ict-rt-NE8" secondAttribute="centerX" id="xjw-bh-QQh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pieView" destination="7fh-kZ-Myo" id="KoM-2J-QfK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ukf-Wj-8vg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1056" y="285"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ODJ-ao-qZs">
+            <objects>
+                <viewController id="iV0-Wm-NYX" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rsl-Yw-1EF"/>
+                        <viewControllerLayoutGuide type="bottom" id="xTc-GD-eLw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uOW-ez-Ahl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8y9-2g-ZC5" customClass="slice" customModule="GradePie" customModuleProvider="target">
+                                <rect key="frame" x="20" y="28" width="560" height="552"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CY2-VR-MOP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1678" y="285"/>
+        </scene>
+        <!--Test Arc View Controller-->
+        <scene sceneID="wuW-B3-Gh8">
+            <objects>
+                <viewController id="wvz-OZ-uL8" customClass="TestArcViewController" customModule="GradePie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bGj-ID-dTR"/>
+                        <viewControllerLayoutGuide type="bottom" id="vJL-HM-KL6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vGH-VX-rbU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6v-2z-Qdq" customClass="ArcTestView" customModule="GradePie" customModuleProvider="target">
+                                <rect key="frame" x="20" y="28" width="560" height="508"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="E6v-2z-Qdq" firstAttribute="leading" secondItem="vGH-VX-rbU" secondAttribute="leadingMargin" id="5Is-QW-Xpt"/>
+                            <constraint firstItem="vJL-HM-KL6" firstAttribute="top" secondItem="E6v-2z-Qdq" secondAttribute="bottom" constant="64" id="Oaw-If-xan"/>
+                            <constraint firstItem="E6v-2z-Qdq" firstAttribute="top" secondItem="bGj-ID-dTR" secondAttribute="bottom" constant="8" symbolic="YES" id="aQ2-dl-271"/>
+                            <constraint firstItem="E6v-2z-Qdq" firstAttribute="trailing" secondItem="vGH-VX-rbU" secondAttribute="trailingMargin" id="iSc-Ig-EDs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="arcTestView" destination="E6v-2z-Qdq" id="cWY-vy-0sp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GXs-95-FU1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2309" y="285"/>
+        </scene>
+        <!--Shape Test View Controller-->
+        <scene sceneID="zLe-Eg-xRm">
+            <objects>
+                <viewController id="dva-eI-HHV" customClass="CAShapeTestViewController" customModule="GradePie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Jw-KV-5An"/>
+                        <viewControllerLayoutGuide type="bottom" id="Rnv-du-cbz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="drD-e5-hEf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fnK-Uz-dVp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2975" y="285"/>
+        </scene>
+        <!--Get Input View Controller-->
+        <scene sceneID="MNn-Ph-vme">
+            <objects>
+                <viewController id="PDT-bc-5UL" customClass="GetInputViewController" customModule="GradePie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Ye-fO-8UK"/>
+                        <viewControllerLayoutGuide type="bottom" id="qgP-Wa-Wm0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ir0-8f-E4T">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9V-KY-lhx">
+                                <rect key="frame" x="254" y="237" width="81" height="30"/>
+                                <state key="normal" title="Add Course"/>
+                                <connections>
+                                    <action selector="addCourse:" destination="PDT-bc-5UL" eventType="touchUpInside" id="q1y-mg-8po"/>
+                                    <segue destination="eqh-6Z-2OE" kind="show" id="tIY-n4-eTH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIX-xW-pvy">
+                                <rect key="frame" x="252" y="189" width="84" height="30"/>
+                                <state key="normal" title="Add Section"/>
+                                <connections>
+                                    <action selector="addSection:" destination="PDT-bc-5UL" eventType="touchUpInside" id="Mp0-tt-aTw"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Percentage of Section" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yjr-O8-BtQ">
+                                <rect key="frame" x="218" y="136" width="165" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="percentageOfSectionTF" destination="yjr-O8-BtQ" id="GhW-TI-gOb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UGO-Pf-Vwd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1678" y="972"/>
+        </scene>
+        <!--Graph-->
+        <scene sceneID="wSJ-Tf-AKN">
+            <objects>
+                <viewController id="eqh-6Z-2OE" customClass="Graph" customModule="GradePie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nyo-47-2x5"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pud-NU-xAy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0oo-UX-rSR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="cJp-Ge-KtS">
+                                <rect key="frame" x="107" y="496" width="118" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="HMH-pc-1RI"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="slider:" destination="eqh-6Z-2OE" eventType="valueChanged" id="4Jv-Cy-H3U"/>
+                                </connections>
+                            </slider>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="los-ir-BlZ" customClass="CircleGraphView" customModule="GradePie" customModuleProvider="target">
+                                <rect key="frame" x="150" y="96" width="300" height="300"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Efc-6N-zCY"/>
+                                    <constraint firstAttribute="width" constant="464" id="Y2u-l6-WGL"/>
+                                    <constraint firstAttribute="width" constant="300" id="kZE-on-MPt"/>
+                                    <constraint firstAttribute="height" constant="300" id="psE-xt-xcg"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Y2u-l6-WGL"/>
+                                        <exclude reference="psE-xt-xcg"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Plk-nc-Sa3">
+                                <rect key="frame" x="327" y="496" width="118" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="b6P-QU-gEq"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="slider2:" destination="eqh-6Z-2OE" eventType="valueChanged" id="blY-SH-TsR"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="los-ir-BlZ" firstAttribute="centerX" secondItem="cJp-Ge-KtS" secondAttribute="centerX" id="5tu-tX-Xrx"/>
+                            <constraint firstItem="cJp-Ge-KtS" firstAttribute="top" secondItem="los-ir-BlZ" secondAttribute="bottom" constant="91" id="Aht-zt-IaM"/>
+                            <constraint firstItem="los-ir-BlZ" firstAttribute="top" secondItem="nyo-47-2x5" secondAttribute="bottom" constant="76" id="MQT-bW-bjl"/>
+                            <constraint firstItem="los-ir-BlZ" firstAttribute="leading" secondItem="0oo-UX-rSR" secondAttribute="leadingMargin" constant="48" id="X2H-v9-OD7"/>
+                            <constraint firstItem="los-ir-BlZ" firstAttribute="top" secondItem="nyo-47-2x5" secondAttribute="bottom" constant="26" id="a9X-vf-qse"/>
+                            <constraint firstAttribute="trailing" secondItem="Plk-nc-Sa3" secondAttribute="trailing" constant="157" id="bYe-5W-vBn"/>
+                            <constraint firstItem="Pud-NU-xAy" firstAttribute="top" secondItem="cJp-Ge-KtS" secondAttribute="bottom" constant="74" id="iCX-Ii-bxB"/>
+                            <constraint firstItem="cJp-Ge-KtS" firstAttribute="centerX" secondItem="0oo-UX-rSR" secondAttribute="centerX" constant="-134" id="lbu-ep-GUs"/>
+                            <constraint firstItem="los-ir-BlZ" firstAttribute="centerX" secondItem="cJp-Ge-KtS" secondAttribute="centerX" constant="134" id="rb8-dJ-ztc"/>
+                            <constraint firstItem="Plk-nc-Sa3" firstAttribute="top" secondItem="cJp-Ge-KtS" secondAttribute="top" id="sRf-B2-IXy"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5tu-tX-Xrx"/>
+                                <exclude reference="X2H-v9-OD7"/>
+                                <exclude reference="a9X-vf-qse"/>
+                                <exclude reference="Aht-zt-IaM"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="CircleGraph" destination="los-ir-BlZ" id="xMK-hc-PUZ"/>
+                        <outlet property="circleGraph" destination="los-ir-BlZ" id="Nxc-8L-IYV"/>
+                        <outlet property="slider" destination="cJp-Ge-KtS" id="q1F-TA-fLD"/>
+                        <outlet property="slider2" destination="Plk-nc-Sa3" id="HfF-X6-o5i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ny6-3o-74Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2357" y="972"/>
         </scene>
     </scenes>
 </document>

@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A50C6EDD1C51E5890049A64F /* TestArcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50C6EDC1C51E5890049A64F /* TestArcViewController.swift */; };
+		A50C6EDF1C51E6520049A64F /* ArcTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50C6EDE1C51E6520049A64F /* ArcTestView.swift */; };
+		A52479801C41F46300EED494 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = A524797F1C41F46300EED494 /* Section.swift */; };
+		A573A3801C1338D400529824 /* slice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573A37F1C1338D400529824 /* slice.swift */; };
+		A573A3821C135B0000529824 /* pieSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573A3811C135B0000529824 /* pieSlice.swift */; };
+		A575F2DD1C4DBD3700E37DCF /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575F2DC1C4DBD3700E37DCF /* Course.swift */; };
+		A575F2DF1C4DC24500E37DCF /* GetInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575F2DE1C4DC24500E37DCF /* GetInputViewController.swift */; };
+		A57C955A1C628240003C7687 /* CAShapeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57C95591C628240003C7687 /* CAShapeTestViewController.swift */; };
+		A57C955C1C62F9A3003C7687 /* PieChartTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57C955B1C62F9A3003C7687 /* PieChartTest.swift */; };
+		A5A4B2EF1BDB6AE1009EF7E6 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A4B2EE1BDB6AE1009EF7E6 /* ChartViewController.swift */; };
+		A5A4B2F11BDB6DD8009EF7E6 /* pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A4B2F01BDB6DD8009EF7E6 /* pie.swift */; };
+		A5BB94491C2117BF002B2466 /* CircleGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB94481C2117BF002B2466 /* CircleGraphView.swift */; };
+		A5BB944B1C211977002B2466 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB944A1C211977002B2466 /* Graph.swift */; };
 		A5E81B5F1BC37B7C00B64049 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E81B5E1BC37B7C00B64049 /* AppDelegate.swift */; };
 		A5E81B611BC37B7C00B64049 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E81B601BC37B7C00B64049 /* ViewController.swift */; };
 		A5E81B641BC37B7C00B64049 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E81B621BC37B7C00B64049 /* Main.storyboard */; };
@@ -14,6 +27,7 @@
 		A5E81B691BC37B7C00B64049 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E81B671BC37B7C00B64049 /* LaunchScreen.storyboard */; };
 		A5E81B741BC37B7C00B64049 /* GradePieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E81B731BC37B7C00B64049 /* GradePieTests.swift */; };
 		A5E81B7F1BC37B7C00B64049 /* GradePieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E81B7E1BC37B7C00B64049 /* GradePieUITests.swift */; };
+		A5F22BD11C1CB851000DA956 /* testSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F22BD01C1CB851000DA956 /* testSlice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +48,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A50C6EDC1C51E5890049A64F /* TestArcViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestArcViewController.swift; sourceTree = "<group>"; };
+		A50C6EDE1C51E6520049A64F /* ArcTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcTestView.swift; sourceTree = "<group>"; };
+		A524797F1C41F46300EED494 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		A573A37F1C1338D400529824 /* slice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = slice.swift; sourceTree = "<group>"; };
+		A573A3811C135B0000529824 /* pieSlice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pieSlice.swift; sourceTree = "<group>"; };
+		A575F2DC1C4DBD3700E37DCF /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		A575F2DE1C4DC24500E37DCF /* GetInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetInputViewController.swift; sourceTree = "<group>"; };
+		A57C95591C628240003C7687 /* CAShapeTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAShapeTestViewController.swift; sourceTree = "<group>"; };
+		A57C955B1C62F9A3003C7687 /* PieChartTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartTest.swift; sourceTree = "<group>"; };
+		A5A4B2EE1BDB6AE1009EF7E6 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		A5A4B2F01BDB6DD8009EF7E6 /* pie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pie.swift; sourceTree = "<group>"; };
+		A5BB94481C2117BF002B2466 /* CircleGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleGraphView.swift; sourceTree = "<group>"; };
+		A5BB944A1C211977002B2466 /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
 		A5E81B5B1BC37B7C00B64049 /* GradePie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradePie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E81B5E1BC37B7C00B64049 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5E81B601BC37B7C00B64049 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +74,7 @@
 		A5E81B7A1BC37B7C00B64049 /* GradePieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GradePieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E81B7E1BC37B7C00B64049 /* GradePieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradePieUITests.swift; sourceTree = "<group>"; };
 		A5E81B801BC37B7C00B64049 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5F22BD01C1CB851000DA956 /* testSlice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testSlice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +102,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A575F2E01C4F3CCB00E37DCF /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				A5E81B601BC37B7C00B64049 /* ViewController.swift */,
+				A50C6EDC1C51E5890049A64F /* TestArcViewController.swift */,
+				A5A4B2F01BDB6DD8009EF7E6 /* pie.swift */,
+				A573A37F1C1338D400529824 /* slice.swift */,
+				A5F22BD01C1CB851000DA956 /* testSlice.swift */,
+				A573A3811C135B0000529824 /* pieSlice.swift */,
+				A5A4B2EE1BDB6AE1009EF7E6 /* ChartViewController.swift */,
+				A50C6EDE1C51E6520049A64F /* ArcTestView.swift */,
+				A57C95591C628240003C7687 /* CAShapeTestViewController.swift */,
+				A57C955B1C62F9A3003C7687 /* PieChartTest.swift */,
+			);
+			name = Test;
+			sourceTree = "<group>";
+		};
 		A5E81B521BC37B7C00B64049 = {
 			isa = PBXGroup;
 			children = (
@@ -97,9 +142,14 @@
 		A5E81B5D1BC37B7C00B64049 /* GradePie */ = {
 			isa = PBXGroup;
 			children = (
-				A5E81B5E1BC37B7C00B64049 /* AppDelegate.swift */,
-				A5E81B601BC37B7C00B64049 /* ViewController.swift */,
+				A575F2E01C4F3CCB00E37DCF /* Test */,
 				A5E81B621BC37B7C00B64049 /* Main.storyboard */,
+				A524797F1C41F46300EED494 /* Section.swift */,
+				A575F2DC1C4DBD3700E37DCF /* Course.swift */,
+				A5E81B5E1BC37B7C00B64049 /* AppDelegate.swift */,
+				A575F2DE1C4DC24500E37DCF /* GetInputViewController.swift */,
+				A5BB944A1C211977002B2466 /* Graph.swift */,
+				A5BB94481C2117BF002B2466 /* CircleGraphView.swift */,
 				A5E81B651BC37B7C00B64049 /* Assets.xcassets */,
 				A5E81B671BC37B7C00B64049 /* LaunchScreen.storyboard */,
 				A5E81B6A1BC37B7C00B64049 /* Info.plist */,
@@ -256,7 +306,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5E81B611BC37B7C00B64049 /* ViewController.swift in Sources */,
+				A575F2DD1C4DBD3700E37DCF /* Course.swift in Sources */,
+				A575F2DF1C4DC24500E37DCF /* GetInputViewController.swift in Sources */,
+				A5A4B2EF1BDB6AE1009EF7E6 /* ChartViewController.swift in Sources */,
+				A5F22BD11C1CB851000DA956 /* testSlice.swift in Sources */,
 				A5E81B5F1BC37B7C00B64049 /* AppDelegate.swift in Sources */,
+				A5A4B2F11BDB6DD8009EF7E6 /* pie.swift in Sources */,
+				A50C6EDF1C51E6520049A64F /* ArcTestView.swift in Sources */,
+				A52479801C41F46300EED494 /* Section.swift in Sources */,
+				A573A3801C1338D400529824 /* slice.swift in Sources */,
+				A5BB944B1C211977002B2466 /* Graph.swift in Sources */,
+				A57C955A1C628240003C7687 /* CAShapeTestViewController.swift in Sources */,
+				A573A3821C135B0000529824 /* pieSlice.swift in Sources */,
+				A57C955C1C62F9A3003C7687 /* PieChartTest.swift in Sources */,
+				A5BB94491C2117BF002B2466 /* CircleGraphView.swift in Sources */,
+				A50C6EDD1C51E5890049A64F /* TestArcViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +547,7 @@
 				A5E81B851BC37B7C00B64049 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5E81B861BC37B7C00B64049 /* Build configuration list for PBXNativeTarget "GradePieTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +556,7 @@
 				A5E81B881BC37B7C00B64049 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5E81B891BC37B7C00B64049 /* Build configuration list for PBXNativeTarget "GradePieUITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +565,7 @@
 				A5E81B8B1BC37B7C00B64049 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

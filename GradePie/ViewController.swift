@@ -60,19 +60,50 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-    let firstRow = NSIndexPath(forRow: 0, inSection: 0)
-  
-        
-        let curvedArrowImageView = UIImageView(frame: CGRectMake(10, 10, 120, 60))
-        let curvedArrow : UIImage = UIImage(named: "curved right arrow")!
-        curvedArrowImageView.image = curvedArrow
-        
-        tableView .cellForRowAtIndexPath(firstRow)?.backgroundView = curvedArrowImageView
-        
-    }
+//    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+//    let firstRow = NSIndexPath(forRow: 0, inSection: 0)
+//  
+//        
+//        let curvedArrowImageView = UIImageView(frame: CGRectMake(10, 10, 120, 60))
+//        let curvedArrow : UIImage = UIImage(named: "curved right arrow")!
+//        curvedArrowImageView.image = curvedArrow
+//        
+//        tableView .cellForRowAtIndexPath(firstRow)?.backgroundView = curvedArrowImageView
+//        
+//    }
     
-    
+//    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+//        // 1
+//        var shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Share" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+//            // 2
+//            let shareMenu = UIAlertController(title: nil, message: "Share using", preferredStyle: .ActionSheet)
+//            
+//            let twitterAction = UIAlertAction(title: "Twitter", style: UIAlertActionStyle.Default, handler: nil)
+//            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+//            
+//            shareMenu.addAction(twitterAction)
+//            shareMenu.addAction(cancelAction)
+//            
+//            
+//            self.presentViewController(shareMenu, animated: true, completion: nil)
+//        })
+//        // 3
+//        var rateAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Rate" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+//            // 4
+//            let rateMenu = UIAlertController(title: nil, message: "Rate this App", preferredStyle: .ActionSheet)
+//            
+//            let appRateAction = UIAlertAction(title: "Rate", style: UIAlertActionStyle.Default, handler: nil)
+//            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+//            
+//            rateMenu.addAction(appRateAction)
+//            rateMenu.addAction(cancelAction)
+//            
+//            
+//            self.presentViewController(rateMenu, animated: true, completion: nil)
+//        })
+//        // 5
+//        return [shareAction,rateAction]
+//    }
     
 //    func AnimateTable() {
 //    tableView.reloadData()
