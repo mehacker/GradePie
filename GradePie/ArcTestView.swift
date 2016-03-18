@@ -18,7 +18,6 @@ class ArcTestView: UIView {
     
     var courseSections = [section] ()
     
-
     //Arrays
     
     // Splits of Pie
@@ -186,7 +185,6 @@ class ArcTestView: UIView {
                 path.stroke()
             }
         
-    
         //Draw slices
         let context = UIGraphicsGetCurrentContext()
         
@@ -204,7 +202,6 @@ class ArcTestView: UIView {
 //        }
         
         CGContextSetLineWidth(context, 100)
-        
     }
     
     //method to turn degrees to radians

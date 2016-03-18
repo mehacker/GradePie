@@ -10,6 +10,6 @@ import Foundation
 
 class section {
     var name = ""
-    var percentageOfCourse = 0.0
-    var percentageEarned = 0.0
+    var percentageOfCourse:Float = 0.0
+    var percentageEarned:Float = 0.0
 }

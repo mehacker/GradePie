@@ -10,7 +10,12 @@ import UIKit
 
 class GetInputViewController: UIViewController {
 
-    @IBOutlet weak var percentageOfSectionTF: UITextField!
+  
+    @IBOutlet weak var sectionName: UITextField!
+  
+    @IBOutlet weak var sectionPercentage: UITextField!
+    
+    @IBOutlet weak var percentageEarned: UITextField!
     
     var sectionsToAdd = [section] ()
     
@@ -18,7 +23,6 @@ class GetInputViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        courseToPass.name = "math"
         
     }
 
@@ -27,32 +31,35 @@ class GetInputViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func addSection(sender: AnyObject) {
-        var newSection = section ()
-        newSection.percentageEarned = Double(percentageOfSectionTF.text!)!
+
+    @IBAction func addSetion(sender: AnyObject) {
+        let newSection = section()
+        
+        var percentageOfCourse:Float?  = Float(sectionPercentage.text!)
+        percentageOfCourse = (percentageOfCourse!/100) * 360
+
+        newSection.percentageOfCourse = percentageOfCourse!
+        
+        let percentageOfCourseEarned:Float?  = Float(percentageEarned.text!)
+        newSection.percentageEarned = percentageOfCourseEarned!
+        
         sectionsToAdd.append(newSection)
     }
 
     @IBAction func addCourse(sender: AnyObject) {
         courseToPass.sections = sectionsToAdd
-        var hundred = 100.0
-        for section in sectionsToAdd {
-            hundred -= section.percentageEarned
-            
-        }
         
-        if (hundred > 0) {
-            print("incomplete course ")
-        }
     }
+
 
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let nextVC = segue.destinationViewController as! Graph
-        nextVC.aCourse = courseToPass
+        var svc = segue.destinationViewController as! CAShapeTestViewController
+        
+        svc.courseSections = sectionsToAdd
     }
 
 
