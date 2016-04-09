@@ -12,6 +12,9 @@
 		A53363E31C7133BF009C1F83 /* chartSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53363E21C7133BF009C1F83 /* chartSlice.swift */; };
 		A53ABF3A1C7AC4B800794C84 /* PieSliceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53ABF391C7AC4B800794C84 /* PieSliceLayer.swift */; };
 		A53ABF3C1C7AC50800794C84 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53ABF3B1C7AC50800794C84 /* ProgressView.swift */; };
+		A54C80491CA62DD300A47B8F /* SectionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C80481CA62DD300A47B8F /* SectionsTableViewController.swift */; };
+		A54C804B1CA63CB100A47B8F /* sectionsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C804A1CA63CB100A47B8F /* sectionsTable.swift */; };
+		A54C804D1CA7006700A47B8F /* sliceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C804C1CA7006700A47B8F /* sliceLayer.swift */; };
 		A573A3801C1338D400529824 /* slice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573A37F1C1338D400529824 /* slice.swift */; };
 		A573A3821C135B0000529824 /* pieSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573A3811C135B0000529824 /* pieSlice.swift */; };
 		A575F2DD1C4DBD3700E37DCF /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575F2DC1C4DBD3700E37DCF /* Course.swift */; };
@@ -21,6 +24,8 @@
 		A5A4B2F11BDB6DD8009EF7E6 /* pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A4B2F01BDB6DD8009EF7E6 /* pie.swift */; };
 		A5BB94491C2117BF002B2466 /* CircleGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB94481C2117BF002B2466 /* CircleGraphView.swift */; };
 		A5BB944B1C211977002B2466 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB944A1C211977002B2466 /* Graph.swift */; };
+		A5CB700D1CB7532D00F5F0D5 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB700C1CB7532D00F5F0D5 /* School.swift */; };
+		A5CB70131CB7550000F5F0D5 /* student.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB70121CB7550000F5F0D5 /* student.swift */; };
 		A5E81B5F1BC37B7C00B64049 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E81B5E1BC37B7C00B64049 /* AppDelegate.swift */; };
 		A5E81B611BC37B7C00B64049 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E81B601BC37B7C00B64049 /* ViewController.swift */; };
 		A5E81B641BC37B7C00B64049 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E81B621BC37B7C00B64049 /* Main.storyboard */; };
@@ -54,6 +59,9 @@
 		A53363E21C7133BF009C1F83 /* chartSlice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chartSlice.swift; sourceTree = "<group>"; };
 		A53ABF391C7AC4B800794C84 /* PieSliceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieSliceLayer.swift; sourceTree = "<group>"; };
 		A53ABF3B1C7AC50800794C84 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		A54C80481CA62DD300A47B8F /* SectionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionsTableViewController.swift; sourceTree = "<group>"; };
+		A54C804A1CA63CB100A47B8F /* sectionsTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sectionsTable.swift; sourceTree = "<group>"; };
+		A54C804C1CA7006700A47B8F /* sliceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sliceLayer.swift; sourceTree = "<group>"; };
 		A573A37F1C1338D400529824 /* slice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = slice.swift; sourceTree = "<group>"; };
 		A573A3811C135B0000529824 /* pieSlice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pieSlice.swift; sourceTree = "<group>"; };
 		A575F2DC1C4DBD3700E37DCF /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
@@ -63,6 +71,8 @@
 		A5A4B2F01BDB6DD8009EF7E6 /* pie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pie.swift; sourceTree = "<group>"; };
 		A5BB94481C2117BF002B2466 /* CircleGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleGraphView.swift; sourceTree = "<group>"; };
 		A5BB944A1C211977002B2466 /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		A5CB700C1CB7532D00F5F0D5 /* School.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
+		A5CB70121CB7550000F5F0D5 /* student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = student.swift; sourceTree = "<group>"; };
 		A5E81B5B1BC37B7C00B64049 /* GradePie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradePie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E81B5E1BC37B7C00B64049 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5E81B601BC37B7C00B64049 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,9 +117,9 @@
 		A53363E41C725F32009C1F83 /* CAShapeLayer */ = {
 			isa = PBXGroup;
 			children = (
-				A57C95591C628240003C7687 /* CAShapeTestViewController.swift */,
-				A53363E21C7133BF009C1F83 /* chartSlice.swift */,
+				A54C804C1CA7006700A47B8F /* sliceLayer.swift */,
 				A53ABF391C7AC4B800794C84 /* PieSliceLayer.swift */,
+				A53363E21C7133BF009C1F83 /* chartSlice.swift */,
 				A53ABF3B1C7AC50800794C84 /* ProgressView.swift */,
 			);
 			name = CAShapeLayer;
@@ -141,11 +151,49 @@
 				A5BB944A1C211977002B2466 /* Graph.swift */,
 				A573A3811C135B0000529824 /* pieSlice.swift */,
 				A5A4B2EE1BDB6AE1009EF7E6 /* ChartViewController.swift */,
+				A54C804A1CA63CB100A47B8F /* sectionsTable.swift */,
+				A54C80481CA62DD300A47B8F /* SectionsTableViewController.swift */,
 				A53363E61C726154009C1F83 /* BezierPath */,
 				A53363E51C725F47009C1F83 /* CGContext */,
 				A53363E41C725F32009C1F83 /* CAShapeLayer */,
 			);
 			name = Test;
+			sourceTree = "<group>";
+		};
+		A5CB700E1CB7539300F5F0D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A5CB700C1CB7532D00F5F0D5 /* School.swift */,
+				A575F2DC1C4DBD3700E37DCF /* Course.swift */,
+				A524797F1C41F46300EED494 /* Section.swift */,
+				A5CB70121CB7550000F5F0D5 /* student.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A5CB700F1CB753D200F5F0D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A5CB70101CB753DD00F5F0D5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A5CB70111CB753F100F5F0D5 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A575F2DE1C4DC24500E37DCF /* GetInputViewController.swift */,
+				A57C95591C628240003C7687 /* CAShapeTestViewController.swift */,
+				A5CB700F1CB753D200F5F0D5 /* View */,
+				A5CB70101CB753DD00F5F0D5 /* Controller */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 		A5E81B521BC37B7C00B64049 = {
@@ -171,12 +219,11 @@
 		A5E81B5D1BC37B7C00B64049 /* GradePie */ = {
 			isa = PBXGroup;
 			children = (
-				A575F2E01C4F3CCB00E37DCF /* Test */,
 				A5E81B621BC37B7C00B64049 /* Main.storyboard */,
-				A524797F1C41F46300EED494 /* Section.swift */,
-				A575F2DC1C4DBD3700E37DCF /* Course.swift */,
+				A575F2E01C4F3CCB00E37DCF /* Test */,
+				A5CB700E1CB7539300F5F0D5 /* Model */,
+				A5CB70111CB753F100F5F0D5 /* ViewController */,
 				A5E81B5E1BC37B7C00B64049 /* AppDelegate.swift */,
-				A575F2DE1C4DC24500E37DCF /* GetInputViewController.swift */,
 				A5E81B651BC37B7C00B64049 /* Assets.xcassets */,
 				A5E81B671BC37B7C00B64049 /* LaunchScreen.storyboard */,
 				A5E81B6A1BC37B7C00B64049 /* Info.plist */,
@@ -336,15 +383,20 @@
 				A575F2DD1C4DBD3700E37DCF /* Course.swift in Sources */,
 				A575F2DF1C4DC24500E37DCF /* GetInputViewController.swift in Sources */,
 				A5A4B2EF1BDB6AE1009EF7E6 /* ChartViewController.swift in Sources */,
+				A54C804B1CA63CB100A47B8F /* sectionsTable.swift in Sources */,
 				A5F22BD11C1CB851000DA956 /* testSlice.swift in Sources */,
 				A5E81B5F1BC37B7C00B64049 /* AppDelegate.swift in Sources */,
+				A5CB700D1CB7532D00F5F0D5 /* School.swift in Sources */,
 				A53ABF3C1C7AC50800794C84 /* ProgressView.swift in Sources */,
 				A5A4B2F11BDB6DD8009EF7E6 /* pie.swift in Sources */,
 				A50C6EDF1C51E6520049A64F /* ArcTestView.swift in Sources */,
+				A5CB70131CB7550000F5F0D5 /* student.swift in Sources */,
 				A53363E31C7133BF009C1F83 /* chartSlice.swift in Sources */,
 				A53ABF3A1C7AC4B800794C84 /* PieSliceLayer.swift in Sources */,
+				A54C804D1CA7006700A47B8F /* sliceLayer.swift in Sources */,
 				A52479801C41F46300EED494 /* Section.swift in Sources */,
 				A573A3801C1338D400529824 /* slice.swift in Sources */,
+				A54C80491CA62DD300A47B8F /* SectionsTableViewController.swift in Sources */,
 				A5BB944B1C211977002B2466 /* Graph.swift in Sources */,
 				A57C955A1C628240003C7687 /* CAShapeTestViewController.swift in Sources */,
 				A573A3821C135B0000529824 /* pieSlice.swift in Sources */,

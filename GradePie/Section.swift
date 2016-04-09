@@ -12,4 +12,6 @@ class section {
     var name = ""
     var percentageOfCourse:Float = 0.0
     var percentageEarned:Float = 0.0
+    
+    var grades = [Int]()
 }

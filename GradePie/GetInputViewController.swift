@@ -10,6 +10,7 @@ import UIKit
 
 class GetInputViewController: UIViewController {
 
+    @IBOutlet weak var courseName: UITextField!
   
     @IBOutlet weak var sectionName: UITextField!
   
@@ -17,9 +18,14 @@ class GetInputViewController: UIViewController {
     
     @IBOutlet weak var percentageEarned: UITextField!
     
+    
     var sectionsToAdd = [section] ()
     
+    var courses = [course] ()
+    
     var courseToPass = course ()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +34,14 @@ class GetInputViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+       
     }
     
 
     @IBAction func addSetion(sender: AnyObject) {
         let newSection = section()
+        
+        newSection.name = sectionName.text!
         
         var percentageOfCourse:Float?  = Float(sectionPercentage.text!)
         percentageOfCourse = (percentageOfCourse!/100) * 360
@@ -48,7 +56,7 @@ class GetInputViewController: UIViewController {
 
     @IBAction func addCourse(sender: AnyObject) {
         courseToPass.sections = sectionsToAdd
-        
+        courseToPass.name = sectionName.text!
     }
 
 
@@ -60,7 +68,13 @@ class GetInputViewController: UIViewController {
         var svc = segue.destinationViewController as! CAShapeTestViewController
         
         svc.courseSections = sectionsToAdd
+        courseToPass.name = courseName.text!
+        svc.aCourse = courseToPass
+        
+        courses.append(courseToPass)
+        
+        print("The number of courses so far are...")
+        print(courses.count)
     }
-
-
+    
 }

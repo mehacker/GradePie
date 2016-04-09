@@ -8,54 +8,88 @@
 
 import UIKit
 
-class CAShapeTestViewController: UIViewController {
- 
-    @IBOutlet weak var chartSliceView: UIView!
+class CAShapeTestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var courseName: UILabel!
+    @IBOutlet weak var sectionsList: UITableView!
+    @IBOutlet weak var gradeSlider: UISlider!
+    @IBOutlet weak var gradeToAdd: UILabel!
+
+    @IBOutlet weak var pieGraphView: UIView!
+    
+    @IBOutlet weak var overallGrade: UILabel!
+    
     
     let progressIndicatorView = chartSlice(frame: CGRectZero)
     var courseSections = [section]()
-
+    var aCourse  = course()
+    var slices = [sliceLayer]()
+    
+    var testGrade = sliceLayer()
+    
+    var slicePath3 = UIBezierPath ()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    /////////////Data
+        overallGrade.layer.cornerRadius = overallGrade.frame.height/2
+        overallGrade.clipsToBounds = true
         
-//        let section1 = section()
-//        let section2 = section()
-//        let section3 = section()
-//        let section4 = section()
-//        
-//        section1.percentageOfCourse = 30
-//        section2.percentageOfCourse = 60
-//        section3.percentageOfCourse = 135
-//        section4.percentageOfCourse = 135
-//        
-//        section1.percentageEarned = 0.50
-//        section2.percentageEarned = 0.50
-//        section3.percentageEarned = 0.50
-//        section4.percentageEarned = 0.50
-//        
-//        courseSections.append(section1)
-//        courseSections.append(section2)
-//        courseSections.append(section3)
-//        courseSections.append(section4)
+        self.pieGraphView.layer.borderColor = UIColor.redColor().CGColor
         
-        print(courseSections)
+        self.sectionsList.registerClass(UITableViewCell.self, forCellReuseIdentifier: "aSection")
+
+        courseName.text = aCourse.name
         
         createPieGraph(courseSections)
+        
+        for sliceLayer in slices {
+            print(sliceLayer.name)
+        }
     }
     
-    func createSlice (startAngle: CGFloat, endAngle: CGFloat, fill: Bool) {
-        let newSlice = CAShapeLayer()
+//    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 1
+//    }
+
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.aCourse.sections.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell:UITableViewCell = self.sectionsList.dequeueReusableCellWithIdentifier("aSection")! as UITableViewCell
         
-        let center = CGPointMake(200.0, 200.0)
+        cell.textLabel?.text = self.aCourse.sections[indexPath.row].name
         
-        var radius = 50
+        return cell
+    }
+    
+    func createSlice (startAngle: CGFloat, endAngle: CGFloat, fill: Bool, color: UIColor, opacity: Float) {
+        let newSlice = sliceLayer()
+        
+        var center = CGPointMake((self.view.frame.width/2), (self.view.frame.height/2))
+        center.x = 240.0
+        center.y = 350.0
+        var radius = 200
         
         if (fill == true) {
-                    newSlice.path = UIBezierPath(arcCenter: center, radius: CGFloat(radius), startAngle: startAngle, endAngle: endAngle, clockwise:true).CGPath
-            newSlice.lineWidth = 100
+            
+            var slicePath2 = UIBezierPath ()
+            
+            slicePath2.addArcWithCenter(center, radius: CGFloat(radius), startAngle: startAngle, endAngle: endAngle, clockwise:true)
+            
+            slicePath2.addLineToPoint(center)
+            
+            slicePath2.closePath()
+            
+            
+            //newSlice.path = UIBezierPath(arcCenter: center, radius: CGFloat(radius), startAngle: startAngle, endAngle: endAngle, clockwise:true).CGPath
+            
+            newSlice.path = slicePath2.CGPath
+            
+            //newSlice.lineWidth = 200
         }
         else {
             newSlice.path = UIBezierPath(arcCenter: center, radius: CGFloat(100), startAngle: startAngle, endAngle: endAngle, clockwise:true).CGPath
@@ -67,41 +101,49 @@ class CAShapeTestViewController: UIViewController {
 
         
         // Configure the circle
-        newSlice.fillColor = UIColor.whiteColor().CGColor
-        newSlice.strokeColor = getRandomColor().CGColor
-        
+        newSlice.fillColor = color.CGColor
+        //newSlice.fillColor = UIColor.whiteColor().CGColor
+        newSlice.opacity = opacity
+        newSlice.strokeColor = color.CGColor
 
-        
         
         // When it gets to the end of its animation, leave it at 0% stroke filled
         newSlice.strokeEnd = 0.0
         
+        //add slice to array 
+        slices.append(newSlice)
+        
         // Add the circle to the parent layer
-        self.view.layer.addSublayer(newSlice)
+        self.pieGraphView.layer.addSublayer(newSlice)
         
         let drawAnimation = CABasicAnimation(keyPath: "strokeEnd")
         drawAnimation.repeatCount = 1.0
-        
         drawAnimation.fromValue = NSNumber(float: 0.0)
         drawAnimation.toValue = NSNumber(double: 1.0)
-        
         drawAnimation.duration = 5.0
-        
         drawAnimation.fillMode = kCAFillModeForwards
         drawAnimation.removedOnCompletion = false
-        
-        
         drawAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        
+        
+        let fillAnimation = CABasicAnimation(keyPath: "fillColor")
+        fillAnimation.repeatCount = 1.0
+        fillAnimation.fromValue = UIColor.whiteColor().CGColor
+        fillAnimation.toValue = color.CGColor
+        fillAnimation.duration = 5.0
+      
+        fillAnimation.fillMode = kCAFillModeBoth
+        fillAnimation.removedOnCompletion = false
+    
+        fillAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         
         // Add the animation to the circle
         newSlice.addAnimation(drawAnimation, forKey: "drawCircleAnimation")
-        
+        newSlice.addAnimation(fillAnimation, forKey: fillAnimation.keyPath)
     }
 
 
     func createPieGraph (courseSections: [section]) {
-        let radius = 50
-        
         //Arrays
         
         // Splits of Pie
@@ -115,15 +157,6 @@ class CAShapeTestViewController: UIViewController {
         //End of Section
         var endOfSectionInDegrees = [CGFloat] ()
         var endOfSectionInRadians = [CGFloat] ()
-        
-        ///////////////////////////////////////////////////////////////////////////////
-        
-//        pieEndPointDegrees.append(30)
-//        pieEndPointDegrees.append(90)
-//        pieEndPointDegrees.append(225)
-//        pieEndPointDegrees.append(360)
-        
- 
         
         pieEndPointDegrees.append(CGFloat(courseSections[0].percentageOfCourse))
         var endDegree:CGFloat = CGFloat(courseSections[0].percentageOfCourse)
@@ -171,18 +204,20 @@ class CAShapeTestViewController: UIViewController {
 //        print(endOfSectionInRadians)
         
         
-//Draw the slices 
+//Draw the slices
         
-        createSlice(0.0, endAngle: endOfSectionInRadians[0], fill: true)
+        var someColor = getRandomColor()
+     
+        createSlice(0.0, endAngle: endOfSectionInRadians[0], fill: true, color: someColor, opacity: 1.0)
+        createSlice(endOfSectionInRadians[0], endAngle: pieEndPointInRadians[0], fill: true, color: someColor,opacity: 0.1)
+        
         for (var a = 1; a < courseSections.count; a++) {
-                createSlice(pieEndPointInRadians[a-1], endAngle: endOfSectionInRadians[a], fill: true)
+            someColor = getRandomColor()
+            createSlice(endOfSectionInRadians[a], endAngle: pieEndPointInRadians[a], fill: true, color: someColor, opacity:  0.1)
+            createSlice(pieEndPointInRadians[a-1], endAngle: endOfSectionInRadians[a], fill: true, color: someColor, opacity: 1.0)
+     
         }
         
-        createSlice(endOfSectionInRadians[0], endAngle: pieEndPointInRadians[0], fill: false)
-        for (var a = 1; a < courseSections.count; a++) {
-            createSlice(endOfSectionInRadians[a], endAngle: pieEndPointInRadians[a], fill: false)
-        }
-
     }
     
     //method to turn degrees to radians
@@ -203,6 +238,65 @@ class CAShapeTestViewController: UIViewController {
         return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
         
     }
+
+
+    @IBAction func addSimulationSlice(sender: AnyObject) {
+       
+//        var center = CGPointMake((self.view.frame.width/2), (self.view.frame.height/2))
+//        center.x = 240.0
+//        center.y = 350.0
+//        var radius = 200
+//        
+//        slicePath3.addArcWithCenter(center, radius: CGFloat(radius), startAngle: degree2radian(270) , endAngle: degree2radian(testGrade.endArc), clockwise:true)
+//            
+//        slicePath3.addLineToPoint(center)
+//            
+//        slicePath3.closePath()
+//            
+//        //newSlice.path = UIBezierPath(arcCenter: center, radius: CGFloat(radius), startAngle: startAngle, endAngle: endAngle, clockwise:true).CGPath
+//            
+//        testGrade.path = slicePath3.CGPath
+//            
+//        //newSlice.lineWidth = 200
+//        
+//        // `clockwise` tells the circle whether to animate in a clockwise or anti clockwise direction
+//        
+//        
+//        // Configure the circle
+//        testGrade.backgroundColor = UIColor.blueColor().CGColor
+//        testGrade.strokeColor = UIColor.orangeColor().CGColor
+//
+//        
+//        // Add the circle to the parent layer
+//        self.pieGraphView.layer.addSublayer(testGrade)
+    
+    }
+    
+    
+    @IBAction func gradeAdder(sender: UISlider) {
+        var grade = sender.value
+        print(grade)
+        gradeToAdd.text = String(grade)
+        
+        
+    }
+    
+    
+
+//
+//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        var touch = touches.first
+//        
+//        var location = touch?.locationInView(self.view)
+//        
+//        if let layer = self.pieGraphView.layer.hitTest(location!) as? CAShapeLayer { // If you hit a layer and if its a Shapelayer
+//            if CGPathContainsPoint(layer.path, nil, location!, false) { // Optional, if you are inside its content path
+//                print("Hit shapeLayer") // Do something
+//            }
+//        }
+//    }
+    
+
     
     override func didReceiveMemoryWarning() {
         
