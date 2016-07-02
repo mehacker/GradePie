@@ -7,9 +7,17 @@
 //
 
 import Foundation
+import RealmSwift
 
-class student {
-    var firstName = " "
-    var lastName = " "
+//class student : Object {
+class student : Object {
+    
+    dynamic var firstName = " "
+    
+    dynamic var lastName = " "
+    
+    dynamic var aSchool : school? = nil
+    
+    var courses = List<course> ()
     
 }

@@ -7,14 +7,15 @@
 //
 
 import Foundation
+import RealmSwift
 
-class school {
-    var name = ""
+//class school : Object {
+class school : Object {
+
+    dynamic var name = ""
     
+    dynamic var GPAScale = 4.0
     
-    
-    var GPA = 4.0
-    
-    var courses =  [course] ()
+   // dynamic var courses =  [course] ()
     
 }

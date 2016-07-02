@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class GetInputViewController: UIViewController {
 
@@ -18,25 +19,23 @@ class GetInputViewController: UIViewController {
     
     @IBOutlet weak var percentageEarned: UITextField!
     
+   // let realm = try! Realm ()
     
-    var sectionsToAdd = [section] ()
-    
-    var courses = [course] ()
+    var theSchool = school ()
     
     var courseToPass = course ()
     
+    var sectionsToAdd = [section] ()
     
+    var currentStudent = student ()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-       
     }
-    
 
     @IBAction func addSetion(sender: AnyObject) {
         let newSection = section()
@@ -52,15 +51,23 @@ class GetInputViewController: UIViewController {
         newSection.percentageEarned = percentageOfCourseEarned!
         
         sectionsToAdd.append(newSection)
+        
+        
+        
+//        try! realm.write {
+//            realm.add(newSection)
+//        }
+        
     }
 
     @IBAction func addCourse(sender: AnyObject) {
-        courseToPass.sections = sectionsToAdd
-        courseToPass.name = sectionName.text!
+        //courseToPass.sections = sectionsToAdd
+        courseToPass.name = courseName.text!
+        //theSchool.courses.append(courseToPass)
+        
+      // courseToPass.sections = sectionsToAdd
     }
 
-
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -68,13 +75,10 @@ class GetInputViewController: UIViewController {
         var svc = segue.destinationViewController as! CAShapeTestViewController
         
         svc.courseSections = sectionsToAdd
-        courseToPass.name = courseName.text!
+
         svc.aCourse = courseToPass
-        
-        courses.append(courseToPass)
-        
-        print("The number of courses so far are...")
-        print(courses.count)
+       
+        svc.currentStudent = currentStudent
     }
     
 }

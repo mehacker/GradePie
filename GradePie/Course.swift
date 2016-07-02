@@ -7,10 +7,16 @@
 //
 
 import Foundation
+import RealmSwift
 
-class course {
-    var name = ""
-    var percentageEarned = 0
-    var sections = [section]()
+//class course : Object {
+class course : Object {
+    
+    dynamic var name = ""
+    
+    dynamic var percentageEarned = 0
+    
+    //var sections = List <section> ()
+    
 }
 

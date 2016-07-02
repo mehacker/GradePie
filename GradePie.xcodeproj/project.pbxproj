@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		409974F4C453B11DE2B69108 /* Pods_GradePieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68BAD9BC269BB74A3CCF9E84 /* Pods_GradePieTests.framework */; };
 		A50C6EDF1C51E6520049A64F /* ArcTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50C6EDE1C51E6520049A64F /* ArcTestView.swift */; };
 		A52479801C41F46300EED494 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = A524797F1C41F46300EED494 /* Section.swift */; };
 		A53363E31C7133BF009C1F83 /* chartSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53363E21C7133BF009C1F83 /* chartSlice.swift */; };
@@ -15,6 +16,8 @@
 		A54C80491CA62DD300A47B8F /* SectionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C80481CA62DD300A47B8F /* SectionsTableViewController.swift */; };
 		A54C804B1CA63CB100A47B8F /* sectionsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C804A1CA63CB100A47B8F /* sectionsTable.swift */; };
 		A54C804D1CA7006700A47B8F /* sliceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C804C1CA7006700A47B8F /* sliceLayer.swift */; };
+		A559A9791CE29F7F00924D2C /* account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A559A9781CE29F7F00924D2C /* account.swift */; };
+		A56A65EA1CBCA3A1008EC1AF /* CreateStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56A65E91CBCA3A1008EC1AF /* CreateStudentViewController.swift */; };
 		A573A3801C1338D400529824 /* slice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573A37F1C1338D400529824 /* slice.swift */; };
 		A573A3821C135B0000529824 /* pieSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573A3811C135B0000529824 /* pieSlice.swift */; };
 		A575F2DD1C4DBD3700E37DCF /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575F2DC1C4DBD3700E37DCF /* Course.swift */; };
@@ -24,19 +27,49 @@
 		A5A4B2F11BDB6DD8009EF7E6 /* pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A4B2F01BDB6DD8009EF7E6 /* pie.swift */; };
 		A5BB94491C2117BF002B2466 /* CircleGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB94481C2117BF002B2466 /* CircleGraphView.swift */; };
 		A5BB944B1C211977002B2466 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB944A1C211977002B2466 /* Graph.swift */; };
+		A5C4B35A1D15B7A50033B41F /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C4B3591D15B7A50033B41F /* Test.swift */; };
 		A5CB700D1CB7532D00F5F0D5 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB700C1CB7532D00F5F0D5 /* School.swift */; };
 		A5CB70131CB7550000F5F0D5 /* student.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB70121CB7550000F5F0D5 /* student.swift */; };
+		A5E632EA1D1F1110005CB65B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E81B621BC37B7C00B64049 /* Main.storyboard */; };
 		A5E81B5F1BC37B7C00B64049 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E81B5E1BC37B7C00B64049 /* AppDelegate.swift */; };
 		A5E81B611BC37B7C00B64049 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E81B601BC37B7C00B64049 /* ViewController.swift */; };
-		A5E81B641BC37B7C00B64049 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E81B621BC37B7C00B64049 /* Main.storyboard */; };
 		A5E81B661BC37B7C00B64049 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5E81B651BC37B7C00B64049 /* Assets.xcassets */; };
 		A5E81B691BC37B7C00B64049 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E81B671BC37B7C00B64049 /* LaunchScreen.storyboard */; };
 		A5E81B741BC37B7C00B64049 /* GradePieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E81B731BC37B7C00B64049 /* GradePieTests.swift */; };
 		A5E81B7F1BC37B7C00B64049 /* GradePieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E81B7E1BC37B7C00B64049 /* GradePieUITests.swift */; };
 		A5F22BD11C1CB851000DA956 /* testSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F22BD01C1CB851000DA956 /* testSlice.swift */; };
+		FE344EC97C0DF3E0BA30EC38 /* Pods_GradePieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD0288E37EF74D6F478FCE1 /* Pods_GradePieUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A5135DC01CC8556600470A7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5135DB91CC8556500470A7E /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
+			remoteInfo = "Charts-iOS";
+		};
+		A5135DC21CC8556600470A7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5135DB91CC8556500470A7E /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A52C5C371BAC5CA400594CDD;
+			remoteInfo = "Charts-TV";
+		};
+		A5135DC41CC8556600470A7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5135DB91CC8556500470A7E /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65B3F5BF1C7370BE000983D0;
+			remoteInfo = "Charts-OSX";
+		};
+		A5135DC61CC8556600470A7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5135DB91CC8556500470A7E /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06AEE7A21BDC3F8B009875AE;
+			remoteInfo = ChartsTests;
+		};
 		A5E81B701BC37B7C00B64049 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A5E81B531BC37B7C00B64049 /* Project object */;
@@ -54,7 +87,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03C25E1D1EBAC3B530EB27F4 /* Pods-GradePieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradePieUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradePieUITests/Pods-GradePieUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		338FB98C67B6C6BDF1553382 /* Pods-GradePie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradePie.release.xcconfig"; path = "Pods/Target Support Files/Pods-GradePie/Pods-GradePie.release.xcconfig"; sourceTree = "<group>"; };
+		414456C67F7382C70E2BE54D /* Pods-GradePieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradePieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GradePieTests/Pods-GradePieTests.release.xcconfig"; sourceTree = "<group>"; };
+		50AD1EFA5560FCA1A1270D10 /* Pods-GradePie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradePie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradePie/Pods-GradePie.debug.xcconfig"; sourceTree = "<group>"; };
+		5BD0288E37EF74D6F478FCE1 /* Pods_GradePieUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GradePieUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68BAD9BC269BB74A3CCF9E84 /* Pods_GradePieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GradePieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BF3E89681D035F4F3AEFD7B /* Pods_GradePie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GradePie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A50C6EDE1C51E6520049A64F /* ArcTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcTestView.swift; sourceTree = "<group>"; };
+		A5135DB91CC8556500470A7E /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../Downloads/Charts-master/Charts/Charts.xcodeproj"; sourceTree = "<group>"; };
+		A5135DCD1CC8B52C00470A7E /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		A5135DCF1CC8B53E00470A7E /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		A524797F1C41F46300EED494 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		A53363E21C7133BF009C1F83 /* chartSlice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chartSlice.swift; sourceTree = "<group>"; };
 		A53ABF391C7AC4B800794C84 /* PieSliceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieSliceLayer.swift; sourceTree = "<group>"; };
@@ -62,6 +105,18 @@
 		A54C80481CA62DD300A47B8F /* SectionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionsTableViewController.swift; sourceTree = "<group>"; };
 		A54C804A1CA63CB100A47B8F /* sectionsTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sectionsTable.swift; sourceTree = "<group>"; };
 		A54C804C1CA7006700A47B8F /* sliceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sliceLayer.swift; sourceTree = "<group>"; };
+		A559A9781CE29F7F00924D2C /* account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = account.swift; sourceTree = "<group>"; };
+		A56A65E91CBCA3A1008EC1AF /* CreateStudentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateStudentViewController.swift; sourceTree = "<group>"; };
+		A56A65F61CC1E4D5008EC1AF /* ChartViewBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartViewBase.swift; path = "../../../Downloads/Charts-master/Charts/Classes/Charts/ChartViewBase.swift"; sourceTree = "<group>"; };
+		A56A65F81CC1E4E6008EC1AF /* PieChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PieChartView.swift; path = "../../../Downloads/Charts-master/Charts/Classes/Charts/PieChartView.swift"; sourceTree = "<group>"; };
+		A56A65FA1CC1E4FB008EC1AF /* PieRadarChartViewBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PieRadarChartViewBase.swift; path = "../../../Downloads/Charts-master/Charts/Classes/Charts/PieRadarChartViewBase.swift"; sourceTree = "<group>"; };
+		A56A65FC1CC1E5DE008EC1AF /* IPieChartDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IPieChartDataSet.swift; path = "../../../Downloads/Charts-master/Charts/Classes/Data/Interfaces/IPieChartDataSet.swift"; sourceTree = "<group>"; };
+		A56A65FD1CC1E5DE008EC1AF /* PieChartData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PieChartData.swift; path = "../../../Downloads/Charts-master/Charts/Classes/Data/Implementations/Standard/PieChartData.swift"; sourceTree = "<group>"; };
+		A56A65FE1CC1E5DE008EC1AF /* PieChartDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PieChartDataSet.swift; path = "../../../Downloads/Charts-master/Charts/Classes/Data/Implementations/Standard/PieChartDataSet.swift"; sourceTree = "<group>"; };
+		A56A65FF1CC1E5DE008EC1AF /* PieChartRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PieChartRenderer.swift; path = "../../../Downloads/Charts-master/Charts/Classes/Renderers/PieChartRenderer.swift"; sourceTree = "<group>"; };
+		A56A66041CC1E6C6008EC1AF /* ChartDataRendererBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartDataRendererBase.swift; path = "../../../Downloads/Charts-master/Charts/Classes/Renderers/ChartDataRendererBase.swift"; sourceTree = "<group>"; };
+		A56A66061CC1E6D1008EC1AF /* ChartRendererBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartRendererBase.swift; path = "../../../Downloads/Charts-master/Charts/Classes/Renderers/ChartRendererBase.swift"; sourceTree = "<group>"; };
+		A56A66081CC1E71C008EC1AF /* ChartData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartData.swift; path = "../../../Downloads/Charts-master/Charts/Classes/Data/Implementations/Standard/ChartData.swift"; sourceTree = "<group>"; };
 		A573A37F1C1338D400529824 /* slice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = slice.swift; sourceTree = "<group>"; };
 		A573A3811C135B0000529824 /* pieSlice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pieSlice.swift; sourceTree = "<group>"; };
 		A575F2DC1C4DBD3700E37DCF /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
@@ -71,6 +126,7 @@
 		A5A4B2F01BDB6DD8009EF7E6 /* pie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pie.swift; sourceTree = "<group>"; };
 		A5BB94481C2117BF002B2466 /* CircleGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleGraphView.swift; sourceTree = "<group>"; };
 		A5BB944A1C211977002B2466 /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		A5C4B3591D15B7A50033B41F /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		A5CB700C1CB7532D00F5F0D5 /* School.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		A5CB70121CB7550000F5F0D5 /* student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = student.swift; sourceTree = "<group>"; };
 		A5E81B5B1BC37B7C00B64049 /* GradePie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradePie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +143,8 @@
 		A5E81B7E1BC37B7C00B64049 /* GradePieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradePieUITests.swift; sourceTree = "<group>"; };
 		A5E81B801BC37B7C00B64049 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5F22BD01C1CB851000DA956 /* testSlice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testSlice.swift; sourceTree = "<group>"; };
+		DEF079FACB93D1A0DD5C482D /* Pods-GradePieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradePieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GradePieUITests/Pods-GradePieUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E5B9DB4EC801C091EE2638A5 /* Pods-GradePieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradePieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradePieTests/Pods-GradePieTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				409974F4C453B11DE2B69108 /* Pods_GradePieTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,12 +167,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE344EC97C0DF3E0BA30EC38 /* Pods_GradePieUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2433CDBA031AAEA304420733 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50AD1EFA5560FCA1A1270D10 /* Pods-GradePie.debug.xcconfig */,
+				338FB98C67B6C6BDF1553382 /* Pods-GradePie.release.xcconfig */,
+				E5B9DB4EC801C091EE2638A5 /* Pods-GradePieTests.debug.xcconfig */,
+				414456C67F7382C70E2BE54D /* Pods-GradePieTests.release.xcconfig */,
+				03C25E1D1EBAC3B530EB27F4 /* Pods-GradePieUITests.debug.xcconfig */,
+				DEF079FACB93D1A0DD5C482D /* Pods-GradePieUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4EEE3E797E961774EFA5D7A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9BF3E89681D035F4F3AEFD7B /* Pods_GradePie.framework */,
+				68BAD9BC269BB74A3CCF9E84 /* Pods_GradePieTests.framework */,
+				5BD0288E37EF74D6F478FCE1 /* Pods_GradePieUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A5135DBA1CC8556500470A7E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A5135DC11CC8556600470A7E /* Charts.framework */,
+				A5135DC31CC8556600470A7E /* Charts.framework */,
+				A5135DC51CC8556600470A7E /* Charts.framework */,
+				A5135DC71CC8556600470A7E /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A53363E41C725F32009C1F83 /* CAShapeLayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,9 +238,27 @@
 			name = BezierPath;
 			sourceTree = "<group>";
 		};
+		A56A65F51CC1E49D008EC1AF /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				A56A65F61CC1E4D5008EC1AF /* ChartViewBase.swift */,
+				A56A65F81CC1E4E6008EC1AF /* PieChartView.swift */,
+				A56A65FA1CC1E4FB008EC1AF /* PieRadarChartViewBase.swift */,
+				A56A65FC1CC1E5DE008EC1AF /* IPieChartDataSet.swift */,
+				A56A65FD1CC1E5DE008EC1AF /* PieChartData.swift */,
+				A56A65FE1CC1E5DE008EC1AF /* PieChartDataSet.swift */,
+				A56A65FF1CC1E5DE008EC1AF /* PieChartRenderer.swift */,
+				A56A66081CC1E71C008EC1AF /* ChartData.swift */,
+				A56A66041CC1E6C6008EC1AF /* ChartDataRendererBase.swift */,
+				A56A66061CC1E6D1008EC1AF /* ChartRendererBase.swift */,
+			);
+			name = Charts;
+			sourceTree = "<group>";
+		};
 		A575F2E01C4F3CCB00E37DCF /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				A5C4B3591D15B7A50033B41F /* Test.swift */,
 				A5E81B601BC37B7C00B64049 /* ViewController.swift */,
 				A5BB944A1C211977002B2466 /* Graph.swift */,
 				A573A3811C135B0000529824 /* pieSlice.swift */,
@@ -163,10 +275,11 @@
 		A5CB700E1CB7539300F5F0D5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A559A9781CE29F7F00924D2C /* account.swift */,
+				A5CB70121CB7550000F5F0D5 /* student.swift */,
 				A5CB700C1CB7532D00F5F0D5 /* School.swift */,
 				A575F2DC1C4DBD3700E37DCF /* Course.swift */,
 				A524797F1C41F46300EED494 /* Section.swift */,
-				A5CB70121CB7550000F5F0D5 /* student.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -188,6 +301,7 @@
 		A5CB70111CB753F100F5F0D5 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A56A65E91CBCA3A1008EC1AF /* CreateStudentViewController.swift */,
 				A575F2DE1C4DC24500E37DCF /* GetInputViewController.swift */,
 				A57C95591C628240003C7687 /* CAShapeTestViewController.swift */,
 				A5CB700F1CB753D200F5F0D5 /* View */,
@@ -199,10 +313,16 @@
 		A5E81B521BC37B7C00B64049 = {
 			isa = PBXGroup;
 			children = (
+				A5135DCF1CC8B53E00470A7E /* RealmSwift.framework */,
+				A5135DCD1CC8B52C00470A7E /* Realm.framework */,
+				A5135DB91CC8556500470A7E /* Charts.xcodeproj */,
+				A56A65F51CC1E49D008EC1AF /* Charts */,
 				A5E81B5D1BC37B7C00B64049 /* GradePie */,
 				A5E81B721BC37B7C00B64049 /* GradePieTests */,
 				A5E81B7D1BC37B7C00B64049 /* GradePieUITests */,
 				A5E81B5C1BC37B7C00B64049 /* Products */,
+				2433CDBA031AAEA304420733 /* Pods */,
+				4EEE3E797E961774EFA5D7A4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -256,9 +376,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5E81B831BC37B7C00B64049 /* Build configuration list for PBXNativeTarget "GradePie" */;
 			buildPhases = (
+				FD36C5CD73B45CB9A8F0A228 /* Check Pods Manifest.lock */,
 				A5E81B571BC37B7C00B64049 /* Sources */,
 				A5E81B581BC37B7C00B64049 /* Frameworks */,
 				A5E81B591BC37B7C00B64049 /* Resources */,
+				A5135DD11CC8B58000470A7E /* ShellScript */,
+				E7FF697E29F771CE862746B5 /* Embed Pods Frameworks */,
+				6A964227882536EF8F430F72 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -273,9 +397,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5E81B861BC37B7C00B64049 /* Build configuration list for PBXNativeTarget "GradePieTests" */;
 			buildPhases = (
+				0A237B754256A12402FB5AC9 /* Check Pods Manifest.lock */,
 				A5E81B6B1BC37B7C00B64049 /* Sources */,
 				A5E81B6C1BC37B7C00B64049 /* Frameworks */,
 				A5E81B6D1BC37B7C00B64049 /* Resources */,
+				367E2551AB0904FF09C8876E /* Embed Pods Frameworks */,
+				66BF58AF68A1BBA2E11E927C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -291,9 +418,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5E81B891BC37B7C00B64049 /* Build configuration list for PBXNativeTarget "GradePieUITests" */;
 			buildPhases = (
+				74F8554002DF75F99565C6E7 /* Check Pods Manifest.lock */,
 				A5E81B761BC37B7C00B64049 /* Sources */,
 				A5E81B771BC37B7C00B64049 /* Frameworks */,
 				A5E81B781BC37B7C00B64049 /* Resources */,
+				90E0D7B0E9FE3BD74A1CB487 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -316,6 +445,7 @@
 				TargetAttributes = {
 					A5E81B5A1BC37B7C00B64049 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = NV5PR33GEL;
 					};
 					A5E81B6E1BC37B7C00B64049 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -338,6 +468,12 @@
 			mainGroup = A5E81B521BC37B7C00B64049;
 			productRefGroup = A5E81B5C1BC37B7C00B64049 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A5135DBA1CC8556500470A7E /* Products */;
+					ProjectRef = A5135DB91CC8556500470A7E /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A5E81B5A1BC37B7C00B64049 /* GradePie */,
@@ -347,14 +483,45 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		A5135DC11CC8556600470A7E /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = A5135DC01CC8556600470A7E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A5135DC31CC8556600470A7E /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = A5135DC21CC8556600470A7E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A5135DC51CC8556600470A7E /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = A5135DC41CC8556600470A7E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A5135DC71CC8556600470A7E /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = A5135DC61CC8556600470A7E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		A5E81B591BC37B7C00B64049 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5E632EA1D1F1110005CB65B /* Main.storyboard in Resources */,
 				A5E81B691BC37B7C00B64049 /* LaunchScreen.storyboard in Resources */,
 				A5E81B661BC37B7C00B64049 /* Assets.xcassets in Resources */,
-				A5E81B641BC37B7C00B64049 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +541,142 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0A237B754256A12402FB5AC9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		367E2551AB0904FF09C8876E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GradePieTests/Pods-GradePieTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66BF58AF68A1BBA2E11E927C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GradePieTests/Pods-GradePieTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A964227882536EF8F430F72 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GradePie/Pods-GradePie-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74F8554002DF75F99565C6E7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		90E0D7B0E9FE3BD74A1CB487 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GradePieUITests/Pods-GradePieUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5135DD11CC8B58000470A7E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+		E7FF697E29F771CE862746B5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GradePie/Pods-GradePie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD36C5CD73B45CB9A8F0A228 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A5E81B571BC37B7C00B64049 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -383,6 +686,7 @@
 				A575F2DD1C4DBD3700E37DCF /* Course.swift in Sources */,
 				A575F2DF1C4DC24500E37DCF /* GetInputViewController.swift in Sources */,
 				A5A4B2EF1BDB6AE1009EF7E6 /* ChartViewController.swift in Sources */,
+				A56A65EA1CBCA3A1008EC1AF /* CreateStudentViewController.swift in Sources */,
 				A54C804B1CA63CB100A47B8F /* sectionsTable.swift in Sources */,
 				A5F22BD11C1CB851000DA956 /* testSlice.swift in Sources */,
 				A5E81B5F1BC37B7C00B64049 /* AppDelegate.swift in Sources */,
@@ -391,6 +695,7 @@
 				A5A4B2F11BDB6DD8009EF7E6 /* pie.swift in Sources */,
 				A50C6EDF1C51E6520049A64F /* ArcTestView.swift in Sources */,
 				A5CB70131CB7550000F5F0D5 /* student.swift in Sources */,
+				A559A9791CE29F7F00924D2C /* account.swift in Sources */,
 				A53363E31C7133BF009C1F83 /* chartSlice.swift in Sources */,
 				A53ABF3A1C7AC4B800794C84 /* PieSliceLayer.swift in Sources */,
 				A54C804D1CA7006700A47B8F /* sliceLayer.swift in Sources */,
@@ -399,6 +704,7 @@
 				A54C80491CA62DD300A47B8F /* SectionsTableViewController.swift in Sources */,
 				A5BB944B1C211977002B2466 /* Graph.swift in Sources */,
 				A57C955A1C628240003C7687 /* CAShapeTestViewController.swift in Sources */,
+				A5C4B35A1D15B7A50033B41F /* Test.swift in Sources */,
 				A573A3821C135B0000529824 /* pieSlice.swift in Sources */,
 				A5BB94491C2117BF002B2466 /* CircleGraphView.swift in Sources */,
 			);
@@ -540,28 +846,45 @@
 		};
 		A5E81B841BC37B7C00B64049 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50AD1EFA5560FCA1A1270D10 /* Pods-GradePie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = GradePie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = crystal.GradePie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		A5E81B851BC37B7C00B64049 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 338FB98C67B6C6BDF1553382 /* Pods-GradePie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = GradePie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = crystal.GradePie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
 		A5E81B871BC37B7C00B64049 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5B9DB4EC801C091EE2638A5 /* Pods-GradePieTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = GradePieTests/Info.plist;
@@ -574,6 +897,7 @@
 		};
 		A5E81B881BC37B7C00B64049 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 414456C67F7382C70E2BE54D /* Pods-GradePieTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = GradePieTests/Info.plist;
@@ -586,6 +910,7 @@
 		};
 		A5E81B8A1BC37B7C00B64049 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03C25E1D1EBAC3B530EB27F4 /* Pods-GradePieUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = GradePieUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -598,6 +923,7 @@
 		};
 		A5E81B8B1BC37B7C00B64049 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEF079FACB93D1A0DD5C482D /* Pods-GradePieUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = GradePieUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
