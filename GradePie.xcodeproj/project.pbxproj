@@ -42,30 +42,30 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A5135DC01CC8556600470A7E /* PBXContainerItemProxy */ = {
+		A50D7E4C1D62A2D50025E5AA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A5135DB91CC8556500470A7E /* Charts.xcodeproj */;
+			containerPortal = A50D7E451D62A2D40025E5AA /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
 			remoteInfo = "Charts-iOS";
 		};
-		A5135DC21CC8556600470A7E /* PBXContainerItemProxy */ = {
+		A50D7E4E1D62A2D50025E5AA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A5135DB91CC8556500470A7E /* Charts.xcodeproj */;
+			containerPortal = A50D7E451D62A2D40025E5AA /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = A52C5C371BAC5CA400594CDD;
 			remoteInfo = "Charts-TV";
 		};
-		A5135DC41CC8556600470A7E /* PBXContainerItemProxy */ = {
+		A50D7E501D62A2D50025E5AA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A5135DB91CC8556500470A7E /* Charts.xcodeproj */;
+			containerPortal = A50D7E451D62A2D40025E5AA /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 65B3F5BF1C7370BE000983D0;
 			remoteInfo = "Charts-OSX";
 		};
-		A5135DC61CC8556600470A7E /* PBXContainerItemProxy */ = {
+		A50D7E521D62A2D50025E5AA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A5135DB91CC8556500470A7E /* Charts.xcodeproj */;
+			containerPortal = A50D7E451D62A2D40025E5AA /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 06AEE7A21BDC3F8B009875AE;
 			remoteInfo = ChartsTests;
@@ -95,7 +95,7 @@
 		68BAD9BC269BB74A3CCF9E84 /* Pods_GradePieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GradePieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BF3E89681D035F4F3AEFD7B /* Pods_GradePie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GradePie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A50C6EDE1C51E6520049A64F /* ArcTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcTestView.swift; sourceTree = "<group>"; };
-		A5135DB91CC8556500470A7E /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../Downloads/Charts-master/Charts/Charts.xcodeproj"; sourceTree = "<group>"; };
+		A50D7E451D62A2D40025E5AA /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../Downloads/Charts-master-2/Charts/Charts.xcodeproj"; sourceTree = "<group>"; };
 		A5135DCD1CC8B52C00470A7E /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		A5135DCF1CC8B53E00470A7E /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		A524797F1C41F46300EED494 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
@@ -107,16 +107,6 @@
 		A54C804C1CA7006700A47B8F /* sliceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sliceLayer.swift; sourceTree = "<group>"; };
 		A559A9781CE29F7F00924D2C /* account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = account.swift; sourceTree = "<group>"; };
 		A56A65E91CBCA3A1008EC1AF /* CreateStudentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateStudentViewController.swift; sourceTree = "<group>"; };
-		A56A65F61CC1E4D5008EC1AF /* ChartViewBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartViewBase.swift; path = "../../../Downloads/Charts-master/Charts/Classes/Charts/ChartViewBase.swift"; sourceTree = "<group>"; };
-		A56A65F81CC1E4E6008EC1AF /* PieChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PieChartView.swift; path = "../../../Downloads/Charts-master/Charts/Classes/Charts/PieChartView.swift"; sourceTree = "<group>"; };
-		A56A65FA1CC1E4FB008EC1AF /* PieRadarChartViewBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PieRadarChartViewBase.swift; path = "../../../Downloads/Charts-master/Charts/Classes/Charts/PieRadarChartViewBase.swift"; sourceTree = "<group>"; };
-		A56A65FC1CC1E5DE008EC1AF /* IPieChartDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IPieChartDataSet.swift; path = "../../../Downloads/Charts-master/Charts/Classes/Data/Interfaces/IPieChartDataSet.swift"; sourceTree = "<group>"; };
-		A56A65FD1CC1E5DE008EC1AF /* PieChartData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PieChartData.swift; path = "../../../Downloads/Charts-master/Charts/Classes/Data/Implementations/Standard/PieChartData.swift"; sourceTree = "<group>"; };
-		A56A65FE1CC1E5DE008EC1AF /* PieChartDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PieChartDataSet.swift; path = "../../../Downloads/Charts-master/Charts/Classes/Data/Implementations/Standard/PieChartDataSet.swift"; sourceTree = "<group>"; };
-		A56A65FF1CC1E5DE008EC1AF /* PieChartRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PieChartRenderer.swift; path = "../../../Downloads/Charts-master/Charts/Classes/Renderers/PieChartRenderer.swift"; sourceTree = "<group>"; };
-		A56A66041CC1E6C6008EC1AF /* ChartDataRendererBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartDataRendererBase.swift; path = "../../../Downloads/Charts-master/Charts/Classes/Renderers/ChartDataRendererBase.swift"; sourceTree = "<group>"; };
-		A56A66061CC1E6D1008EC1AF /* ChartRendererBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartRendererBase.swift; path = "../../../Downloads/Charts-master/Charts/Classes/Renderers/ChartRendererBase.swift"; sourceTree = "<group>"; };
-		A56A66081CC1E71C008EC1AF /* ChartData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartData.swift; path = "../../../Downloads/Charts-master/Charts/Classes/Data/Implementations/Standard/ChartData.swift"; sourceTree = "<group>"; };
 		A573A37F1C1338D400529824 /* slice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = slice.swift; sourceTree = "<group>"; };
 		A573A3811C135B0000529824 /* pieSlice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pieSlice.swift; sourceTree = "<group>"; };
 		A575F2DC1C4DBD3700E37DCF /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
@@ -197,13 +187,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A5135DBA1CC8556500470A7E /* Products */ = {
+		A50D7E461D62A2D40025E5AA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A5135DC11CC8556600470A7E /* Charts.framework */,
-				A5135DC31CC8556600470A7E /* Charts.framework */,
-				A5135DC51CC8556600470A7E /* Charts.framework */,
-				A5135DC71CC8556600470A7E /* ChartsTests.xctest */,
+				A50D7E4D1D62A2D50025E5AA /* Charts.framework */,
+				A50D7E4F1D62A2D50025E5AA /* Charts.framework */,
+				A50D7E511D62A2D50025E5AA /* Charts.framework */,
+				A50D7E531D62A2D50025E5AA /* ChartsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -236,23 +226,6 @@
 				A573A37F1C1338D400529824 /* slice.swift */,
 			);
 			name = BezierPath;
-			sourceTree = "<group>";
-		};
-		A56A65F51CC1E49D008EC1AF /* Charts */ = {
-			isa = PBXGroup;
-			children = (
-				A56A65F61CC1E4D5008EC1AF /* ChartViewBase.swift */,
-				A56A65F81CC1E4E6008EC1AF /* PieChartView.swift */,
-				A56A65FA1CC1E4FB008EC1AF /* PieRadarChartViewBase.swift */,
-				A56A65FC1CC1E5DE008EC1AF /* IPieChartDataSet.swift */,
-				A56A65FD1CC1E5DE008EC1AF /* PieChartData.swift */,
-				A56A65FE1CC1E5DE008EC1AF /* PieChartDataSet.swift */,
-				A56A65FF1CC1E5DE008EC1AF /* PieChartRenderer.swift */,
-				A56A66081CC1E71C008EC1AF /* ChartData.swift */,
-				A56A66041CC1E6C6008EC1AF /* ChartDataRendererBase.swift */,
-				A56A66061CC1E6D1008EC1AF /* ChartRendererBase.swift */,
-			);
-			name = Charts;
 			sourceTree = "<group>";
 		};
 		A575F2E01C4F3CCB00E37DCF /* Test */ = {
@@ -313,10 +286,9 @@
 		A5E81B521BC37B7C00B64049 = {
 			isa = PBXGroup;
 			children = (
+				A50D7E451D62A2D40025E5AA /* Charts.xcodeproj */,
 				A5135DCF1CC8B53E00470A7E /* RealmSwift.framework */,
 				A5135DCD1CC8B52C00470A7E /* Realm.framework */,
-				A5135DB91CC8556500470A7E /* Charts.xcodeproj */,
-				A56A65F51CC1E49D008EC1AF /* Charts */,
 				A5E81B5D1BC37B7C00B64049 /* GradePie */,
 				A5E81B721BC37B7C00B64049 /* GradePieTests */,
 				A5E81B7D1BC37B7C00B64049 /* GradePieUITests */,
@@ -470,8 +442,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = A5135DBA1CC8556500470A7E /* Products */;
-					ProjectRef = A5135DB91CC8556500470A7E /* Charts.xcodeproj */;
+					ProductGroup = A50D7E461D62A2D40025E5AA /* Products */;
+					ProjectRef = A50D7E451D62A2D40025E5AA /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -484,32 +456,32 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		A5135DC11CC8556600470A7E /* Charts.framework */ = {
+		A50D7E4D1D62A2D50025E5AA /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Charts.framework;
-			remoteRef = A5135DC01CC8556600470A7E /* PBXContainerItemProxy */;
+			remoteRef = A50D7E4C1D62A2D50025E5AA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		A5135DC31CC8556600470A7E /* Charts.framework */ = {
+		A50D7E4F1D62A2D50025E5AA /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Charts.framework;
-			remoteRef = A5135DC21CC8556600470A7E /* PBXContainerItemProxy */;
+			remoteRef = A50D7E4E1D62A2D50025E5AA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		A5135DC51CC8556600470A7E /* Charts.framework */ = {
+		A50D7E511D62A2D50025E5AA /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Charts.framework;
-			remoteRef = A5135DC41CC8556600470A7E /* PBXContainerItemProxy */;
+			remoteRef = A50D7E501D62A2D50025E5AA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		A5135DC71CC8556600470A7E /* ChartsTests.xctest */ = {
+		A50D7E531D62A2D50025E5AA /* ChartsTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ChartsTests.xctest;
-			remoteRef = A5135DC61CC8556600470A7E /* PBXContainerItemProxy */;
+			remoteRef = A50D7E521D62A2D50025E5AA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

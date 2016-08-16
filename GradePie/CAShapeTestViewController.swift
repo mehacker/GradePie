@@ -18,6 +18,7 @@ class CAShapeTestViewController: UIViewController {
     @IBOutlet weak var gradeSlider: UISlider!
     @IBOutlet weak var gradeToAdd: UILabel!
 
+    @IBOutlet weak var pieChartView: PieChartView!
    // @IBOutlet weak var pieGraphView: UIView!
     
     @IBOutlet weak var overallGrade: UILabel!
@@ -48,7 +49,17 @@ class CAShapeTestViewController: UIViewController {
 
      //   courseName.text = aCourse.name
         
-        createPieGraph(courseSections)
+//        createPieGraph(courseSections)
+        var sectionNames: Array<String> = []
+        var grades: Array<Double> = []
+        
+        for section in courseSections {
+            sectionNames.append(section.name)
+            grades.append(Double(section.percentageOfCourse))
+            
+        }
+        
+        setChart(sectionNames, values: grades)
     
     }
     
@@ -249,8 +260,7 @@ class CAShapeTestViewController: UIViewController {
         
     }
 
-
-    @IBAction func addSimulationSlice(sender: AnyObject) {
+//    @IBAction func addSimulationSlice(sender: AnyObject) {
        
 //        var center = CGPointMake((self.view.frame.width/2), (self.view.frame.height/2))
 //        center.x = 240.0
@@ -280,7 +290,7 @@ class CAShapeTestViewController: UIViewController {
 //        // Add the circle to the parent layer
 //        self.pieGraphView.layer.addSublayer(testGrade)
     
-    }
+//    }
     
     @IBAction func gradeAdder(sender: UISlider) {
         var grade = sender.value
@@ -288,34 +298,70 @@ class CAShapeTestViewController: UIViewController {
         gradeToAdd.text = String(grade)
     }
 
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesBegan(touches, withEvent: event)
-        var position = CGPoint(x: 0.0, y: 0.0)
+//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        super.touchesBegan(touches, withEvent: event)
+//        var position = CGPoint(x: 0.0, y: 0.0)
+//        
+//        if let touch = touches.first {
+//            position = touch.locationInView(view)
+//        }
+//        print(self.view.layer.sublayers?.count)
+//        
+//        var count = 0
+//        
+//        for layer in self.view.layer.sublayers! {
+//  
+//            if (layer.containsPoint(position)) {
+//            let layerGrabbed = layer.modelLayer() as! CAShapeLayer
+//
+//            print(layer.position)
+//              
+//            
+//                if count == 5 {
+//                        layerGrabbed.fillColor = UIColor.redColor().CGColor
+//                }
+//                  count += 1
+//            }
+//            else {
+//                print("failed")
+//            }
+//        }
+//    }
+    
+    func setChart(dataPoints: [String], values: [Double]) {
+        var dataEntries: [ChartDataEntry] = []
         
-        if let touch = touches.first {
-            position = touch.locationInView(view)
-        }
-        print(self.view.layer.sublayers?.count)
-        
-        var count = 0
-        
-        for layer in self.view.layer.sublayers! {
-  
-            if (layer.containsPoint(position)) {
-            let layerGrabbed = layer.modelLayer() as! CAShapeLayer
-
-            print(layer.position)
-              
+        for i in 0..<dataPoints.count {
+            let dataEntry = ChartDataEntry(value: values[i], xIndex: i, data: courseSections[i])
+            dataEntries.append(dataEntry)
             
-                if count == 5 {
-                        layerGrabbed.fillColor = UIColor.redColor().CGColor
-                }
-                  count += 1
-            }
-            else {
-                print("failed")
-            }
         }
+        
+        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "Class sections")
+        let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
+        pieChartView.data = pieChartData
+        
+        var colors: [UIColor] = []
+        
+        for i in 0..<dataPoints.count {
+            let red = Double (arc4random_uniform(256))
+            let green = Double(arc4random_uniform(256))
+            let blue = Double(arc4random_uniform(256))
+            
+            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
+            colors.append(color)
+            
+            pieChartDataSet.colors = colors
+            
+        }
+    }
+    
+    func chartValueSelected (charView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight ) {
+        
+        var sectionGrabbed = section()
+        sectionGrabbed = entry.data as! section
+        print(entry.value, sectionGrabbed.name)
+        
     }
     
     override func didReceiveMemoryWarning() {
