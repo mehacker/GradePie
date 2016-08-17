@@ -11,12 +11,13 @@ import UIKit
 import Charts
 
 //class CAShapeTestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-class CAShapeTestViewController: UIViewController {
+class CAShapeTestViewController: UIViewController, ChartViewDelegate {
     
     @IBOutlet weak var courseName: UILabel!
    // @IBOutlet weak var sectionsList: UITableView!
     @IBOutlet weak var gradeSlider: UISlider!
     @IBOutlet weak var gradeToAdd: UILabel!
+
 
     @IBOutlet weak var pieChartView: PieChartView!
    // @IBOutlet weak var pieGraphView: UIView!
@@ -50,6 +51,8 @@ class CAShapeTestViewController: UIViewController {
      //   courseName.text = aCourse.name
         
 //        createPieGraph(courseSections)
+        pieChartView.delegate = self
+        
         var sectionNames: Array<String> = []
         var grades: Array<Double> = []
         
@@ -362,6 +365,9 @@ class CAShapeTestViewController: UIViewController {
         sectionGrabbed = entry.data as! section
         print(entry.value, sectionGrabbed.name)
         
+        print(self.pieChartView.absoluteAngles)
+        print(self.pieChartView.drawAngles)
+        self.pieChartView.setNeedsDisplay()
     }
     
     override func didReceiveMemoryWarning() {
