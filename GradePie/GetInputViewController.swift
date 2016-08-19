@@ -72,13 +72,13 @@ class GetInputViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var svc = segue.destinationViewController as! CAShapeTestViewController
+      var svc = segue.destinationViewController as! CAShapeTestViewController
         
-        svc.courseSections = sectionsToAdd
+      svc.courseSections = sectionsToAdd
 
-        svc.aCourse = courseToPass
+      svc.aCourse = courseToPass
        
-        svc.currentStudent = currentStudent
+      svc.currentStudent = currentStudent
     }
     
 }

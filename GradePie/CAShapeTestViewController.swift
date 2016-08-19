@@ -51,7 +51,7 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
      //   courseName.text = aCourse.name
         
 //        createPieGraph(courseSections)
-        pieChartView.delegate = self
+     //   pieChartView.delegate = self
         
         var sectionNames: Array<String> = []
         var grades: Array<Double> = []
@@ -335,13 +335,20 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         var dataEntries: [ChartDataEntry] = []
         
         for i in 0..<dataPoints.count {
-            let dataEntry = ChartDataEntry(value: values[i], xIndex: i, data: courseSections[i])
+            let dataEntry = ChartDataEntry(x: Double(i), y: values[i])
             dataEntries.append(dataEntry)
             
         }
         
-        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "Class sections")
-        let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
+        let pieChartDataSet = PieChartDataSet(values: dataEntries, label: "Class sections")
+        
+        
+  //let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
+      
+
+        
+        let pieChartData = PieChartData(dataSet: pieChartDataSet)
+        
         pieChartView.data = pieChartData
         
         var colors: [UIColor] = []
@@ -359,11 +366,11 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         }
     }
     
-    func chartValueSelected (charView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight ) {
-        
+//    func chartValueSelected (charView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight ) {
+    func chartValueSelected (charView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int) {
         var sectionGrabbed = section()
         sectionGrabbed = entry.data as! section
-        print(entry.value, sectionGrabbed.name)
+      //  print(entry.value, sectionGrabbed.name)
         
         print(self.pieChartView.absoluteAngles)
         print(self.pieChartView.drawAngles)
