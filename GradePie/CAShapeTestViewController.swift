@@ -62,7 +62,11 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
             
         }
         
-        setChart(sectionNames, values: grades)
+        let gradesPercentagedEarned = addPercentageEarned(courseSections)
+        
+        print(gradesPercentagedEarned)
+        
+        setChart(gradesPercentagedEarned)
     
     }
     
@@ -82,6 +86,8 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
 //        
 //        return cell
 //    }
+    
+    // MARK: - CAShapeLayer
     
     func createSlice (startAngle: CGFloat, endAngle: CGFloat, fill: Bool, color: UIColor, opacity: Float) {
         let newSlice = CAShapeLayer()
@@ -240,7 +246,7 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
             createSlice(pieEndPointInRadians[a-1], endAngle: endOfSectionInRadians[a], fill: true, color: someColor, opacity: 1.0)
      
         }
-        
+    
         
     }
     
@@ -331,10 +337,13 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
 //        }
 //    }
     
-    func setChart(dataPoints: [String], values: [Double]) {
+    // MARK: - Charts Framework
+    
+    //func setChart(dataPoints: [String], values: [Double]) {
+    func setChart(values: [Double]) {
         var dataEntries: [ChartDataEntry] = []
         
-        for i in 0..<dataPoints.count {
+        for i in 0..<values.count {
             let dataEntry = ChartDataEntry(x: Double(i), y: values[i])
             dataEntries.append(dataEntry)
             
@@ -344,8 +353,6 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         
         
   //let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
-      
-
         
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
         
@@ -353,17 +360,33 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         
         var colors: [UIColor] = []
         
-        for i in 0..<dataPoints.count {
+        for i in 0..<values.count {
             let red = Double (arc4random_uniform(256))
             let green = Double(arc4random_uniform(256))
             let blue = Double(arc4random_uniform(256))
             
             let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-            colors.append(color)
+            
+            if (i%2 == 0 ) {
+                colors.append(color)
+                colors.append(color.colorWithAlphaComponent(0.8))
+            }
             
             pieChartDataSet.colors = colors
             
         }
+        
+               pieChartView.centerText = "Overall Grade"
+    }
+    
+    func addPercentageEarned (sections:  [section]) -> [Double] {
+        var values = [Double]()
+        for section in sections {
+            let fraction = Double(section.percentageOfCourse)*Double(section.percentageEarned)
+            values.append(fraction)
+            values.append(Double(section.percentageOfCourse) - fraction)
+        }
+        return values
     }
     
 //    func chartValueSelected (charView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight ) {
