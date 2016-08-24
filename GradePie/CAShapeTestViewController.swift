@@ -66,7 +66,8 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         
         print(gradesPercentagedEarned)
         
-        setChart(gradesPercentagedEarned)
+       // setChart(gradesPercentagedEarned)
+        setChart(grades)
     
     }
     
@@ -367,10 +368,11 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
             
             let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
             
-            if (i%2 == 0 ) {
-                colors.append(color)
-                colors.append(color.colorWithAlphaComponent(0.8))
-            }
+            colors.append(color)
+//            if (i%2 == 0 ) {
+//                colors.append(color)
+//                colors.append(color.colorWithAlphaComponent(0.2))
+//            }
             
             pieChartDataSet.colors = colors
             
