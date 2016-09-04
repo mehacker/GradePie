@@ -43,7 +43,6 @@ class GetInputViewController: UIViewController {
         newSection.name = sectionName.text!
         
         var percentageOfCourse:Float?  = Float(sectionPercentage.text!)
-        percentageOfCourse = (percentageOfCourse!/100) * 360
 
         newSection.percentageOfCourse = percentageOfCourse!
         
@@ -51,8 +50,6 @@ class GetInputViewController: UIViewController {
         newSection.percentageEarned = percentageOfCourseEarned!
         
         sectionsToAdd.append(newSection)
-        
-        
         
 //        try! realm.write {
 //            realm.add(newSection)
@@ -62,6 +59,8 @@ class GetInputViewController: UIViewController {
 
     @IBAction func addCourse(sender: AnyObject) {
         //courseToPass.sections = sectionsToAdd
+        
+        courseToPass.sections = sectionsToAdd
         courseToPass.name = courseName.text!
         //theSchool.courses.append(courseToPass)
         
@@ -72,13 +71,13 @@ class GetInputViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var svc = segue.destinationViewController as! CAShapeTestViewController
+      var svc = segue.destinationViewController as! CAShapeTestViewController
         
-        svc.courseSections = sectionsToAdd
+      svc.courseSections = sectionsToAdd
 
-        svc.aCourse = courseToPass
+      svc.aCourse = courseToPass
        
-        svc.currentStudent = currentStudent
+      svc.currentStudent = currentStudent
     }
     
 }
