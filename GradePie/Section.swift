@@ -20,6 +20,8 @@ class section {
     
     var grades = [Int]()
     
+    var selected = false
+    
     func addGrade (grade: Int) {
         grades.append(grade)
     }
@@ -32,5 +34,8 @@ class section {
             
         }
     }
+    
+
+    
 }
 

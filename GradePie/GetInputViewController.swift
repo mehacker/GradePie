@@ -43,7 +43,6 @@ class GetInputViewController: UIViewController {
         newSection.name = sectionName.text!
         
         var percentageOfCourse:Float?  = Float(sectionPercentage.text!)
-        percentageOfCourse = (percentageOfCourse!/100) * 360
 
         newSection.percentageOfCourse = percentageOfCourse!
         
@@ -51,8 +50,6 @@ class GetInputViewController: UIViewController {
         newSection.percentageEarned = percentageOfCourseEarned!
         
         sectionsToAdd.append(newSection)
-        
-        
         
 //        try! realm.write {
 //            realm.add(newSection)

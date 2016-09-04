@@ -146,6 +146,7 @@
 		A53363E31C7133BF009C1F83 /* chartSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53363E21C7133BF009C1F83 /* chartSlice.swift */; };
 		A53ABF3A1C7AC4B800794C84 /* PieSliceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53ABF391C7AC4B800794C84 /* PieSliceLayer.swift */; };
 		A53ABF3C1C7AC50800794C84 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53ABF3B1C7AC50800794C84 /* ProgressView.swift */; };
+		A546727E1D7A573F0075A4BC /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A546727D1D7A573F0075A4BC /* Assignment.swift */; };
 		A54C80491CA62DD300A47B8F /* SectionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C80481CA62DD300A47B8F /* SectionsTableViewController.swift */; };
 		A54C804B1CA63CB100A47B8F /* sectionsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C804A1CA63CB100A47B8F /* sectionsTable.swift */; };
 		A54C804D1CA7006700A47B8F /* sliceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C804C1CA7006700A47B8F /* sliceLayer.swift */; };
@@ -366,6 +367,7 @@
 		A53363E21C7133BF009C1F83 /* chartSlice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chartSlice.swift; sourceTree = "<group>"; };
 		A53ABF391C7AC4B800794C84 /* PieSliceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieSliceLayer.swift; sourceTree = "<group>"; };
 		A53ABF3B1C7AC50800794C84 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		A546727D1D7A573F0075A4BC /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
 		A54C80481CA62DD300A47B8F /* SectionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionsTableViewController.swift; sourceTree = "<group>"; };
 		A54C804A1CA63CB100A47B8F /* sectionsTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sectionsTable.swift; sourceTree = "<group>"; };
 		A54C804C1CA7006700A47B8F /* sliceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sliceLayer.swift; sourceTree = "<group>"; };
@@ -777,6 +779,7 @@
 				A5CB700C1CB7532D00F5F0D5 /* School.swift */,
 				A575F2DC1C4DBD3700E37DCF /* Course.swift */,
 				A524797F1C41F46300EED494 /* Section.swift */,
+				A546727D1D7A573F0075A4BC /* Assignment.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -942,7 +945,7 @@
 				TargetAttributes = {
 					A5E81B5A1BC37B7C00B64049 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = NV5PR33GEL;
+						DevelopmentTeam = DP8WZRYLZG;
 					};
 					A5E81B6E1BC37B7C00B64049 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -1243,6 +1246,7 @@
 				A53ABF3C1C7AC50800794C84 /* ProgressView.swift in Sources */,
 				A50AC78A1D65EF4E00666595 /* RadarChartRenderer.swift in Sources */,
 				A50AC73A1D65EF4E00666595 /* ChartBaseDataSet.swift in Sources */,
+				A546727E1D7A573F0075A4BC /* Assignment.swift in Sources */,
 				A50AC7621D65EF4E00666595 /* BarHighlighter.swift in Sources */,
 				A5A4B2F11BDB6DD8009EF7E6 /* pie.swift in Sources */,
 				A50AC7191D65EF4E00666595 /* BarChartView.swift in Sources */,

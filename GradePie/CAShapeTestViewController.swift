@@ -18,7 +18,6 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
     @IBOutlet weak var gradeSlider: UISlider!
     @IBOutlet weak var gradeToAdd: UILabel!
 
-
     @IBOutlet weak var pieChartView: PieChartView!
    // @IBOutlet weak var pieGraphView: UIView!
     
@@ -51,7 +50,9 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
      //   courseName.text = aCourse.name
         
 //        createPieGraph(courseSections)
-     //   pieChartView.delegate = self
+        
+        self.pieChartView.delegate = self
+
         
         var sectionNames: Array<String> = []
         var grades: Array<Double> = []
@@ -59,7 +60,7 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         for section in courseSections {
             sectionNames.append(section.name)
             grades.append(Double(section.percentageOfCourse))
-            
+
         }
         
         let gradesPercentagedEarned = addPercentageEarned(courseSections)
@@ -67,7 +68,7 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         print(gradesPercentagedEarned)
         
        // setChart(gradesPercentagedEarned)
-        setChart(grades)
+        setChart(courseSections, percentagesEarned: gradesPercentagedEarned)
     
     }
     
@@ -341,19 +342,26 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
     // MARK: - Charts Framework
     
     //func setChart(dataPoints: [String], values: [Double]) {
-    func setChart(values: [Double]) {
+    func setChart(values: [section], percentagesEarned: [Double]) {
+//    func setChart(values: [Double], percentagesEarned: [Double]) {
         var dataEntries: [ChartDataEntry] = []
         
-        for i in 0..<values.count {
-            let dataEntry = ChartDataEntry(x: Double(i), y: values[i])
+        for i in 0...values.count-1 {
+            var sectionGrabbed = section()
+            sectionGrabbed = courseSections[i]
+            var value = sectionGrabbed.percentageOfCourse
+            
+            //COnvert to a percentage of the chart 
+            value = (value/100) * 360
+            
+            let dataEntry = ChartDataEntry(x: Double(i), y: Double(value), data: sectionGrabbed)
             dataEntries.append(dataEntry)
             
         }
         
         let pieChartDataSet = PieChartDataSet(values: dataEntries, label: "Class sections")
         
-        
-  //let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
+//      let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
         
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
         
@@ -378,7 +386,7 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
             
         }
         
-               pieChartView.centerText = "Overall Grade"
+            pieChartView.centerText = "Overall Grade"
     }
     
     func addPercentageEarned (sections:  [section]) -> [Double] {
@@ -391,16 +399,28 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         return values
     }
     
-//    func chartValueSelected (charView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight ) {
-    func chartValueSelected (charView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int) {
+    func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         var sectionGrabbed = section()
         sectionGrabbed = entry.data as! section
-      //  print(entry.value, sectionGrabbed.name)
         
-        print(self.pieChartView.absoluteAngles)
-        print(self.pieChartView.drawAngles)
+        print(entry.data)
+        print("The name of the seciton is", sectionGrabbed.name)
+        print("The percentage of the course is", sectionGrabbed.percentageOfCourse)
+        print("The percentage earned is", sectionGrabbed.percentageEarned)
+        print("The grades of the section are", sectionGrabbed.grades)
+        
+        for aSection in courseSections {
+        if (aSection.name == sectionGrabbed.name) {
+            
+        }
+        }
+        
         self.pieChartView.setNeedsDisplay()
     }
+    
+//    func chartValueSelected (charView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight ) {
+//    func chartValueSelected (charView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int) {
+
     
     override func didReceiveMemoryWarning() {
         
