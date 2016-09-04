@@ -24,6 +24,7 @@ class section {
     
     func addGrade (grade: Float) {
         grades.append(grade)
+        getPercentageOfCourseEarned()
     }
     
 //    func removeGrade (grade: Int) {
@@ -38,6 +39,7 @@ class section {
     func getAverage () -> Float {
         var total:Float = 0.0
         var average:Float = 0.0
+        print("The grades for the seciton is", grades)
         for grade in grades {
             total += grade
         }
@@ -51,6 +53,5 @@ class section {
         return percentageEarned
     }
 
-    
 }
 

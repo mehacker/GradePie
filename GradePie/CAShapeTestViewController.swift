@@ -10,9 +10,6 @@ import UIKit
 
 //import Charts
 
-//class CAShapeTestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-
 class CAShapeTestViewController: UIViewController, ChartViewDelegate {
     
     @IBOutlet weak var courseName: UILabel!
@@ -40,26 +37,53 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
     
     var selectedSection = section ()
     
+    var testSections = [section] ()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
        // overallGrade.layer.cornerRadius = overallGrade.frame.height/2
-        //overallGrade.clipsToBounds = true
+       
+       // overallGrade.clipsToBounds = true
         
        // self.pieGraphView.layer.borderColor = UIColor.redColor().CGColor
         
        // self.pieGraphView.userInteractionEnabled = true
         
-    //    self.sectionsList.registerClass(UITableViewCell.self, forCellReuseIdentifier: "aSection")
-
-     //   courseName.text = aCourse.name
+       // self.sectionsList.registerClass(UITableViewCell.self, forCellReuseIdentifier: "aSection")
         
-//        createPieGraph(courseSections)
+       // createPieGraph(courseSections)
+        
+        //temporary test data
+        let testSection1 = section ()
+        testSection1.addGrade(50)
+        testSection1.addGrade(50)
+        testSection1.name = "Quizzes"
+        testSection1.percentageOfCourse = 0.25
+        let testSection2 = section ()
+        testSection2.addGrade(50)
+        testSection2.addGrade(50)
+        testSection2.name = "Tests"
+        testSection2.percentageOfCourse = 0.25
+        let testSection3 = section ()
+        testSection3.addGrade(50)
+        testSection3.addGrade(50)
+        testSection2.name = "Homework"
+        testSection3.percentageOfCourse = 0.25
+        let testSection4 = section ()
+        testSection4.addGrade(50)
+        testSection4.addGrade(50)
+        testSection2.name = "Bonus"
+        testSection4.percentageOfCourse = 0.25
+        testSections.append(testSection1)
+        testSections.append(testSection2)
+        testSections.append(testSection3)
+        testSections.append(testSection4)
+        
+        aCourse.sections = testSections
         
         self.pieChartView.delegate = self
 
-        
-        
         var sectionNames: Array<String> = []
         var grades: Array<Double> = []
         
@@ -69,33 +93,14 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
 
         }
         
-        let gradesPercentagedEarned = addPercentageEarned(courseSections)
-        
-        print(gradesPercentagedEarned)
+        let gradesPercentagedEarned = addPercentageEarned(testSections)
         
        // setChart(gradesPercentagedEarned)
-        setChart(courseSections, percentagesEarned: gradesPercentagedEarned)
+        setChart(testSections, percentagesEarned: gradesPercentagedEarned)
     
     }
-    
-//    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 1
-//    }
-    
-//    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.aCourse.sections.count
-//    }
-//    
-//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        var cell:UITableViewCell = self.sectionsList.dequeueReusableCellWithIdentifier("aSection")! as UITableViewCell
-//        
-//        cell.textLabel?.text = self.aCourse.sections[indexPath.row].name
-//        
-//        return cell
-//    }
-    
-    // MARK: - CAShapeLayer
+
+    // MARK: - CAShapeLayer - old
     
     func createSlice (startAngle: CGFloat, endAngle: CGFloat, fill: Bool, color: UIColor, opacity: Float) {
         let newSlice = CAShapeLayer()
@@ -220,9 +225,9 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
             percentageOfSectionEarnedInRadians.append(degree2radian(percentageEarned))
         }
         
-//        print("percentage of section earned in radians")
-//        print(percentageOfSectionEarnedInRadians)
-//        print("\n")
+        // print("percentage of section earned in radians")
+        // print(percentageOfSectionEarnedInRadians)
+        // print("\n")
         
        endOfSectionInDegrees.append(percentageOfSectionEarned[0])
         for (var index2 = 1; index2 < pieEndPointDegrees.count; index2++) {
@@ -237,11 +242,11 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
             endOfSectionInRadians.append(degree2radian(endOfSectionInDegrees[index3]))
         }
         
-//        print("end of section in radians")
-//        print(endOfSectionInRadians)
+        // print("end of section in radians")
+        // print(endOfSectionInRadians)
         
         
-//Draw the slices
+        // Draw the slices
         
         var someColor = getRandomColor()
      
@@ -254,8 +259,6 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
             createSlice(pieEndPointInRadians[a-1], endAngle: endOfSectionInRadians[a], fill: true, color: someColor, opacity: 1.0)
      
         }
-    
-        
     }
     
     //method to turn degrees to radians
@@ -308,12 +311,6 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
 //        self.pieGraphView.layer.addSublayer(testGrade)
     
 //    }
-    
-    @IBAction func gradeAdder(sender: UISlider) {
-        var grade = sender.value
-        print(grade)
-        gradeToAdd.text = String(grade)
-    }
 
 //    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
 //        super.touchesBegan(touches, withEvent: event)
@@ -346,15 +343,12 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
 //    }
     
     // MARK: - Charts Framework
-    
-    //func setChart(dataPoints: [String], values: [Double]) {
     func setChart(values: [section], percentagesEarned: [Double]) {
-//    func setChart(values: [Double], percentagesEarned: [Double]) {
         var dataEntries: [ChartDataEntry] = []
         
         for i in 0...values.count-1 {
             var sectionGrabbed = section()
-            sectionGrabbed = courseSections[i]
+            sectionGrabbed = testSections[i]
             var value = sectionGrabbed.percentageOfCourse
             
             //COnvert to a percentage of the chart 
@@ -428,11 +422,8 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         let gradesLeft = Int(gradesLeftTF.text!)
         print(gradesLeft)
         print(aCourse.bestGradePossibleForSection(gradesLeft!, sectionName: selectedSection.name))
+        
     }
-    
-//    func chartValueSelected (charView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight ) {
-//    func chartValueSelected (charView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int) {
-
     
     override func didReceiveMemoryWarning() {
         
