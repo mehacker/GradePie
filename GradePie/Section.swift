@@ -18,23 +18,38 @@ class section {
     
     dynamic var percentageEarned:Float = 0.0
     
-    var grades = [Int]()
+    var grades = [Float]()
     
     var selected = false
     
-    func addGrade (grade: Int) {
+    func addGrade (grade: Float) {
         grades.append(grade)
     }
     
-    func removeGrade (grade: Int) {
-        for i in 0 ..< grades.count {
-            if (grade == grades[i]) {
-                grades.removeAtIndex(i)
-            }
-            
+//    func removeGrade (grade: Int) {
+//        for i in 0 ..< grades.count {
+//            if (Int(grade) == grades[i]) {
+//                grades.removeAtIndex(i)
+//            }
+//            
+//        }
+//    }
+    
+    func getAverage () -> Float {
+        var total:Float = 0.0
+        var average:Float = 0.0
+        for grade in grades {
+            total += grade
         }
+        
+        average = total/Float(grades.count)
+        return average
     }
     
+    func getPercentageOfCourseEarned ()  -> Float {
+        percentageEarned = (getAverage()  * percentageOfCourse)/100
+        return percentageEarned
+    }
 
     
 }

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GradePie/CAShapeTestViewController.swift"
-            timestampString = "494455145.842108"
+            timestampString = "494703890.135611"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "403"
-            endingLineNumber = "403"
+            startingLineNumber = "409"
+            endingLineNumber = "409"
             landmarkName = "chartValueSelected(_:entry:highlight:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -41,13 +41,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../../Downloads/Charts-master-2/Charts/Classes/Charts/ChartViewBase.swift"
-            timestampString = "494453230.751964"
+            filePath = "GradePie/CAShapeTestViewController.swift"
+            timestampString = "494703890.135611"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "505"
-            endingLineNumber = "505"
-            landmarkName = "highlightValue(highlight:callDelegate:)"
+            startingLineNumber = "428"
+            endingLineNumber = "428"
+            landmarkName = "getBestGradeForSelectedSection(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GradePie/Course.swift"
+            timestampString = "494705034.129942"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "getSection(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

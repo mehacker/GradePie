@@ -8,9 +8,11 @@
 
 import UIKit
 
-import Charts
+//import Charts
 
 //class CAShapeTestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+
 class CAShapeTestViewController: UIViewController, ChartViewDelegate {
     
     @IBOutlet weak var courseName: UILabel!
@@ -18,6 +20,7 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
     @IBOutlet weak var gradeSlider: UISlider!
     @IBOutlet weak var gradeToAdd: UILabel!
 
+    @IBOutlet weak var gradesLeftTF: UITextField!
     @IBOutlet weak var pieChartView: PieChartView!
    // @IBOutlet weak var pieGraphView: UIView!
     
@@ -34,6 +37,8 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
     var slicePath3 = UIBezierPath ()
     
     var currentStudent = student ()
+    
+    var selectedSection = section ()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +58,7 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         
         self.pieChartView.delegate = self
 
+        
         
         var sectionNames: Array<String> = []
         var grades: Array<Double> = []
@@ -411,11 +417,17 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         
         for aSection in courseSections {
         if (aSection.name == sectionGrabbed.name) {
-            
+            selectedSection = aSection
         }
         }
         
         self.pieChartView.setNeedsDisplay()
+    }
+    
+    @IBAction func getBestGradeForSelectedSection(sender: AnyObject) {
+        let gradesLeft = Int(gradesLeftTF.text!)
+        print(gradesLeft)
+        print(aCourse.bestGradePossibleForSection(gradesLeft!, sectionName: selectedSection.name))
     }
     
 //    func chartValueSelected (charView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight ) {

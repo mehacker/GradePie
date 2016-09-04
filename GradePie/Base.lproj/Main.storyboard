@@ -561,7 +561,15 @@
                                     <constraint firstAttribute="width" constant="179" id="KZP-jn-rAc"/>
                                 </constraints>
                                 <state key="normal" title="Get Best grade of course"/>
+                                <connections>
+                                    <action selector="getBestGradeForSelectedSection:" destination="dva-eI-HHV" eventType="touchUpInside" id="75j-EE-khh"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="riC-VV-r2D">
+                                <rect key="frame" x="329" y="520" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.27058823529411763" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -605,6 +613,7 @@
                     </view>
                     <connections>
                         <outlet property="courseName" destination="Qx0-3B-Dbb" id="NPt-7e-JAW"/>
+                        <outlet property="gradesLeftTF" destination="riC-VV-r2D" id="0VF-9Z-WSh"/>
                         <outlet property="pieChartView" destination="nEa-ba-jkI" id="Jh7-NE-o5m"/>
                     </connections>
                 </viewController>

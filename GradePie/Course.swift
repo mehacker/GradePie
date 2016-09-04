@@ -16,7 +16,7 @@ class course : Object {
     
     dynamic var percentageEarned = 0
     
-    var sections = Array <section>
+    var sections = [section]()
     
     func getSection (name: String) -> section {
         var sectionFound = section()
@@ -34,6 +34,8 @@ class course : Object {
         var mockSection =  section()
         let sectionSearched = getSection(sectionName)
         mockSection = sectionSearched
+        
+        print(mockSection.grades)
         
         for _ in 0..<gradesLeft {
             mockSection.addGrade(100)

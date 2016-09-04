@@ -59,6 +59,8 @@ class GetInputViewController: UIViewController {
 
     @IBAction func addCourse(sender: AnyObject) {
         //courseToPass.sections = sectionsToAdd
+        
+        courseToPass.sections = sectionsToAdd
         courseToPass.name = courseName.text!
         //theSchool.courses.append(courseToPass)
         
