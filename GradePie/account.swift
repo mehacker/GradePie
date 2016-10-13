@@ -7,11 +7,11 @@
 //
 
 import Foundation
-import RealmSwift
+//import RealmSwift
 
 //class account : Object {
-class account : Object {
-    dynamic var username = ""
-    dynamic var password = ""
-    dynamic var aStudent : student? = nil
+class account {
+    var username = ""
+    var password = ""
+    var aStudent : student? = nil
 }

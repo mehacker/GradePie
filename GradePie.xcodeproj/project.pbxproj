@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		409974F4C453B11DE2B69108 /* Pods_GradePieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68BAD9BC269BB74A3CCF9E84 /* Pods_GradePieTests.framework */; };
+		138B313381FB45CB35D30BD3 /* Pods_GradePieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC0F3D33A9D6D9F481B3BD6 /* Pods_GradePieUITests.framework */; };
+		4F3B485DE0E45983B4575D84 /* Pods_GradePie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB04FFA77A2810FF3F1508A3 /* Pods_GradePie.framework */; };
 		A50AC7171D65EF4E00666595 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50AC6831D65EF4E00666595 /* Animator.swift */; };
 		A50AC7181D65EF4E00666595 /* ChartAnimationEasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50AC6841D65EF4E00666595 /* ChartAnimationEasing.swift */; };
 		A50AC7191D65EF4E00666595 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50AC6861D65EF4E00666595 /* BarChartView.swift */; };
@@ -160,6 +161,7 @@
 		A5A4B2F11BDB6DD8009EF7E6 /* pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A4B2F01BDB6DD8009EF7E6 /* pie.swift */; };
 		A5BB94491C2117BF002B2466 /* CircleGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB94481C2117BF002B2466 /* CircleGraphView.swift */; };
 		A5BB944B1C211977002B2466 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BB944A1C211977002B2466 /* Graph.swift */; };
+		A5C2FE5E1DAA7DCE00A00CA5 /* DDBDynamoDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C2FE5D1DAA7DCE00A00CA5 /* DDBDynamoDBManager.swift */; };
 		A5C4B35A1D15B7A50033B41F /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C4B3591D15B7A50033B41F /* Test.swift */; };
 		A5CB700D1CB7532D00F5F0D5 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB700C1CB7532D00F5F0D5 /* School.swift */; };
 		A5CB70131CB7550000F5F0D5 /* student.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB70121CB7550000F5F0D5 /* student.swift */; };
@@ -171,7 +173,7 @@
 		A5E81B741BC37B7C00B64049 /* GradePieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E81B731BC37B7C00B64049 /* GradePieTests.swift */; };
 		A5E81B7F1BC37B7C00B64049 /* GradePieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E81B7E1BC37B7C00B64049 /* GradePieUITests.swift */; };
 		A5F22BD11C1CB851000DA956 /* testSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F22BD01C1CB851000DA956 /* testSlice.swift */; };
-		FE344EC97C0DF3E0BA30EC38 /* Pods_GradePieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD0288E37EF74D6F478FCE1 /* Pods_GradePieUITests.framework */; };
+		F77D10358A8B942460C1BFBC /* Pods_GradePieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB4956FBB3F495265CBC02F6 /* Pods_GradePieTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -220,13 +222,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03C25E1D1EBAC3B530EB27F4 /* Pods-GradePieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradePieUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradePieUITests/Pods-GradePieUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		338FB98C67B6C6BDF1553382 /* Pods-GradePie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradePie.release.xcconfig"; path = "Pods/Target Support Files/Pods-GradePie/Pods-GradePie.release.xcconfig"; sourceTree = "<group>"; };
-		414456C67F7382C70E2BE54D /* Pods-GradePieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradePieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GradePieTests/Pods-GradePieTests.release.xcconfig"; sourceTree = "<group>"; };
-		50AD1EFA5560FCA1A1270D10 /* Pods-GradePie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradePie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradePie/Pods-GradePie.debug.xcconfig"; sourceTree = "<group>"; };
-		5BD0288E37EF74D6F478FCE1 /* Pods_GradePieUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GradePieUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		68BAD9BC269BB74A3CCF9E84 /* Pods_GradePieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GradePieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9BF3E89681D035F4F3AEFD7B /* Pods_GradePie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GradePie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3309083EBD35C90F724B4AAB /* Pods-GradePieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradePieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GradePieUITests/Pods-GradePieUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4D0CEC00947F1D22529E484B /* Pods-GradePieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradePieUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradePieUITests/Pods-GradePieUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		59D6BCBDAE7FABAF49CC4D93 /* Pods-GradePie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradePie.release.xcconfig"; path = "Pods/Target Support Files/Pods-GradePie/Pods-GradePie.release.xcconfig"; sourceTree = "<group>"; };
+		7B166D80C8518A82A2828C92 /* Pods-GradePieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradePieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GradePieTests/Pods-GradePieTests.release.xcconfig"; sourceTree = "<group>"; };
+		87641F621D445C430EE9C00B /* Pods-GradePie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradePie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradePie/Pods-GradePie.debug.xcconfig"; sourceTree = "<group>"; };
 		A50AC6831D65EF4E00666595 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		A50AC6841D65EF4E00666595 /* ChartAnimationEasing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartAnimationEasing.swift; sourceTree = "<group>"; };
 		A50AC6861D65EF4E00666595 /* BarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
@@ -361,8 +361,6 @@
 		A50AC7141D65EF4E00666595 /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		A50C6EDE1C51E6520049A64F /* ArcTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcTestView.swift; sourceTree = "<group>"; };
 		A50D7E451D62A2D40025E5AA /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../Downloads/Charts-master-2/Charts/Charts.xcodeproj"; sourceTree = "<group>"; };
-		A5135DCD1CC8B52C00470A7E /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
-		A5135DCF1CC8B53E00470A7E /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		A524797F1C41F46300EED494 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		A53363E21C7133BF009C1F83 /* chartSlice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chartSlice.swift; sourceTree = "<group>"; };
 		A53ABF391C7AC4B800794C84 /* PieSliceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieSliceLayer.swift; sourceTree = "<group>"; };
@@ -382,6 +380,7 @@
 		A5A4B2F01BDB6DD8009EF7E6 /* pie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pie.swift; sourceTree = "<group>"; };
 		A5BB94481C2117BF002B2466 /* CircleGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleGraphView.swift; sourceTree = "<group>"; };
 		A5BB944A1C211977002B2466 /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		A5C2FE5D1DAA7DCE00A00CA5 /* DDBDynamoDBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DDBDynamoDBManager.swift; path = "../../../../Downloads/Charts-master-2/Charts/Classes/DDBDynamoDBManager.swift"; sourceTree = "<group>"; };
 		A5C4B3591D15B7A50033B41F /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		A5CB700C1CB7532D00F5F0D5 /* School.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		A5CB70121CB7550000F5F0D5 /* student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = student.swift; sourceTree = "<group>"; };
@@ -399,8 +398,10 @@
 		A5E81B7E1BC37B7C00B64049 /* GradePieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradePieUITests.swift; sourceTree = "<group>"; };
 		A5E81B801BC37B7C00B64049 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5F22BD01C1CB851000DA956 /* testSlice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testSlice.swift; sourceTree = "<group>"; };
-		DEF079FACB93D1A0DD5C482D /* Pods-GradePieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradePieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GradePieUITests/Pods-GradePieUITests.release.xcconfig"; sourceTree = "<group>"; };
-		E5B9DB4EC801C091EE2638A5 /* Pods-GradePieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradePieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradePieTests/Pods-GradePieTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B63946B75284A6A2FA8209BD /* Pods-GradePieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradePieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradePieTests/Pods-GradePieTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BB4956FBB3F495265CBC02F6 /* Pods_GradePieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GradePieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCC0F3D33A9D6D9F481B3BD6 /* Pods_GradePieUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GradePieUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB04FFA77A2810FF3F1508A3 /* Pods_GradePie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GradePie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -408,6 +409,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F3B485DE0E45983B4575D84 /* Pods_GradePie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,7 +417,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				409974F4C453B11DE2B69108 /* Pods_GradePieTests.framework in Frameworks */,
+				F77D10358A8B942460C1BFBC /* Pods_GradePieTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,32 +425,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE344EC97C0DF3E0BA30EC38 /* Pods_GradePieUITests.framework in Frameworks */,
+				138B313381FB45CB35D30BD3 /* Pods_GradePieUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2433CDBA031AAEA304420733 /* Pods */ = {
+		62A3A44469A46DEB512AB56B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				50AD1EFA5560FCA1A1270D10 /* Pods-GradePie.debug.xcconfig */,
-				338FB98C67B6C6BDF1553382 /* Pods-GradePie.release.xcconfig */,
-				E5B9DB4EC801C091EE2638A5 /* Pods-GradePieTests.debug.xcconfig */,
-				414456C67F7382C70E2BE54D /* Pods-GradePieTests.release.xcconfig */,
-				03C25E1D1EBAC3B530EB27F4 /* Pods-GradePieUITests.debug.xcconfig */,
-				DEF079FACB93D1A0DD5C482D /* Pods-GradePieUITests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		4EEE3E797E961774EFA5D7A4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9BF3E89681D035F4F3AEFD7B /* Pods_GradePie.framework */,
-				68BAD9BC269BB74A3CCF9E84 /* Pods_GradePieTests.framework */,
-				5BD0288E37EF74D6F478FCE1 /* Pods_GradePieUITests.framework */,
+				FB04FFA77A2810FF3F1508A3 /* Pods_GradePie.framework */,
+				BB4956FBB3F495265CBC02F6 /* Pods_GradePieTests.framework */,
+				DCC0F3D33A9D6D9F481B3BD6 /* Pods_GradePieUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -801,6 +790,7 @@
 		A5CB70111CB753F100F5F0D5 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A5C2FE5D1DAA7DCE00A00CA5 /* DDBDynamoDBManager.swift */,
 				A56A65E91CBCA3A1008EC1AF /* CreateStudentViewController.swift */,
 				A575F2DE1C4DC24500E37DCF /* GetInputViewController.swift */,
 				A57C95591C628240003C7687 /* CAShapeTestViewController.swift */,
@@ -814,14 +804,12 @@
 			isa = PBXGroup;
 			children = (
 				A50D7E451D62A2D40025E5AA /* Charts.xcodeproj */,
-				A5135DCF1CC8B53E00470A7E /* RealmSwift.framework */,
-				A5135DCD1CC8B52C00470A7E /* Realm.framework */,
 				A5E81B5D1BC37B7C00B64049 /* GradePie */,
 				A5E81B721BC37B7C00B64049 /* GradePieTests */,
 				A5E81B7D1BC37B7C00B64049 /* GradePieUITests */,
 				A5E81B5C1BC37B7C00B64049 /* Products */,
-				2433CDBA031AAEA304420733 /* Pods */,
-				4EEE3E797E961774EFA5D7A4 /* Frameworks */,
+				DBA191750CAA84137DED6B9C /* Pods */,
+				62A3A44469A46DEB512AB56B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -869,6 +857,19 @@
 			path = GradePieUITests;
 			sourceTree = "<group>";
 		};
+		DBA191750CAA84137DED6B9C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				87641F621D445C430EE9C00B /* Pods-GradePie.debug.xcconfig */,
+				59D6BCBDAE7FABAF49CC4D93 /* Pods-GradePie.release.xcconfig */,
+				B63946B75284A6A2FA8209BD /* Pods-GradePieTests.debug.xcconfig */,
+				7B166D80C8518A82A2828C92 /* Pods-GradePieTests.release.xcconfig */,
+				4D0CEC00947F1D22529E484B /* Pods-GradePieUITests.debug.xcconfig */,
+				3309083EBD35C90F724B4AAB /* Pods-GradePieUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -876,13 +877,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5E81B831BC37B7C00B64049 /* Build configuration list for PBXNativeTarget "GradePie" */;
 			buildPhases = (
-				FD36C5CD73B45CB9A8F0A228 /* Check Pods Manifest.lock */,
+				9BD20F7C6EB1B638A0DD6C14 /* [CP] Check Pods Manifest.lock */,
 				A5E81B571BC37B7C00B64049 /* Sources */,
 				A5E81B581BC37B7C00B64049 /* Frameworks */,
 				A5E81B591BC37B7C00B64049 /* Resources */,
 				A5135DD11CC8B58000470A7E /* ShellScript */,
-				E7FF697E29F771CE862746B5 /* Embed Pods Frameworks */,
-				6A964227882536EF8F430F72 /* Copy Pods Resources */,
+				411D42FD0E54C7B6F11D9696 /* [CP] Embed Pods Frameworks */,
+				E74DB8254D3037A692055961 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -897,12 +898,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5E81B861BC37B7C00B64049 /* Build configuration list for PBXNativeTarget "GradePieTests" */;
 			buildPhases = (
-				0A237B754256A12402FB5AC9 /* Check Pods Manifest.lock */,
+				242D0A1688FF46977E02E617 /* [CP] Check Pods Manifest.lock */,
 				A5E81B6B1BC37B7C00B64049 /* Sources */,
 				A5E81B6C1BC37B7C00B64049 /* Frameworks */,
 				A5E81B6D1BC37B7C00B64049 /* Resources */,
-				367E2551AB0904FF09C8876E /* Embed Pods Frameworks */,
-				66BF58AF68A1BBA2E11E927C /* Copy Pods Resources */,
+				F8D7F1F6F4567605AE34A235 /* [CP] Embed Pods Frameworks */,
+				902EF661FD8ABD6986BD2840 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -918,11 +919,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5E81B891BC37B7C00B64049 /* Build configuration list for PBXNativeTarget "GradePieUITests" */;
 			buildPhases = (
-				74F8554002DF75F99565C6E7 /* Check Pods Manifest.lock */,
+				449EF5680BB36B8016D46CA1 /* [CP] Check Pods Manifest.lock */,
 				A5E81B761BC37B7C00B64049 /* Sources */,
 				A5E81B771BC37B7C00B64049 /* Frameworks */,
 				A5E81B781BC37B7C00B64049 /* Resources */,
-				90E0D7B0E9FE3BD74A1CB487 /* Copy Pods Resources */,
+				67F13DC5EA245AC793C75085 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1042,14 +1043,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0A237B754256A12402FB5AC9 /* Check Pods Manifest.lock */ = {
+		242D0A1688FF46977E02E617 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1057,29 +1058,59 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		367E2551AB0904FF09C8876E /* Embed Pods Frameworks */ = {
+		411D42FD0E54C7B6F11D9696 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GradePieTests/Pods-GradePieTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GradePie/Pods-GradePie-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		66BF58AF68A1BBA2E11E927C /* Copy Pods Resources */ = {
+		449EF5680BB36B8016D46CA1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		67F13DC5EA245AC793C75085 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GradePieUITests/Pods-GradePieUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		902EF661FD8ABD6986BD2840 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1087,49 +1118,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GradePieTests/Pods-GradePieTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6A964227882536EF8F430F72 /* Copy Pods Resources */ = {
+		9BD20F7C6EB1B638A0DD6C14 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GradePie/Pods-GradePie-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		74F8554002DF75F99565C6E7 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		90E0D7B0E9FE3BD74A1CB487 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GradePieUITests/Pods-GradePieUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A5135DD11CC8B58000470A7E /* ShellScript */ = {
@@ -1145,34 +1146,34 @@
 			shellPath = /bin/sh;
 			shellScript = "";
 		};
-		E7FF697E29F771CE862746B5 /* Embed Pods Frameworks */ = {
+		E74DB8254D3037A692055961 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GradePie/Pods-GradePie-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GradePie/Pods-GradePie-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FD36C5CD73B45CB9A8F0A228 /* Check Pods Manifest.lock */ = {
+		F8D7F1F6F4567605AE34A235 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GradePieTests/Pods-GradePieTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1225,6 +1226,7 @@
 				A50AC72B1D65EF4E00666595 /* MarkerImage.swift in Sources */,
 				A50AC78D1D65EF4E00666595 /* AxisRendererBase.swift in Sources */,
 				A50AC73F1D65EF4E00666595 /* BarLineScatterCandleBubbleChartDataSet.swift in Sources */,
+				A5C2FE5E1DAA7DCE00A00CA5 /* DDBDynamoDBManager.swift in Sources */,
 				A50AC7721D65EF4E00666595 /* ZoomViewJob.swift in Sources */,
 				A50AC7271D65EF4E00666595 /* Legend.swift in Sources */,
 				A5F22BD11C1CB851000DA956 /* testSlice.swift in Sources */,
@@ -1479,7 +1481,7 @@
 		};
 		A5E81B841BC37B7C00B64049 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 50AD1EFA5560FCA1A1270D10 /* Pods-GradePie.debug.xcconfig */;
+			baseConfigurationReference = 87641F621D445C430EE9C00B /* Pods-GradePie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1498,7 +1500,7 @@
 		};
 		A5E81B851BC37B7C00B64049 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 338FB98C67B6C6BDF1553382 /* Pods-GradePie.release.xcconfig */;
+			baseConfigurationReference = 59D6BCBDAE7FABAF49CC4D93 /* Pods-GradePie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1517,7 +1519,7 @@
 		};
 		A5E81B871BC37B7C00B64049 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E5B9DB4EC801C091EE2638A5 /* Pods-GradePieTests.debug.xcconfig */;
+			baseConfigurationReference = B63946B75284A6A2FA8209BD /* Pods-GradePieTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = GradePieTests/Info.plist;
@@ -1530,7 +1532,7 @@
 		};
 		A5E81B881BC37B7C00B64049 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 414456C67F7382C70E2BE54D /* Pods-GradePieTests.release.xcconfig */;
+			baseConfigurationReference = 7B166D80C8518A82A2828C92 /* Pods-GradePieTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = GradePieTests/Info.plist;
@@ -1543,7 +1545,7 @@
 		};
 		A5E81B8A1BC37B7C00B64049 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03C25E1D1EBAC3B530EB27F4 /* Pods-GradePieUITests.debug.xcconfig */;
+			baseConfigurationReference = 4D0CEC00947F1D22529E484B /* Pods-GradePieUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = GradePieUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1556,7 +1558,7 @@
 		};
 		A5E81B8B1BC37B7C00B64049 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DEF079FACB93D1A0DD5C482D /* Pods-GradePieUITests.release.xcconfig */;
+			baseConfigurationReference = 3309083EBD35C90F724B4AAB /* Pods-GradePieUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = GradePieUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

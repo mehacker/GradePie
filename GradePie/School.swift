@@ -7,10 +7,10 @@
 //
 
 import Foundation
-import RealmSwift
+//import RealmSwift
 
 //class school : Object {
-class school : Object {
+class school {
 
     dynamic var name = ""
     

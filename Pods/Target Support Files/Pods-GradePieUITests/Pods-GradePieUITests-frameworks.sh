@@ -16,7 +16,7 @@ install_framework()
     local source="$1"
   fi
 
-  local destination="${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
+  local destination="${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 
   if [ -L "${source}" ]; then
       echo "Symlinked..."
@@ -59,8 +59,8 @@ code_sign_if_enabled() {
   if [ -n "${EXPANDED_CODE_SIGN_IDENTITY}" -a "${CODE_SIGNING_REQUIRED}" != "NO" -a "${CODE_SIGNING_ALLOWED}" != "NO" ]; then
     # Use the current code_sign_identitiy
     echo "Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}"
-    echo "/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements \"$1\""
-    /usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements "$1"
+    echo "/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} ${OTHER_CODE_SIGN_FLAGS} --preserve-metadata=identifier,entitlements \"$1\""
+    /usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} ${OTHER_CODE_SIGN_FLAGS} --preserve-metadata=identifier,entitlements "$1"
   fi
 }
 
@@ -84,10 +84,42 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-GradePieUITests/Realm.framework"
-  install_framework "Pods-GradePieUITests/RealmSwift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSAutoScaling/AWSAutoScaling.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSCloudWatch/AWSCloudWatch.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSCognito/AWSCognito.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSCognitoIdentityProvider/AWSCognitoIdentityProvider.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSCore/AWSCore.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSDynamoDB/AWSDynamoDB.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSEC2/AWSEC2.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSElasticLoadBalancing/AWSElasticLoadBalancing.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSIoT/AWSIoT.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSKinesis/AWSKinesis.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSLambda/AWSLambda.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSMachineLearning/AWSMachineLearning.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSMobileAnalytics/AWSMobileAnalytics.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSS3/AWSS3.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSSES/AWSSES.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSSNS/AWSSNS.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSSQS/AWSSQS.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSSimpleDB/AWSSimpleDB.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-GradePieUITests/Realm.framework"
-  install_framework "Pods-GradePieUITests/RealmSwift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSAutoScaling/AWSAutoScaling.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSCloudWatch/AWSCloudWatch.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSCognito/AWSCognito.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSCognitoIdentityProvider/AWSCognitoIdentityProvider.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSCore/AWSCore.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSDynamoDB/AWSDynamoDB.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSEC2/AWSEC2.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSElasticLoadBalancing/AWSElasticLoadBalancing.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSIoT/AWSIoT.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSKinesis/AWSKinesis.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSLambda/AWSLambda.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSMachineLearning/AWSMachineLearning.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSMobileAnalytics/AWSMobileAnalytics.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSS3/AWSS3.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSSES/AWSSES.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSSNS/AWSSNS.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSSQS/AWSSQS.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSSimpleDB/AWSSimpleDB.framework"
 fi
