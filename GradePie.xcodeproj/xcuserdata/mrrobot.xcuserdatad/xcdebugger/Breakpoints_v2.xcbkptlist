@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GradePie/CAShapeTestViewController.swift"
-            timestampString = "494713699.652243"
+            timestampString = "502861048.028863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "403"
-            endingLineNumber = "403"
-            landmarkName = "chartValueSelected(_:entry:highlight:)"
-            landmarkType = "5">
+            startingLineNumber = "438"
+            endingLineNumber = "438"
+            landmarkName = "setChart(values:percentagesEarned:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -42,13 +42,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GradePie/CAShapeTestViewController.swift"
-            timestampString = "494713699.652243"
+            timestampString = "502861048.028863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "422"
-            endingLineNumber = "422"
-            landmarkName = "getBestGradeForSelectedSection(_:)"
-            landmarkType = "5">
+            startingLineNumber = "457"
+            endingLineNumber = "457"
+            landmarkName = "chartValueSelected(chartView:entry:highlight:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -63,8 +63,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
             endingLineNumber = "25"
-            landmarkName = "getSection(_:)"
-            landmarkType = "5">
+            landmarkName = "getSection(name:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

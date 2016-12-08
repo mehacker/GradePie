@@ -32,13 +32,13 @@ class course {
         var bestGrade: Float = 0.0
         
         var mockSection =  section()
-        let sectionSearched = getSection(sectionName)
+        let sectionSearched = getSection(name: sectionName)
         mockSection = sectionSearched
         
         print(mockSection.grades)
         
         for _ in 0..<gradesLeft {
-            mockSection.addGrade(100)
+            mockSection.addGrade(grade: 100)
         }
         
         bestGrade = mockSection.getPercentageOfCourseEarned()

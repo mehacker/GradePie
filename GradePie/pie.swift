@@ -16,10 +16,10 @@ let π:CGFloat = CGFloat(M_PI)
 class pie: UIView {
     
         @IBInspectable var counter: Int = 5
-        @IBInspectable var outlineColor : UIColor = UIColor.blueColor()
-        @IBInspectable var counterColor: UIColor = UIColor.orangeColor()
+        @IBInspectable var outlineColor : UIColor = UIColor.blue
+        @IBInspectable var counterColor: UIColor = UIColor.orange
         
-        override func drawRect(rect: CGRect) {
+        override func draw(_ rect: CGRect) {
             
             // 1
             let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
@@ -37,13 +37,13 @@ class pie: UIView {
             let endAngle2: CGFloat = 2 * π / 3
             
             // 5
-            var path = UIBezierPath(arcCenter: center,
+            let path = UIBezierPath(arcCenter: center,
                 radius: radius/2 - arcWidth/2,
                 startAngle: startAngle,
                 endAngle: endAngle,
                 clockwise: true)
             
-            var path2 = UIBezierPath(arcCenter: center,
+            let path2 = UIBezierPath(arcCenter: center,
                 radius: radius/2 - arcWidth/2,
                 startAngle: startAngle,
                 endAngle: endAngle2,
@@ -77,33 +77,33 @@ class pie: UIView {
             let outlineEndAngle2 = arcLengthPerGlass2 * CGFloat(counter) + startAngle
             
             //2 - draw the outer arc
-            var outlinePath = UIBezierPath(arcCenter: center,
+            let outlinePath = UIBezierPath(arcCenter: center,
                 radius: bounds.width/2 - 2.5,
                 startAngle: startAngle,
                 endAngle: outlineEndAngle,
                 clockwise: true)
             
-            var outlinePath2 = UIBezierPath(arcCenter: center,
+            let outlinePath2 = UIBezierPath(arcCenter: center,
                 radius: bounds.width/2 - 2.5,
                 startAngle: startAngle,
                 endAngle: outlineEndAngle2,
                 clockwise: true)
             
             //3 - draw the inner arc
-            outlinePath.addArcWithCenter(center,
+            outlinePath.addArc(withCenter: center,
                 radius: bounds.width/2 - arcWidth + 2.5,
                 startAngle: outlineEndAngle,
                 endAngle: startAngle,
                 clockwise: false)
             
-            outlinePath2.addArcWithCenter(center,
+            outlinePath2.addArc(withCenter: center,
                 radius: bounds.width/2 - arcWidth + 2.5,
                 startAngle: outlineEndAngle2,
                 endAngle: startAngle,
                 clockwise: false)
             
             //4 - close the path
-            outlinePath.closePath()
+            outlinePath.close()
             
             outlineColor.setStroke()
             outlinePath.lineWidth = 5.0
@@ -111,9 +111,9 @@ class pie: UIView {
             
             
             //4 - close the path
-            outlinePath2.closePath()
+            outlinePath2.close()
             
-            UIColor.blueColor().setStroke()
+            UIColor.blue.setStroke()
             outlinePath2.lineWidth = 5.0
             outlinePath2.stroke()
         

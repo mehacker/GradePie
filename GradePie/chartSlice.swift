@@ -25,27 +25,27 @@ class chartSlice: UIView {
     
     func configure() {
         circlePathLayer.frame = bounds
-        circlePathLayer.fillColor = UIColor.clearColor().CGColor
-        circlePathLayer.strokeColor = UIColor.redColor().CGColor
+        circlePathLayer.fillColor = UIColor.clear.cgColor
+        circlePathLayer.strokeColor = UIColor.red.cgColor
         layer.addSublayer(circlePathLayer)
-        backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.white
     }
     
     func circleFrame() -> CGRect {
         var circleFrame = CGRect(x: 0, y: 0, width: 2*circleRadius, height: 2*circleRadius)
-        circleFrame.origin.x = CGRectGetMidX(circlePathLayer.bounds) - CGRectGetMidX(circleFrame)
-        circleFrame.origin.y = CGRectGetMidY(circlePathLayer.bounds) - CGRectGetMidY(circleFrame)
+        circleFrame.origin.x = circlePathLayer.bounds.midX - circleFrame.midX
+        circleFrame.origin.y = circlePathLayer.bounds.midY - circleFrame.midY
         return circleFrame
     }
     
     func circlePath() -> UIBezierPath {
-        return UIBezierPath(ovalInRect: circleFrame())
+        return UIBezierPath(ovalIn: circleFrame())
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         circlePathLayer.frame = bounds
-        circlePathLayer.path = circlePath().CGPath
+        circlePathLayer.path = circlePath().cgPath
     }
     
 }

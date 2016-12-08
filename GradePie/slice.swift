@@ -13,10 +13,10 @@ import UIKit
 class slice: UIView {
 
     @IBInspectable var counter: Int = 5
-    @IBInspectable var outlineColor : UIColor = UIColor.blueColor()
-    @IBInspectable var counterColor: UIColor = UIColor.orangeColor()
+    @IBInspectable var outlineColor : UIColor = UIColor.blue
+    @IBInspectable var counterColor: UIColor = UIColor.orange
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         
         // 1
         let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
@@ -32,7 +32,7 @@ class slice: UIView {
         let endAngle: CGFloat = 7 * π / 4
         
         // 5
-        var path = UIBezierPath(arcCenter: center,
+        let path = UIBezierPath(arcCenter: center,
             radius: radius/2 - 285/2,
             startAngle: startAngle,
             endAngle: endAngle,
@@ -43,7 +43,7 @@ class slice: UIView {
         let endAngle2: CGFloat = 2 * π
         
         // 5
-        var path2 = UIBezierPath(arcCenter: center,
+        let path2 = UIBezierPath(arcCenter: center,
             radius: radius/2 - 285/2,
             startAngle: startAngle2,
             endAngle: endAngle2,
@@ -54,21 +54,21 @@ class slice: UIView {
         counterColor.setStroke()
         path.stroke()
         
-        path.addLineToPoint(center)
+        path.addLine(to: center)
         
-        path.closePath()
+        path.close()
         
         path.stroke()
         
         path.fill()
         
         path2.lineWidth = 2
-        UIColor.blueColor().setStroke()
+        UIColor.blue.setStroke()
         path2.stroke()
         
-        path2.addLineToPoint(center)
+        path2.addLine(to: center)
         
-        path2.closePath()
+        path2.close()
         
         path2.stroke()
         

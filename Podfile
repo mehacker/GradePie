@@ -22,7 +22,7 @@ target 'GradePie' do
     pod 'AWSSimpleDB'
     pod 'AWSSNS'
     pod 'AWSSQS'
-
+    pod 'Charts'
 end
 
 target 'GradePieTests' do

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AWSCognito
+import AWSDynamoDB
 //import RealmSwift
 
 
@@ -20,17 +22,16 @@ class CreateStudentViewController: UIViewController {
     
     var aAccount = account ()
     
+    var lastEvaluatedKey:[String : AWSDynamoDBAttributeValue]!
+    
     //let realm = try! Realm ()
-    
 
-    
-    @IBOutlet weak var errorMessage: UILabel!
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-       // print(Realm.Configuration.defaultConfiguration.fileURL!)
+       //print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         aStudent.firstName = "Nathan"
         
@@ -39,9 +40,47 @@ class CreateStudentViewController: UIViewController {
         
     }
     
-    
     @IBAction func login(sender: AnyObject) {
         let username = usernameTextField.text!
+    
+        
+//        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+//        let queryExpression = AWSDynamoDBQueryExpression()
+//
+//        queryExpression.hashKeyValues = "Username"
+//        queryExpression.hashKeyAttribute = "tester"
+//        queryExpression.exclusiveStartKey = lastEvaluatedKey.self
+//        
+//        let aRow = DDBTableRow()
+//        
+//        queryExpression.limit = 10
+//        
+//        
+//        //putting it all together
+//        let dynamoDBObjectMapper2 = AWSDynamoDBObjectMapper.default()
+//        
+//        dynamoDBObjectMapper2.query(DDBTableRow.self, expression: queryExpression) .continue(with: AWSExecutor.mainThread(), with: { (task:AWSTask!) -> AnyObject! in
+//            if (task.error == nil) {
+//                if (task.result != nil) {
+//                    NSLog("Somthing happened")
+//                    //starting the output of data
+//                    let tableRow = task.result as! AWSDynamoDBPaginatedOutput?
+//                    for (item) in (tableRow?.items)! {
+//                        print(item)
+//                    }
+//                }
+//            }
+//            else {
+//                print("Error: \(task.error)")
+//                
+//            }
+//            return nil
+//        })
+}
+
+
+
+        
       //  let searchAccount = realm.objects(account).filter("username = %@", username)
 //        if (searchAccount.count == 1) {
 //            print ("login sucessful")
@@ -57,21 +96,22 @@ class CreateStudentViewController: UIViewController {
 //            
 //            print ("login unsucessful")
 //        }
-    }
+    
 
-    @IBAction func createAccount(sender: AnyObject) {
+
+
+    @IBAction func createStudentAccount(_ sender: Any) {
         aAccount.username = usernameTextField.text!
         aAccount.password = passwordTextField.text!
         aAccount.aStudent = aStudent
         
         //print(Realm.Configuration.defaultConfiguration.fileURL!)
         
-//try! realm.write {
-//            realm.add(aAccount)
-//        }
+        //try! realm.write {
+        //            realm.add(aAccount)
+        //        }
     }
-    
-    
+ 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -79,8 +119,8 @@ class CreateStudentViewController: UIViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-           let svc = segue.destinationViewController as! GetInputViewController
+     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+           let svc = segue.destination as! GetInputViewController
     
            svc.currentStudent = aStudent
     }

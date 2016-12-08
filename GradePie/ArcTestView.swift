@@ -41,10 +41,10 @@ class ArcTestView: UIView {
     @IBInspectable var greenColor: UIColor = UIColor(red: 131.0/255, green: 257.0/255, blue: 162.0/255, alpha: 1.0)
     
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         
-        cCoordinate = CGRectGetWidth(rect) / 2.0
-        yCoordinate = CGRectGetHeight(rect) / 2.0
+        cCoordinate = rect.width / 2.0
+        yCoordinate = rect.height / 2.0
         
         section1.percentageOfCourse = 30
         section2.percentageOfCourse = 60
@@ -70,8 +70,8 @@ class ArcTestView: UIView {
         print("The split degrees in Pie")
         print(pieEndPointDegrees)
         
-        for (var index1 = 0; index1 < pieEndPointDegrees.count; index1++) {
-            pieEndPointInRadians.append(degree2radian(CGFloat(pieEndPointDegrees[index1])))
+        for index1 in 0 ..< pieEndPointDegrees.count {
+            pieEndPointInRadians.append(degree2radian(a: CGFloat(pieEndPointDegrees[index1])))
         }
         
         print("The split radians of Pie")
@@ -87,7 +87,7 @@ class ArcTestView: UIView {
         print(percentageOfSectionEarned)
        
         for percentageEarned in percentageOfSectionEarned {
-            percentageOfSectionEarnedInRadians.append(degree2radian(percentageEarned))
+            percentageOfSectionEarnedInRadians.append(degree2radian(a: percentageEarned))
         }
         
         print("percentage of section earned in radians")
@@ -97,7 +97,7 @@ class ArcTestView: UIView {
     
         endOfSectionInRadians.append(percentageOfSectionEarnedInRadians[0])
         
-        for var index2 = 1; index2 < (pieEndPointDegrees.count); index2++ {
+        for index2 in 1 ..< (pieEndPointDegrees.count) {
             endOfSectionInDegrees.append(pieEndPointDegrees[index2 - 1] + percentageOfSectionEarned[index2])
         }
         
@@ -105,8 +105,8 @@ class ArcTestView: UIView {
         print(endOfSectionInDegrees)
         
         
-        for var index3 = 0; index3 < endOfSectionInDegrees.count; index3++ {
-            endOfSectionInRadians.append(degree2radian(endOfSectionInDegrees[index3]))
+        for index3 in 0 ..< endOfSectionInDegrees.count {
+            endOfSectionInRadians.append(degree2radian(a: endOfSectionInDegrees[index3]))
         }
   
         print("end of section in radians")
@@ -128,10 +128,10 @@ class ArcTestView: UIView {
             let endAngle: CGFloat = π / 4
             
             // 5
-            var path = UIBezierPath(arcCenter: center,
+            let path = UIBezierPath(arcCenter: center,
                 radius: 101.0,
                 startAngle: startAngle,
-                endAngle: degree2radian(30),
+                endAngle: degree2radian(a: 30),
                 clockwise: true)
             
             // 4
@@ -147,12 +147,12 @@ class ArcTestView: UIView {
         
             // 6
             path.lineWidth = 2
-            UIColor.redColor().setStroke()
+            UIColor.red.setStroke()
             path.stroke()
             
-            path.addLineToPoint(center)
+            path.addLine(to: center)
             
-            path.closePath()
+            path.close()
             
             path.stroke()
             
@@ -166,7 +166,7 @@ class ArcTestView: UIView {
 //            
 //            path2.stroke()
         
-            for var index = 1; index < pieEndPointInRadians.count; index++ {
+            for index in 1 ..< pieEndPointInRadians.count {
                 
                 let path = UIBezierPath(arcCenter: center,
                     radius: 101.0,
@@ -178,9 +178,9 @@ class ArcTestView: UIView {
                 getRandomColor().setStroke()
                 path.stroke()
                 
-                path.addLineToPoint(center)
+                path.addLine(to: center)
                 
-                path.closePath()
+                path.close()
                 
                 path.stroke()
             }
@@ -188,20 +188,20 @@ class ArcTestView: UIView {
         //Draw slices
         let context = UIGraphicsGetCurrentContext()
         
-        createSlice (0.0, endAngle: percentageOfSectionEarnedInRadians[0],currentContext: context!, color: redColor)
+        createSlice (startAngle: 0.0, endAngle: percentageOfSectionEarnedInRadians[0],currentContext: context!, color: redColor)
        
-        createSlice (pieEndPointInRadians[0], endAngle: endOfSectionInRadians[1],currentContext: context!, color: redColor)
+        createSlice (startAngle: pieEndPointInRadians[0], endAngle: endOfSectionInRadians[1],currentContext: context!, color: redColor)
         
-        createSlice (pieEndPointInRadians[1], endAngle: endOfSectionInRadians[2],currentContext: context!, color: redColor)
+        createSlice (startAngle: pieEndPointInRadians[1], endAngle: endOfSectionInRadians[2],currentContext: context!, color: redColor)
         
-        createSlice (pieEndPointInRadians[2], endAngle: endOfSectionInRadians[3],currentContext: context!, color: redColor)
+        createSlice (startAngle: pieEndPointInRadians[2], endAngle: endOfSectionInRadians[3],currentContext: context!, color: redColor)
         
 //        for (var index = 1; index < courseSections.count; index++) {
 //            createSlice(pieEndPointInRadians[0] - 1, endAngle: endOfSectionInRadians[index], currentContext: context!
 //                , color: redColor)
 //        }
         
-        CGContextSetLineWidth(context, 100)
+        context!.setLineWidth(100)
     }
     
     //method to turn degrees to radians
@@ -225,12 +225,13 @@ class ArcTestView: UIView {
     
     func createSlice (startAngle: CGFloat, endAngle :CGFloat, currentContext: CGContext, color : UIColor) {
         
-        CGContextSetLineWidth(currentContext, 100)
+        currentContext.setLineWidth(100)
         
-        CGContextSetStrokeColorWithColor(currentContext, color.CGColor)
-        
-        CGContextAddArc(currentContext, cCoordinate, yCoordinate, 50.0, startAngle, endAngle, 0)
-        
-        CGContextStrokePath(currentContext)
+        currentContext.setStrokeColor(color.cgColor)
+//        
+//        CGContextAddArc(currentContext, cCoordinate, yCoordinate, 50.0, startAngle, endAngle, 0)
+        let aPoint = CGPoint(x: cCoordinate, y: yCoordinate)
+        currentContext.addArc(center: aPoint, radius: 50.0, startAngle: startAngle, endAngle: 0, clockwise: true)
+        currentContext.strokePath()
     }
 }

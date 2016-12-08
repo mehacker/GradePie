@@ -29,12 +29,12 @@ class CircleGraphView: UIView {
     }
     
     var arcWidth:CGFloat = 100.0
-    var arcColor  = UIColor.yellowColor()
-    var arcColor2 = UIColor.redColor()
-    var arcColor3 = UIColor.whiteColor()
-    var arcBackgroundColor = UIColor.blackColor()
+    var arcColor  = UIColor.yellow
+    var arcColor2 = UIColor.red
+    var arcColor3 = UIColor.white
+    var arcBackgroundColor = UIColor.black
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         let fullCircle = 2.0 * CGFloat(M_PI)
         let start:CGFloat = -0.25 * fullCircle
         
@@ -44,14 +44,14 @@ class CircleGraphView: UIView {
         
         let end3:CGFloat = endArc3 * fullCircle + start
         
-        var centerPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect))
+        let centerPoint = CGPointMake(rect.midX, rect.midY)
 
         
         var radius:CGFloat = 0.0
-        if CGRectGetWidth(rect) > CGRectGetHeight(rect){
-            radius = (CGRectGetWidth(rect) - arcWidth) / 2.0
+        if rect.width > rect.height{
+            radius = (rect.width - arcWidth) / 2.0
         } else {
-            radius = (CGRectGetHeight(rect) - arcWidth) / 2.0
+            radius = (rect.height - arcWidth) / 2.0
             
             //first arc
             
@@ -59,34 +59,34 @@ class CircleGraphView: UIView {
             
             let colorspace = CGColorSpaceCreateDeviceRGB()
             
-            CGContextSetLineWidth(context, arcWidth)
+            context!.setLineWidth(arcWidth)
             //CGContextSetLineCap(context, kCGLineCapRound)
-            CGContextSetStrokeColorWithColor(context, arcColor.CGColor)
+            context!.setStrokeColor(arcColor.cgColor)
             
-            CGContextSetFillColorWithColor(context, arcColor3.CGColor)
+            context!.setFillColor(arcColor3.cgColor)
             
             CGContextAddArc(context, centerPoint.x, centerPoint.y, radius, start, end, 0)
             
-            CGContextStrokePath(context)
+            context!.strokePath()
             
             //second arc
             
             let context2 = UIGraphicsGetCurrentContext()
             
             
-            CGContextSetStrokeColorWithColor(context2, arcColor2.CGColor)
+            context2!.setStrokeColor(arcColor2.cgColor)
             
             CGContextAddArc(context2, centerPoint.x, centerPoint.y, radius, π / 3, end2, 0)
             
-            CGContextStrokePath(context2)
+            context2!.strokePath()
             
             let context3 = UIGraphicsGetCurrentContext()
             
-            CGContextSetStrokeColorWithColor(context3, UIColor.greenColor().CGColor)
+            context3!.setStrokeColor(UIColor.green.cgColor)
             
             CGContextAddArc(context3, centerPoint.x, centerPoint.y, radius, π / 6, end3, 0)
             
-            CGContextStrokePath(context3)
+            context3!.strokePath()
        
 
         }

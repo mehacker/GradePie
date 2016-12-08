@@ -34,29 +34,30 @@ class GetInputViewController: UIViewController {
         
         super.viewDidLoad()
         
-        let dynamoDB = AWSDynamoDB.defaultDynamoDB()
+        let dynamoDB = AWSDynamoDB.default()
         let listTableInput = AWSDynamoDBListTablesInput()
-        dynamoDB.listTables(listTableInput).continueWithBlock{ (task: AWSTask?) -> AnyObject? in
+        dynamoDB.listTables(listTableInput!).continue(successBlock: { (task: AWSTask?) -> AnyObject? in
             if let error = task!.error {
                 print("Error occurred: \(error)")
                 return nil
             }
             
-            let listTablesOutput = task!.result as! AWSDynamoDBListTablesOutput
+            let listTablesOutput = task!.result as AWSDynamoDBListTablesOutput!
             
-            for tableName in listTablesOutput.tableNames! {
+            for tableName in (listTablesOutput?.tableNames!)! {
                 print("\(tableName)")
             }
             
             return nil
-        }
+        })
 
 //        newTable.sectionTitle = "test"
 //        newTable.Userid = "test"
 //        newTable.Grade = 100
 //        newTable.PercentageOfCourse = 100
         
-        self.setupTable()
+        //setup table in aws
+//        self.setupTable()
 
     }
     
@@ -66,7 +67,7 @@ class GetInputViewController: UIViewController {
     
     func setupTable() {
         //See if the test table exists.
-        DDBDynamoDBManager.describeTable().continueWithExecutor(AWSExecutor.mainThreadExecutor(), withBlock: { (task:AWSTask!) -> AnyObject! in
+        DDBDynamoDBManager.describeTable().continue(with: AWSExecutor.mainThread(), with: { (task:AWSTask!) -> AnyObject! in
             
             // If the test table doesn't exist, create one.
 //            if (task.error != nil && task.error!.domain == AWSDynamoDBErrorDomain)
@@ -74,20 +75,20 @@ class GetInputViewController: UIViewController {
             
 //                self.performSegueWithIdentifier("DDBLoadingViewSegue", sender: self)
             
-                return DDBDynamoDBManager.createTable().continueWithExecutor(AWSExecutor.mainThreadExecutor(), withBlock: { (task:AWSTask!) -> AnyObject! in
+                return DDBDynamoDBManager.createTable().continue(with: AWSExecutor.mainThread(), with: { (task:AWSTask!) -> AnyObject! in
                     //Handle erros.
                     if ((task.error) != nil) {
                         print("Error: \(task.error)")
                         
-                        let alertController = UIAlertController(title: "Failed to setup a test table.", message: task.error!.description, preferredStyle: UIAlertControllerStyle.Alert)
-                        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: { (action:UIAlertAction) -> Void in
+                        let alertController = UIAlertController(title: "Failed to setup a test table.", message: task.error!.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: { (action:UIAlertAction) -> Void in
                         })
                         alertController.addAction(okAction)
                         
-                        self.presentViewController(alertController, animated: true, completion: nil)
+                        self.present(alertController, animated: true, completion: nil)
                         
                     } else {
-                        self.dismissViewControllerAnimated(false, completion: nil)
+                        self.dismiss(animated: false, completion: nil)
                     }
                     return nil
                     
@@ -102,24 +103,24 @@ class GetInputViewController: UIViewController {
     }
     
     func insertTableRow(tableRow: DDBTableRow) {
-        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
         
-        dynamoDBObjectMapper.save(tableRow).continueWithExecutor(AWSExecutor.mainThreadExecutor(), withBlock: { (task:AWSTask!) -> AnyObject! in
+        dynamoDBObjectMapper.save(tableRow).continue(with: AWSExecutor.mainThread(), with: { (task:AWSTask!) -> AnyObject! in
             if (task.error == nil) {
-                let alertController = UIAlertController(title: "Succeeded", message: "Successfully inserted the data into the table.", preferredStyle: UIAlertControllerStyle.Alert)
-                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: { (action:UIAlertAction) -> Void in
+                let alertController = UIAlertController(title: "Succeeded", message: "Successfully inserted the data into the table.", preferredStyle: UIAlertControllerStyle.alert)
+                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: { (action:UIAlertAction) -> Void in
                 })
                 alertController.addAction(okAction)
-                self.presentViewController(alertController, animated: true, completion: nil)
+                self.present(alertController, animated: true, completion: nil)
                 
             } else {
                 print("Error: \(task.error)")
                 
-                let alertController = UIAlertController(title: "Failed to insert the data into the table.", message: task.error!.description, preferredStyle: UIAlertControllerStyle.Alert)
-                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: { (action:UIAlertAction) -> Void in
+                let alertController = UIAlertController(title: "Failed to insert the data into the table.", message: task.error!.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: { (action:UIAlertAction) -> Void in
                 })
                 alertController.addAction(okAction)
-                self.presentViewController(alertController, animated: true, completion: nil)
+                self.present(alertController, animated: true, completion: nil)
             }
             
             return nil
@@ -127,12 +128,12 @@ class GetInputViewController: UIViewController {
             
     }
     
-    @IBAction func addSetion(sender: AnyObject) {
+    @IBAction func addSection(_ sender: Any) {
         let newSection = section()
         
         newSection.name = sectionName.text!
         
-        var percentageOfCourse:Float?  = Float(sectionPercentage.text!)
+        let percentageOfCourse:Float?  = Float(sectionPercentage.text!)
         
         newSection.percentageOfCourse = percentageOfCourse!
         
@@ -141,16 +142,16 @@ class GetInputViewController: UIViewController {
         
         sectionsToAdd.append(newSection)
         
-        let newTable = DDBTableRow()
-        self.insertTableRow(newTable)
+//        let newTable = DDBTableRow()
+//        self.insertTableRow(tableRow: newTable!)
         
         //        try! realm.write {
         //            realm.add(newSection)
         //        }
-        
     }
+
     
-    @IBAction func addCourse(sender: AnyObject) {
+    @IBAction func addCourse(_ sender: Any) {
         //courseToPass.sections = sectionsToAdd
         
         courseToPass.sections = sectionsToAdd
@@ -159,18 +160,19 @@ class GetInputViewController: UIViewController {
         
         // courseToPass.sections = sectionsToAdd
     }
+
     
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var svc = segue.destinationViewController as! CAShapeTestViewController
-        
-        svc.courseSections = sectionsToAdd
-        
-        svc.aCourse = courseToPass
-        
-        svc.currentStudent = currentStudent
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+      //  let svc = segue.destination as! CAShapeTestViewController
+//        
+//        svc.courseSections = sectionsToAdd
+//        
+//        svc.aCourse = courseToPass
+//        
+//        svc.currentStudent = currentStudent
     }
     
 }

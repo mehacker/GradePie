@@ -14,8 +14,8 @@ class testSlice: UIView {
     
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        let path = UIBezierPath(ovalInRect: rect)
+    override func draw(_ rect: CGRect) {
+        let path = UIBezierPath(ovalIn: rect)
      path.stroke()
        
 //        let path2 = UIBezierPath()
@@ -39,7 +39,7 @@ class testSlice: UIView {
         let endAngle : CGFloat = 5 * π / 3
         
         
-        path3.addArcWithCenter(center, radius: 100, startAngle: startAngle, endAngle: endAngle, clockwise: true)
+        path3.addArc(withCenter: center, radius: 100, startAngle: startAngle, endAngle: endAngle, clockwise: true)
         
         path3.fill()
 //        let center = CGPoint(x:bounds.width/2, y: bounds.height/2)

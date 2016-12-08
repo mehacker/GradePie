@@ -15,7 +15,7 @@ class PieSliceLayer: CAShapeLayer {
     var maxAngle = CGFloat(1.5 * M_PI)
     
     var center: CGPoint {
-        return CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2)
+        return CGPoint(self.bounds.size.width/2, self.bounds.size.height/2)
     }
     var radius: CGFloat {
         return min(center.x - circleOffset, center.y - circleOffset)
@@ -24,7 +24,7 @@ class PieSliceLayer: CAShapeLayer {
     var startPoint: CGPoint {
         let startPointX = Float(center.x) + Float(radius) * cosf(Float(startAngle))
         let startPointY = Float(center.y) + Float(radius) * sinf(Float(startAngle))
-        return CGPointMake(CGFloat(startPointX), CGFloat(startPointY))
+        return CGPoint(CGFloat(startPointX), CGFloat(startPointY))
     }
     
     var cw:Int32  {
@@ -36,23 +36,23 @@ class PieSliceLayer: CAShapeLayer {
     
     func makeAnimationForKey(key: String!) -> CABasicAnimation {
         let anim = CABasicAnimation(keyPath: key)
-        anim.fromValue = self.presentationLayer()?.valueForKey(key)
+        anim.fromValue = self.presentation()?.value(forKey: key)
         anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         anim.duration = 0.5
         return anim
     }
     
-    override func actionForKey(event: String) -> CAAction? {
+    override func action(forKey event: String) -> CAAction? {
         if event == "endAngle" {
-            return makeAnimationForKey(event)
+            return makeAnimationForKey(key: event)
         }
-        return super.actionForKey(event)
+        return super.action(forKey: event)
     }
     
-    override init(layer: AnyObject) {
+    override init(layer: Any) {
         super.init(layer: layer)
         
-        if (layer.isKindOfClass(PieSliceLayer)) {
+        if ((layer as AnyObject).isKind(PieSliceLayer)) {
             if let other = layer as? PieSliceLayer {
                 startAngle = other.startAngle
                 endAngle = other.endAngle
@@ -64,31 +64,31 @@ class PieSliceLayer: CAShapeLayer {
         super.init(coder: aDecoder)
     }
     
-    override class func needsDisplayForKey(key: String) -> Bool {
+    override class func needsDisplay(forKey key: String) -> Bool {
         if (key == "endAngle") {
             return true
         }
-        return super.needsDisplayForKey(key)
+        return super.needsDisplay(forKey: key)
     }
     
-    override func drawInContext(ctx: CGContext) {
+    override func draw(in ctx: CGContext) {
             let backgroundRect = CGRectMake(0,0,bounds.size.width,bounds.size.height)
             //CGContextSetBlendMode(ctx, CGBlendMode.DestinationOver)
-            CGContextAddRect(ctx, backgroundRect)
-            CGContextSetFillColorWithColor(ctx, UIColor.whiteColor().CGColor)
-            CGContextFillPath(ctx)
+            ctx.addRect(backgroundRect)
+            ctx.setFillColor(UIColor.white.cgColor)
+            ctx.fillPath()
             
-            CGContextBeginPath(ctx)
+            ctx.beginPath()
             CGContextMoveToPoint(ctx, center.x, center.y)
             CGContextAddLineToPoint(ctx, startPoint.x, startPoint.y)
             CGContextAddArc(ctx, center.x, center.y, radius, startAngle, endAngle, cw)
-            CGContextClosePath(ctx)
+            ctx.closePath()
             
-            CGContextSetFillColorWithColor(ctx, getRandomColor().CGColor)
-            CGContextSetLineCap(ctx, CGLineCap.Round)
+            ctx.setFillColor(getRandomColor().cgColor)
+            ctx.setLineCap(CGLineCap.round)
             
             //CGContextSetBlendMode(ctx, CGBlendMode.DestinationOut)
-            CGContextDrawPath(ctx, CGPathDrawingMode.Fill)
+            ctx.drawPath(using: CGPathDrawingMode.fill)
     }
     
     //Get Random Color

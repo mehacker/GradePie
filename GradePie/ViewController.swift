@@ -22,17 +22,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.frame = CGRectMake(200, 50, 120, 300)
+        tableView.frame = CGRect(origin: CGPoint(x: 200,y :50), size: CGSize(width: 120, height: 300))
+
         tableView.delegate = self
         
         tableView.dataSource = self
         
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         self.view.addSubview(tableView)
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.items.count
     }
     
@@ -40,11 +41,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.didReceiveMemoryWarning()
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cell")!
-        
-        let rightPickerImageView = UIImageView(frame: CGRectMake(10, 10, 120, 60))
+        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+       
+        let rect = CGRect(origin: CGPoint(x: 200,y :50), size: CGSize(width: 120, height: 300))
+        let rightPickerImageView = UIImageView(frame: rect)
         let rightPicker : UIImage = UIImage(named: "rightarrow")!
         rightPickerImageView.image = rightPicker
         

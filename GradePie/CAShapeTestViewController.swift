@@ -7,23 +7,27 @@
 //
 
 import UIKit
-
-//import Charts
+import Charts
 
 class CAShapeTestViewController: UIViewController, ChartViewDelegate {
-    
+//class CAShapeTestViewController: UIViewController {
+
+    @IBOutlet weak var pieChart: PieChartView!
     @IBOutlet weak var courseName: UILabel!
    // @IBOutlet weak var sectionsList: UITableView!
     @IBOutlet weak var gradeSlider: UISlider!
     @IBOutlet weak var gradeToAdd: UILabel!
 
     @IBOutlet weak var gradesLeftTF: UITextField!
+
+//    @IBOutlet weak var pieGraphView: UIView!
+
     @IBOutlet weak var pieChartView: PieChartView!
-   // @IBOutlet weak var pieGraphView: UIView!
+
     
     @IBOutlet weak var overallGrade: UILabel!
-    
-    let progressIndicatorView = chartSlice(frame: CGRectZero)
+//    let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 100, height: 100))
+    let progressIndicatorView = chartSlice(frame: CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 100, height: 100)))
     
     var courseSections = [section]()
     var aCourse  = course()
@@ -56,23 +60,24 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         
         //temporary test data
         let testSection1 = section ()
-        testSection1.addGrade(50)
-        testSection1.addGrade(50)
+        testSection1.addGrade(grade: 50)
+        testSection1.addGrade(grade: 50)
         testSection1.name = "Quizzes"
         testSection1.percentageOfCourse = 0.25
         let testSection2 = section ()
-        testSection2.addGrade(50)
-        testSection2.addGrade(50)
+        testSection2.addGrade(grade: 50)
+        testSection2.addGrade(grade: 50)
         testSection2.name = "Tests"
         testSection2.percentageOfCourse = 0.25
         let testSection3 = section ()
-        testSection3.addGrade(50)
-        testSection3.addGrade(50)
+        testSection3.addGrade(grade: 50)
+        testSection3.addGrade(grade: 50)
         testSection2.name = "Homework"
         testSection3.percentageOfCourse = 0.25
         let testSection4 = section ()
-        testSection4.addGrade(50)
-        testSection4.addGrade(50)
+        testSection4.addGrade(grade: 50)
+        testSection4.addGrade(grade:
+            50)
         testSection2.name = "Bonus"
         testSection4.percentageOfCourse = 0.25
         testSections.append(testSection1)
@@ -82,7 +87,7 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         
         aCourse.sections = testSections
         
-        self.pieChartView.delegate = self
+//      self.pieChartView.delegate = self
 
         var sectionNames: Array<String> = []
         var grades: Array<Double> = []
@@ -93,11 +98,46 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
 
         }
         
-        let gradesPercentagedEarned = addPercentageEarned(testSections)
+        let gradesPercentagedEarned = addPercentageEarned(sections: testSections)
         
        // setChart(gradesPercentagedEarned)
-        setChart(testSections, percentagesEarned: gradesPercentagedEarned)
+//        setChart(values: testSections, percentagesEarned: gradesPercentagedEarned)
+        
+        let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
+        let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0]
+        
+        setChart1(dataPoints: months, values: unitsSold)
     
+    }
+    
+    func setChart1(dataPoints: [String], values: [Double]) {
+        
+        var dataEntries: [ChartDataEntry] = []
+        
+        for i in 0..<dataPoints.count {
+            let dataEntry = ChartDataEntry(x: values[i], y: Double(i))
+            dataEntries.append(dataEntry)
+        }
+        
+        let pieChartDataSet = PieChartDataSet(values: dataEntries, label: "Units Sold")
+        let pieChartData = PieChartData(dataSet: pieChartDataSet)
+//        let pieChartData = PieChartData(dataSets: pieChartDataSet)
+
+        pieChartView.data = pieChartData
+        
+        var colors: [UIColor] = []
+        
+        for i in 0..<dataPoints.count {
+            let red = Double(arc4random_uniform(256))
+            let green = Double(arc4random_uniform(256))
+            let blue = Double(arc4random_uniform(256))
+            
+            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
+            colors.append(color)
+        }
+        
+        pieChartDataSet.colors = colors
+        
     }
 
     // MARK: - CAShapeLayer - old
@@ -106,30 +146,30 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         let newSlice = CAShapeLayer()
         
         //var center = CGPointMake((self.view.frame.width/2), (self.view.frame.height/2))
-        var center = self.view.center
+        let center = self.view.center
         
-        var radius = 200
+        let radius = 200
         
         if (fill == true) {
             
-            var slicePath2 = UIBezierPath ()
+            let slicePath2 = UIBezierPath ()
             
-            slicePath2.addArcWithCenter(center, radius: CGFloat(radius), startAngle: startAngle, endAngle: endAngle, clockwise:true)
+            slicePath2.addArc(withCenter: center, radius: CGFloat(radius), startAngle: startAngle, endAngle: endAngle, clockwise:true)
             
-            slicePath2.addLineToPoint(center)
+            slicePath2.addLine(to: center)
             
-            slicePath2.closePath()
+            slicePath2.close()
             
             
             //newSlice.path = UIBezierPath(arcCenter: center, radius: CGFloat(radius), startAngle: startAngle, endAngle: endAngle, clockwise:true).CGPath
             
-            newSlice.path = slicePath2.CGPath
+            newSlice.path = slicePath2.cgPath
             
             //newSlice.lineWidth = 200
         }
             
         else {
-            newSlice.path = UIBezierPath(arcCenter: center, radius: CGFloat(100), startAngle: startAngle, endAngle: endAngle, clockwise:true).CGPath
+            newSlice.path = UIBezierPath(arcCenter: center, radius: CGFloat(100), startAngle: startAngle, endAngle: endAngle, clockwise:true).cgPath
             newSlice.lineWidth = 1
             
         }
@@ -142,10 +182,10 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
 
         
         // Configure the circle
-        newSlice.fillColor = color.CGColor
+        newSlice.fillColor = color.cgColor
         //newSlice.fillColor = UIColor.whiteColor().CGColor
         newSlice.opacity = opacity
-        newSlice.strokeColor = color.CGColor
+        newSlice.strokeColor = color.cgColor
 
         
         // When it gets to the end of its animation, leave it at 0% stroke filled
@@ -161,28 +201,28 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         
         let drawAnimation = CABasicAnimation(keyPath: "strokeEnd")
         drawAnimation.repeatCount = 1.0
-        drawAnimation.fromValue = NSNumber(float: 0.0)
-        drawAnimation.toValue = NSNumber(double: 1.0)
+        drawAnimation.fromValue = NSNumber(value: 0.0)
+        drawAnimation.toValue = NSNumber(value: 1.0)
         drawAnimation.duration = 5.0
         drawAnimation.fillMode = kCAFillModeForwards
-        drawAnimation.removedOnCompletion = false
+        drawAnimation.isRemovedOnCompletion = false
         drawAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         
         
         let fillAnimation = CABasicAnimation(keyPath: "fillColor")
         fillAnimation.repeatCount = 1.0
-        fillAnimation.fromValue = UIColor.whiteColor().CGColor
-        fillAnimation.toValue = color.CGColor
+        fillAnimation.fromValue = UIColor.white.cgColor
+        fillAnimation.toValue = color.cgColor
         fillAnimation.duration = 5.0
       
         fillAnimation.fillMode = kCAFillModeBoth
-        fillAnimation.removedOnCompletion = false
+        fillAnimation.isRemovedOnCompletion = false
     
         fillAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         
         // Add the animation to the circle
-        newSlice.addAnimation(drawAnimation, forKey: "drawCircleAnimation")
-        newSlice.addAnimation(fillAnimation, forKey: fillAnimation.keyPath)
+        newSlice.add(drawAnimation, forKey: "drawCircleAnimation")
+        newSlice.add(fillAnimation, forKey: fillAnimation.keyPath)
     }
 
     func createPieGraph (courseSections: [section]) {
@@ -202,7 +242,7 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         
         pieEndPointDegrees.append(CGFloat(courseSections[0].percentageOfCourse))
         var endDegree:CGFloat = CGFloat(courseSections[0].percentageOfCourse)
-        for (var index = 1; index < courseSections.count; index++) {
+        for index in 1 ..< courseSections.count {
             pieEndPointDegrees.append(CGFloat(courseSections[index].percentageOfCourse) + endDegree)
             endDegree = pieEndPointDegrees[index]
         }
@@ -210,8 +250,8 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         print("The splits in degree of the pie:")
         print(pieEndPointDegrees)
         
-        for (var index1 = 0; index1 < pieEndPointDegrees.count; index1++) {
-            pieEndPointInRadians.append(degree2radian(CGFloat(pieEndPointDegrees[index1])))
+        for index1 in 0 ..< pieEndPointDegrees.count {
+            pieEndPointInRadians.append(degree2radian(a: CGFloat(pieEndPointDegrees[index1])))
         }
         
         for section in courseSections {
@@ -222,7 +262,7 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         print(percentageOfSectionEarned)
         
         for percentageEarned in percentageOfSectionEarned {
-            percentageOfSectionEarnedInRadians.append(degree2radian(percentageEarned))
+            percentageOfSectionEarnedInRadians.append(degree2radian(a: percentageEarned))
         }
         
         // print("percentage of section earned in radians")
@@ -230,7 +270,7 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         // print("\n")
         
        endOfSectionInDegrees.append(percentageOfSectionEarned[0])
-        for (var index2 = 1; index2 < pieEndPointDegrees.count; index2++) {
+        for index2 in 1 ..< pieEndPointDegrees.count {
             endOfSectionInDegrees.append(pieEndPointDegrees[index2-1] + percentageOfSectionEarned[index2])
         }
         
@@ -238,8 +278,8 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         print(endOfSectionInDegrees)
         
         endOfSectionInRadians.append(percentageOfSectionEarnedInRadians[0])
-        for (var index3 = 1; index3 < endOfSectionInDegrees.count; index3++) {
-            endOfSectionInRadians.append(degree2radian(endOfSectionInDegrees[index3]))
+        for index3 in 1 ..< endOfSectionInDegrees.count {
+            endOfSectionInRadians.append(degree2radian(a: endOfSectionInDegrees[index3]))
         }
         
         // print("end of section in radians")
@@ -250,13 +290,16 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         
         var someColor = getRandomColor()
      
-        createSlice(0.0, endAngle: endOfSectionInRadians[0], fill: true, color: someColor, opacity: 1.0)
-        createSlice(endOfSectionInRadians[0], endAngle: pieEndPointInRadians[0], fill: true, color: someColor,opacity: 0.1)
+        createSlice(startAngle: 0.0, endAngle: endOfSectionInRadians[0], fill: true, color: someColor, opacity: 1.0)
+        createSlice(startAngle: endOfSectionInRadians[0], endAngle: pieEndPointInRadians[0], fill: true, color: someColor,opacity: 0.1)
         
-        for (var a = 1; a < courseSections.count; a++) {
+        for a in 1 ..< courseSections.count {
+
+            
+            
             someColor = getRandomColor()
-            createSlice(endOfSectionInRadians[a], endAngle: pieEndPointInRadians[a], fill: true, color: someColor, opacity:  0.1)
-            createSlice(pieEndPointInRadians[a-1], endAngle: endOfSectionInRadians[a], fill: true, color: someColor, opacity: 1.0)
+            createSlice(startAngle: endOfSectionInRadians[a], endAngle: pieEndPointInRadians[a], fill: true, color: someColor, opacity:  0.1)
+            createSlice(startAngle: pieEndPointInRadians[a-1], endAngle: endOfSectionInRadians[a], fill: true, color: someColor, opacity: 1.0)
      
         }
     }
@@ -359,13 +402,19 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
             
         }
         
-        let pieChartDataSet = PieChartDataSet(values: dataEntries, label: "Class sections")
+//        let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
         
-//      let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
+
         
-        let pieChartData = PieChartData(dataSet: pieChartDataSet)
+//        let pieChartDataSet = pieChartData(values: dataEntries, label: "Class sections")
+        let pieChartDataSet = PieChartData()
+//        
+//        let pieChartData = pieChartDataSet(dataSet: pieChartDataSet)
         
-        pieChartView.data = pieChartData
+        
+        
+        
+//        pieChartView.data = pieChartData
         
         var colors: [UIColor] = []
         
@@ -382,11 +431,11 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
 //                colors.append(color.colorWithAlphaComponent(0.2))
 //            }
             
-            pieChartDataSet.colors = colors
+//            pieChartDataSet.colors = colors
             
         }
         
-            pieChartView.centerText = "Overall Grade"
+//            pieChartView.centerText = "Overall Grade"
     }
     
     func addPercentageEarned (sections:  [section]) -> [Double] {
@@ -415,13 +464,13 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         }
         }
         
-        self.pieChartView.setNeedsDisplay()
+//        self.pieChartView.setNeedsDisplay()
     }
     
     @IBAction func getBestGradeForSelectedSection(sender: AnyObject) {
         let gradesLeft = Int(gradesLeftTF.text!)
         print(gradesLeft)
-        print(aCourse.bestGradePossibleForSection(gradesLeft!, sectionName: selectedSection.name))
+        print(aCourse.bestGradePossibleForSection(gradesLeft: gradesLeft!, sectionName: selectedSection.name))
         
     }
     

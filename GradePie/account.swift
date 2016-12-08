@@ -7,10 +7,14 @@
 //
 
 import Foundation
+import AWSDynamoDB
 //import RealmSwift
 
+// For Realm
 //class account : Object {
-class account {
+
+// For AWS
+class account  {
     var username = ""
     var password = ""
     var aStudent : student? = nil

@@ -41,9 +41,9 @@ class SectionsTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("someCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "someCell", for: indexPath as IndexPath)
 
-         cell.backgroundColor = UIColor.redColor()
+         cell.backgroundColor = UIColor.red
 
         return cell
     }

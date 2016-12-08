@@ -16,11 +16,11 @@ class ChartViewController: UIViewController {
         super.viewDidLoad()
 
         let layer = CALayer ();
-        layer.frame = CGRectMake(50, 50, 50, 50)
-        var redColor = UIColor.redColor()
-        layer.backgroundColor = redColor.CGColor
+//        layer.frame = CGRectMake(50, 50, 50, 50)
+        let redColor = UIColor.red
+        layer.backgroundColor = redColor.cgColor
         
-        self.pieView.backgroundColor = UIColor.redColor()
+        self.pieView.backgroundColor = UIColor.red
         
         let context = UIGraphicsGetCurrentContext()
     }
