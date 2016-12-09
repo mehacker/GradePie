@@ -7,8 +7,9 @@
 //
 
 import UIKit
-import AWSCognito
-import AWSDynamoDB
+//import AWSCognito
+//import AWSDynamoDB
+import FBSDKLoginKit
 //import RealmSwift
 
 
@@ -22,7 +23,7 @@ class CreateStudentViewController: UIViewController {
     
     var aAccount = account ()
     
-    var lastEvaluatedKey:[String : AWSDynamoDBAttributeValue]!
+//    var lastEvaluatedKey:[String : AWSDynamoDBAttributeValue]!
     
     //let realm = try! Realm ()
 
@@ -37,6 +38,11 @@ class CreateStudentViewController: UIViewController {
         
         aStudent.lastName = "Nguyen"
       //  aSchool.name = "Georgia State University"
+        
+        let loginButton = FBSDKLoginButton()
+        loginButton.center = view.center
+        
+        view.addSubview(loginButton)
         
     }
     
@@ -103,7 +109,7 @@ class CreateStudentViewController: UIViewController {
     @IBAction func createStudentAccount(_ sender: Any) {
         aAccount.username = usernameTextField.text!
         aAccount.password = passwordTextField.text!
-        aAccount.aStudent = aStudent
+//        aAccount.aStudent = aStudent
         
         //print(Realm.Configuration.defaultConfiguration.fileURL!)
         

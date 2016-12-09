@@ -33,6 +33,27 @@
                 <string>USWest2</string>
             </dict>
         </dict>
+        
+        <key>CFBundleURLTypes</key>
+        <array>
+            <dict>
+                <key>CFBundleURLSchemes</key>
+                <array>
+                    <string>fb1039050972890536</string>
+                </array>
+            </dict>
+        </array>
+        <key>FacebookAppID</key>
+        <string>1039050972890536</string>
+        <key>FacebookDisplayName</key>
+        <string>GradePie</string>
+        <key>LSApplicationQueriesSchemes</key>
+        <array>
+            <string>fbapi</string>
+            <string>fb-messenger-api</string>
+            <string>fbauth2</string>
+            <string>fbshareextension</string>
+        </array>
     </dict>
     <key>NSAppTransportSecurity</key>
     <dict>

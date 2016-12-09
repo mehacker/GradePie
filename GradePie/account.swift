@@ -7,15 +7,27 @@
 //
 
 import Foundation
-import AWSDynamoDB
-//import RealmSwift
+//import AWSDynamoDB
+import RealmSwift
 
 // For Realm
 //class account : Object {
 
 // For AWS
-class account  {
-    var username = ""
-    var password = ""
-    var aStudent : student? = nil
+class account : Object {
+    dynamic var username = ""
+    dynamic var password = ""
+//    dynamic var aStudent : student? = nil
+
+func save () {
+    do {
+        let realm = try Realm()
+        try realm.write {
+            realm.add(self)
+        }
+    } catch let error as NSError {
+        fatalError(error.localizedDescription)
+    }
+}
+
 }

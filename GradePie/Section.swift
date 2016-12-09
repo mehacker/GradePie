@@ -7,16 +7,15 @@
 //
 
 import Foundation
-//import RealmSwift
+import RealmSwift
 
-//class section : Object {
 class section {
     
-    dynamic var name = ""
+    var name = ""
     
-    dynamic var percentageOfCourse:Float = 0.0
+    var percentageOfCourse:Float = 0.0
     
-    dynamic var percentageEarned:Float = 0.0
+    var percentageEarned:Float = 0.0
     
     var grades = [Float]()
     

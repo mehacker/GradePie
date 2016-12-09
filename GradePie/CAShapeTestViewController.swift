@@ -10,23 +10,16 @@ import UIKit
 import Charts
 
 class CAShapeTestViewController: UIViewController, ChartViewDelegate {
-//class CAShapeTestViewController: UIViewController {
 
     @IBOutlet weak var pieChart: PieChartView!
     @IBOutlet weak var courseName: UILabel!
-   // @IBOutlet weak var sectionsList: UITableView!
     @IBOutlet weak var gradeSlider: UISlider!
     @IBOutlet weak var gradeToAdd: UILabel!
-
     @IBOutlet weak var gradesLeftTF: UITextField!
-
-//    @IBOutlet weak var pieGraphView: UIView!
-
     @IBOutlet weak var pieChartView: PieChartView!
+    @IBOutlet weak var gradesTableView: UITableView!
 
-    
-    @IBOutlet weak var overallGrade: UILabel!
-//    let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 100, height: 100))
+//  let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 100, height: 100))
     let progressIndicatorView = chartSlice(frame: CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 100, height: 100)))
     
     var courseSections = [section]()
@@ -58,28 +51,38 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         
        // createPieGraph(courseSections)
         
+        let newAccount = account()
+        newAccount.username = "aTester"
+        newAccount.password = "aPassword"
+        newAccount.save()
+        
+        
+        
         //temporary test data
         let testSection1 = section ()
         testSection1.addGrade(grade: 50)
         testSection1.addGrade(grade: 50)
         testSection1.name = "Quizzes"
-        testSection1.percentageOfCourse = 0.25
+        testSection1.percentageOfCourse = 25
+        testSection1.percentageEarned = 100
         let testSection2 = section ()
         testSection2.addGrade(grade: 50)
         testSection2.addGrade(grade: 50)
         testSection2.name = "Tests"
-        testSection2.percentageOfCourse = 0.25
+        testSection2.percentageOfCourse = 25
+        testSection2.percentageEarned = 100
         let testSection3 = section ()
         testSection3.addGrade(grade: 50)
         testSection3.addGrade(grade: 50)
-        testSection2.name = "Homework"
-        testSection3.percentageOfCourse = 0.25
+        testSection3.name = "Homework"
+        testSection3.percentageOfCourse = 25
+        testSection3.percentageEarned = 100
         let testSection4 = section ()
         testSection4.addGrade(grade: 50)
-        testSection4.addGrade(grade:
-            50)
-        testSection2.name = "Bonus"
-        testSection4.percentageOfCourse = 0.25
+        testSection4.addGrade(grade: 50)
+        testSection4.name = "Bonus"
+        testSection4.percentageOfCourse = 25
+        testSection4.percentageEarned = 100
         testSections.append(testSection1)
         testSections.append(testSection2)
         testSections.append(testSection3)
@@ -87,7 +90,7 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         
         aCourse.sections = testSections
         
-//      self.pieChartView.delegate = self
+        pieChartView.delegate = self
 
         var sectionNames: Array<String> = []
         var grades: Array<Double> = []
@@ -100,48 +103,16 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         
         let gradesPercentagedEarned = addPercentageEarned(sections: testSections)
         
-       // setChart(gradesPercentagedEarned)
-//        setChart(values: testSections, percentagesEarned: gradesPercentagedEarned)
+        pieChartView.centerText = "100%"
+        pieChartView.holeRadiusPercent = 0.35
         
-        let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
-        let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0]
+        setChart(values: testSections, percentagesEarned: gradesPercentagedEarned)
         
-        setChart1(dataPoints: months, values: unitsSold)
+//      pieChartView.usePercentValuesEnabled = true
     
     }
     
-    func setChart1(dataPoints: [String], values: [Double]) {
-        
-        var dataEntries: [ChartDataEntry] = []
-        
-        for i in 0..<dataPoints.count {
-            let dataEntry = ChartDataEntry(x: values[i], y: Double(i))
-            dataEntries.append(dataEntry)
-        }
-        
-        let pieChartDataSet = PieChartDataSet(values: dataEntries, label: "Units Sold")
-        let pieChartData = PieChartData(dataSet: pieChartDataSet)
-//        let pieChartData = PieChartData(dataSets: pieChartDataSet)
-
-        pieChartView.data = pieChartData
-        
-        var colors: [UIColor] = []
-        
-        for i in 0..<dataPoints.count {
-            let red = Double(arc4random_uniform(256))
-            let green = Double(arc4random_uniform(256))
-            let blue = Double(arc4random_uniform(256))
-            
-            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-            colors.append(color)
-        }
-        
-        pieChartDataSet.colors = colors
-        
-    }
-
     // MARK: - CAShapeLayer - old
-    
     func createSlice (startAngle: CGFloat, endAngle: CGFloat, fill: Bool, color: UIColor, opacity: Float) {
         let newSlice = CAShapeLayer()
         
@@ -393,47 +364,33 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
             var sectionGrabbed = section()
             sectionGrabbed = testSections[i]
             var value = sectionGrabbed.percentageOfCourse
+//          var value = sectionGrabbed.percentageOfCourse
             
-            //COnvert to a percentage of the chart 
-            value = (value/100) * 360
+            //Convert to a percentage of the chart
+//            value = (value/100) * 360
             
             let dataEntry = ChartDataEntry(x: Double(i), y: Double(value), data: sectionGrabbed)
             dataEntries.append(dataEntry)
-            
         }
         
-//        let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
-        
+        let pieChartDataSet = PieChartDataSet(values: dataEntries, label: "Class Sections")
+        let pieChartData = PieChartData(dataSet: pieChartDataSet)
 
-        
-//        let pieChartDataSet = pieChartData(values: dataEntries, label: "Class sections")
-        let pieChartDataSet = PieChartData()
-//        
-//        let pieChartData = pieChartDataSet(dataSet: pieChartDataSet)
-        
-        
-        
-        
-//        pieChartView.data = pieChartData
+        pieChartView.data = pieChartData
         
         var colors: [UIColor] = []
         
         for i in 0..<values.count {
-            let red = Double (arc4random_uniform(256))
+            let red = Double(arc4random_uniform(256))
             let green = Double(arc4random_uniform(256))
             let blue = Double(arc4random_uniform(256))
             
-            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
+            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 0.5)
             
             colors.append(color)
-//            if (i%2 == 0 ) {
-//                colors.append(color)
-//                colors.append(color.colorWithAlphaComponent(0.2))
-//            }
-            
-//            pieChartDataSet.colors = colors
-            
         }
+        
+        pieChartDataSet.colors = colors
         
 //            pieChartView.centerText = "Overall Grade"
     }
@@ -448,7 +405,7 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         return values
     }
     
-    func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         var sectionGrabbed = section()
         sectionGrabbed = entry.data as! section
         
