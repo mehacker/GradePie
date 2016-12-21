@@ -7,16 +7,15 @@
 //
 
 import Foundation
-//import RealmSwift
+import RealmSwift
 
-//class course : Object {
-class course {
+class course : Object {
     
     dynamic var name = ""
     
     dynamic var percentageEarned = 0
     
-    var sections = [section]()
+    var sections = List<section>()
     
     func getSection (name: String) -> section {
         var sectionFound = section()
@@ -28,23 +27,23 @@ class course {
         return sectionFound
     }
     
-    func bestGradePossibleForSection(gradesLeft: Int, sectionName: String) -> Float {
-        var bestGrade: Float = 0.0
-        
-        var mockSection =  section()
-        let sectionSearched = getSection(name: sectionName)
-        mockSection = sectionSearched
-        
-        print(mockSection.grades)
-        
-        for _ in 0..<gradesLeft {
-            mockSection.addGrade(grade: 100)
-        }
-        
-        bestGrade = mockSection.getPercentageOfCourseEarned()
-        
-        return bestGrade
-    }
+//    func bestGradePossibleForSection(gradesLeft: Int, sectionName: String) -> Float {
+//        var bestGrade: Float = 0.0
+//        
+//        var mockSection =  section()
+//        let sectionSearched = getSection(name: sectionName)
+//        mockSection = sectionSearched
+//        
+//        print(mockSection.grades)
+//        
+//        for _ in 0..<gradesLeft {
+//            mockSection.addGrade(grade: 100)
+//        }
+//        
+//        bestGrade = mockSection.getPercentageOfCourseEarned()
+//        
+//        return bestGrade
+//    }
     
 }
 

@@ -9,19 +9,19 @@
 import Foundation
 import RealmSwift
 
-class section {
+class section : Object {
     
-    var name = ""
+    dynamic var name = ""
     
-    var percentageOfCourse:Float = 0.0
+    dynamic var percentageOfCourse:Float = 0.0
     
-    var percentageEarned:Float = 0.0
+    dynamic var percentageEarned:Float = 0.0
     
-    var grades = [Float]()
+    var grades = List<Grade>()
     
     var selected = false
     
-    func addGrade (grade: Float) {
+    func addGrade (grade: Grade) {
         grades.append(grade)
         getPercentageOfCourseEarned()
     }
@@ -40,7 +40,7 @@ class section {
         var average:Float = 0.0
         print("The grades for the seciton is", grades)
         for grade in grades {
-            total += grade
+            total += grade.grade
         }
         
         average = total/Float(grades.count)
@@ -51,6 +51,21 @@ class section {
         percentageEarned = (getAverage()  * percentageOfCourse)/100
         return percentageEarned
     }
+    
+    func save () {
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.add(self)
+            }
+        } catch let error as NSError {
+            fatalError(error.localizedDescription)
+        }
+    }
 
+}
+
+class Grade : Object {
+    dynamic var grade:Float = 0.0
 }
 

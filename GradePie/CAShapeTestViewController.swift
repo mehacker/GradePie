@@ -9,8 +9,8 @@
 import UIKit
 import Charts
 
-class CAShapeTestViewController: UIViewController, ChartViewDelegate {
-
+class CAShapeTestViewController: UIViewController, ChartViewDelegate, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var pieChart: PieChartView!
     @IBOutlet weak var courseName: UILabel!
     @IBOutlet weak var gradeSlider: UISlider!
@@ -36,6 +36,8 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
     
     var testSections = [section] ()
     
+    var loggedInAccount = account ()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,35 +53,38 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         
        // createPieGraph(courseSections)
         
-        let newAccount = account()
-        newAccount.username = "aTester"
-        newAccount.password = "aPassword"
-        newAccount.save()
-        
-        
-        
+        print(loggedInAccount)
+                
         //temporary test data
         let testSection1 = section ()
-        testSection1.addGrade(grade: 50)
-        testSection1.addGrade(grade: 50)
+        let newGrade = Grade ()
+        newGrade.grade = 50
+        testSection1.addGrade(grade: newGrade)
+        testSection1.addGrade(grade: newGrade)
         testSection1.name = "Quizzes"
         testSection1.percentageOfCourse = 25
         testSection1.percentageEarned = 100
         let testSection2 = section ()
-        testSection2.addGrade(grade: 50)
-        testSection2.addGrade(grade: 50)
+        let newGrade2 = Grade ()
+        newGrade2.grade = 50
+        testSection2.addGrade(grade: newGrade2)
+        testSection2.addGrade(grade: newGrade2)
         testSection2.name = "Tests"
         testSection2.percentageOfCourse = 25
         testSection2.percentageEarned = 100
         let testSection3 = section ()
-        testSection3.addGrade(grade: 50)
-        testSection3.addGrade(grade: 50)
+        let newGrade3 = Grade ()
+        newGrade3.grade = 50.0
+        testSection3.addGrade(grade: newGrade3)
+        testSection3.addGrade(grade: newGrade3)
         testSection3.name = "Homework"
         testSection3.percentageOfCourse = 25
         testSection3.percentageEarned = 100
         let testSection4 = section ()
-        testSection4.addGrade(grade: 50)
-        testSection4.addGrade(grade: 50)
+        let newGrade4 = Grade ()
+        newGrade4.grade = 50.0
+        testSection4.addGrade(grade: newGrade4)
+        testSection4.addGrade(grade: newGrade4)
         testSection4.name = "Bonus"
         testSection4.percentageOfCourse = 25
         testSection4.percentageEarned = 100
@@ -87,9 +92,16 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         testSections.append(testSection2)
         testSections.append(testSection3)
         testSections.append(testSection4)
+
+        testSection1.save()
+        testSection2.save()
+        testSection3.save()
+        testSection4.save()
         
-        aCourse.sections = testSections
+//      aCourse.sections = testSections
         
+        gradesTableView.delegate = self
+        gradesTableView.dataSource = self
         pieChartView.delegate = self
 
         var sectionNames: Array<String> = []
@@ -107,6 +119,8 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
         pieChartView.holeRadiusPercent = 0.35
         
         setChart(values: testSections, percentagesEarned: gradesPercentagedEarned)
+        
+        self.gradesTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
 //      pieChartView.usePercentValuesEnabled = true
     
@@ -406,30 +420,44 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate {
     }
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        var sectionGrabbed = section()
-        sectionGrabbed = entry.data as! section
+                var sectionGrabbed = section()
+                sectionGrabbed = entry.data as! section
         
-        print(entry.data)
-        print("The name of the seciton is", sectionGrabbed.name)
-        print("The percentage of the course is", sectionGrabbed.percentageOfCourse)
-        print("The percentage earned is", sectionGrabbed.percentageEarned)
-        print("The grades of the section are", sectionGrabbed.grades)
+                print(entry.data)
+                print("The name of the section is", sectionGrabbed.name)
+                print("The percentage of the course is", sectionGrabbed.percentageOfCourse)
+                print("The percentage earned is", sectionGrabbed.percentageEarned)
+                print("The grades of the section are", sectionGrabbed.grades)
         
-        for aSection in courseSections {
-        if (aSection.name == sectionGrabbed.name) {
-            selectedSection = aSection
-        }
-        }
-        
-//        self.pieChartView.setNeedsDisplay()
+                for aSection in courseSections {
+                if (aSection.name == sectionGrabbed.name) {
+                    selectedSection = aSection
+                }
+                }
+                
+        ////        self.pieChartView.setNeedsDisplay()
     }
     
-    @IBAction func getBestGradeForSelectedSection(sender: AnyObject) {
-        let gradesLeft = Int(gradesLeftTF.text!)
-        print(gradesLeft)
-        print(aCourse.bestGradePossibleForSection(gradesLeft: gradesLeft!, sectionName: selectedSection.name))
-        
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return testSections.count
     }
+
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell:UITableViewCell = self.gradesTableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
+        
+        let grabbedSection = testSections[indexPath.row]
+        
+        cell.textLabel?.text = grabbedSection.name
+        
+        return cell
+    }
+    
+//    @IBAction func getBestGradeForSelectedSection(sender: AnyObject) {
+//        let gradesLeft = Int(gradesLeftTF.text!)
+//        print(gradesLeft)
+//        print(aCourse.bestGradePossibleForSection(gradesLeft: gradesLeft!, sectionName: selectedSection.name))
+//        
+//    }
     
     override func didReceiveMemoryWarning() {
         
