@@ -19,6 +19,7 @@
 		A573A3821C135B0000529824 /* pieSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573A3811C135B0000529824 /* pieSlice.swift */; };
 		A575F2DD1C4DBD3700E37DCF /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575F2DC1C4DBD3700E37DCF /* Course.swift */; };
 		A575F2DF1C4DC24500E37DCF /* GetInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A575F2DE1C4DC24500E37DCF /* GetInputViewController.swift */; };
+		A59AAC201E05AFF300F0FF45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A59AAC1E1E05AFF300F0FF45 /* Main.storyboard */; };
 		A5A4B2EF1BDB6AE1009EF7E6 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A4B2EE1BDB6AE1009EF7E6 /* ChartViewController.swift */; };
 		A5A4B2F11BDB6DD8009EF7E6 /* pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A4B2F01BDB6DD8009EF7E6 /* pie.swift */; };
 		A5BEB0D11DF114610070F905 /* CAShapeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57C95591C628240003C7687 /* CAShapeTestViewController.swift */; };
@@ -33,7 +34,6 @@
 		A5CE4B631DD9298F0075B0B5 /* Pods_GradePieTests.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BB4956FBB3F495265CBC02F6 /* Pods_GradePieTests.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A5CE4B641DD9298F0075B0B5 /* Pods_GradePieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC0F3D33A9D6D9F481B3BD6 /* Pods_GradePieUITests.framework */; };
 		A5CE4B651DD9298F0075B0B5 /* Pods_GradePieUITests.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DCC0F3D33A9D6D9F481B3BD6 /* Pods_GradePieUITests.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A5E632EA1D1F1110005CB65B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E81B621BC37B7C00B64049 /* Main.storyboard */; };
 		A5E6D6211DEBAB2400D6D31E /* ChartsTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E6D6201DEBAB2400D6D31E /* ChartsTestViewController.swift */; };
 		A5E81B5F1BC37B7C00B64049 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E81B5E1BC37B7C00B64049 /* AppDelegate.swift */; };
 		A5E81B611BC37B7C00B64049 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E81B601BC37B7C00B64049 /* ViewController.swift */; };
@@ -100,6 +100,7 @@
 		A575F2DC1C4DBD3700E37DCF /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		A575F2DE1C4DC24500E37DCF /* GetInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetInputViewController.swift; sourceTree = "<group>"; };
 		A57C95591C628240003C7687 /* CAShapeTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAShapeTestViewController.swift; sourceTree = "<group>"; };
+		A59AAC1F1E05AFF300F0FF45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5A4B2EE1BDB6AE1009EF7E6 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		A5A4B2F01BDB6DD8009EF7E6 /* pie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pie.swift; sourceTree = "<group>"; };
 		A5BB94481C2117BF002B2466 /* CircleGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleGraphView.swift; sourceTree = "<group>"; };
@@ -114,7 +115,6 @@
 		A5E81B5B1BC37B7C00B64049 /* GradePie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradePie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E81B5E1BC37B7C00B64049 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5E81B601BC37B7C00B64049 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A5E81B631BC37B7C00B64049 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5E81B651BC37B7C00B64049 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5E81B681BC37B7C00B64049 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5E81B6A1BC37B7C00B64049 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -283,7 +283,7 @@
 		A5E81B5D1BC37B7C00B64049 /* GradePie */ = {
 			isa = PBXGroup;
 			children = (
-				A5E81B621BC37B7C00B64049 /* Main.storyboard */,
+				A59AAC1E1E05AFF300F0FF45 /* Main.storyboard */,
 				A5BEB0DA1DF9143A0070F905 /* betterPieChartView.swift */,
 				A5BEB0DC1DF9C8D40070F905 /* improvePieChartRenderer.swift */,
 				A575F2E01C4F3CCB00E37DCF /* Test */,
@@ -444,7 +444,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5E632EA1D1F1110005CB65B /* Main.storyboard in Resources */,
+				A59AAC201E05AFF300F0FF45 /* Main.storyboard in Resources */,
 				A5E81B691BC37B7C00B64049 /* LaunchScreen.storyboard in Resources */,
 				A5E81B661BC37B7C00B64049 /* Assets.xcassets in Resources */,
 			);
@@ -681,10 +681,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A5E81B621BC37B7C00B64049 /* Main.storyboard */ = {
+		A59AAC1E1E05AFF300F0FF45 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A5E81B631BC37B7C00B64049 /* Base */,
+				A59AAC1F1E05AFF300F0FF45 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

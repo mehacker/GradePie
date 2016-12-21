@@ -22,21 +22,21 @@ class GetInputViewController: UIViewController {
     
     @IBOutlet weak var percentageEarned: UITextField!
     
-    // let realm = try! Realm ()
-    
     var theSchool = school ()
     
     var courseToPass = course ()
     
-    var sectionsToAdd = [section] ()
+    var sectionsToAdd = List<section>()
     
     var currentStudent = student ()
     
+    var loggedInAccount = account ()
+    
     override func viewDidLoad() {
         
-        super.viewDidLoad()
+    super.viewDidLoad()
         
-        //Old AWS
+    //Old AWS
         
 //        let dynamoDB = AWSDynamoDB.default()
 //        let listTableInput = AWSDynamoDBListTablesInput()
@@ -146,20 +146,31 @@ class GetInputViewController: UIViewController {
         
         sectionsToAdd.append(newSection)
         
-//        let newTable = DDBTableRow()
-//        self.insertTableRow(tableRow: newTable!)
+//      let newTable = DDBTableRow()
+//      self.insertTableRow(tableRow: newTable!)
+        let realm = try! Realm()
         
-        //        try! realm.write {
-        //            realm.add(newSection)
-        //        }
+        try! realm.write {
+             realm.add(newSection)
+        }
     }
 
     
     @IBAction func addCourse(_ sender: Any) {
-        //courseToPass.sections = sectionsToAdd
         
-        courseToPass.sections = sectionsToAdd
         courseToPass.name = courseName.text!
+
+        let realm = try! Realm()
+        
+        let usernameSearch = realm.objects(account.self).filter("username = %@ AND password = %a", "tester", "password")
+        
+        
+ 
+//        try! realm.write {
+//            usernameSearch.
+//        }
+        
+//        courseToPass.sections = sectionsToAdd
         //theSchool.courses.append(courseToPass)
         
         // courseToPass.sections = sectionsToAdd
