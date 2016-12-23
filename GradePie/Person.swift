@@ -1,5 +1,5 @@
 //
-//  Student.swift
+//  Person.swift
 //  GradePie
 //
 //  Created by Nathan Nguyen on 12/21/16.
@@ -9,10 +9,10 @@
 import Foundation
 import RealmSwift
 
-class Student : Person {
+class Person : Object {
     
-    //  var aSchool : school? = nil
+    var firstName = ""
     
-    var courses = List<course> ()
+    var lastName = ""
     
 }

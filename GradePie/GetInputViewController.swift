@@ -28,9 +28,9 @@ class GetInputViewController: UIViewController {
     
     var sectionsToAdd = List<section>()
     
-    var currentStudent = student ()
+    var currentStudent = Student ()
     
-    var loggedInAccount = account ()
+    var loggedInAccount = Account ()
     
     override func viewDidLoad() {
         
@@ -146,36 +146,49 @@ class GetInputViewController: UIViewController {
         
         sectionsToAdd.append(newSection)
         
-//      let newTable = DDBTableRow()
-//      self.insertTableRow(tableRow: newTable!)
-        let realm = try! Realm()
+        courseToPass.sections = sectionsToAdd
         
-        try! realm.write {
-             realm.add(newSection)
-        }
+        //      let newTable = DDBTableRow()
+        //      self.insertTableRow(tableRow: newTable!)
     }
-
     
     @IBAction func addCourse(_ sender: Any) {
         
         courseToPass.name = courseName.text!
-
+        courseToPass.sections = sectionsToAdd
+        
+        var newAccount = Account()
+        
+        var courses = List<course> ()
+        
         let realm = try! Realm()
         
-        let usernameSearch = realm.objects(account.self).filter("username = %@ AND password = %a", "tester", "password")
+        let usernameSearch = realm.objects(Account.self).filter("username = %@ AND password = %a", "tester1", "password")
         
+        loggedInAccount = usernameSearch[0]
         
- 
+        let studentOfAccount = loggedInAccount.student
+        
+        try! realm.write {
+            studentOfAccount?.courses.append(courseToPass)
+        }
+    
+//        let updatedAccount = Account ()
+//        
+//        updatedAccount.username = "tester"
+//        updatedAccount.password = "password"
+//        updatedAccount.student = studentOfAccount
+//        
 //        try! realm.write {
-//            usernameSearch.
+//            realm.add(updatedAccount)
 //        }
         
-//        courseToPass.sections = sectionsToAdd
-        //theSchool.courses.append(courseToPass)
+//        try! realm.write {
+//            realm.create(Account.self, value: ["password": "password", "username": "tester"], update: true)
+//        }
         
-        // courseToPass.sections = sectionsToAdd
+        
     }
-
     
     // MARK: - Navigation
     
