@@ -8,6 +8,7 @@
 
 import UIKit
 import Charts
+import RealmSwift
 
 class CAShapeTestViewController: UIViewController, ChartViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
@@ -30,13 +31,14 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate, UITableVie
     
     var slicePath3 = UIBezierPath ()
     
-    var currentStudent = student ()
+    var currentStudent = Student ()
     
     var selectedSection = section ()
     
     var testSections = [section] ()
+    var coursesSections = [section] ()
     
-    var loggedInAccount = account ()
+    var loggedInAccount = Account ()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,56 +51,13 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate, UITableVie
         
        // self.pieGraphView.userInteractionEnabled = true
         
-       // self.sectionsList.registerClass(UITableViewCell.self, forCellReuseIdentifier: "aSection")
-        
        // createPieGraph(courseSections)
         
         print(loggedInAccount)
-                
-        //temporary test data
-        let testSection1 = section ()
-        let newGrade = Grade ()
-        newGrade.grade = 50
-        testSection1.addGrade(grade: newGrade)
-        testSection1.addGrade(grade: newGrade)
-        testSection1.name = "Quizzes"
-        testSection1.percentageOfCourse = 25
-        testSection1.percentageEarned = 100
-        let testSection2 = section ()
-        let newGrade2 = Grade ()
-        newGrade2.grade = 50
-        testSection2.addGrade(grade: newGrade2)
-        testSection2.addGrade(grade: newGrade2)
-        testSection2.name = "Tests"
-        testSection2.percentageOfCourse = 25
-        testSection2.percentageEarned = 100
-        let testSection3 = section ()
-        let newGrade3 = Grade ()
-        newGrade3.grade = 50.0
-        testSection3.addGrade(grade: newGrade3)
-        testSection3.addGrade(grade: newGrade3)
-        testSection3.name = "Homework"
-        testSection3.percentageOfCourse = 25
-        testSection3.percentageEarned = 100
-        let testSection4 = section ()
-        let newGrade4 = Grade ()
-        newGrade4.grade = 50.0
-        testSection4.addGrade(grade: newGrade4)
-        testSection4.addGrade(grade: newGrade4)
-        testSection4.name = "Bonus"
-        testSection4.percentageOfCourse = 25
-        testSection4.percentageEarned = 100
-        testSections.append(testSection1)
-        testSections.append(testSection2)
-        testSections.append(testSection3)
-        testSections.append(testSection4)
-
-        testSection1.save()
-        testSection2.save()
-        testSection3.save()
-        testSection4.save()
         
 //      aCourse.sections = testSections
+        
+        
         
         gradesTableView.delegate = self
         gradesTableView.dataSource = self
@@ -107,24 +66,47 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate, UITableVie
         var sectionNames: Array<String> = []
         var grades: Array<Double> = []
         
-        for section in courseSections {
+        //Query database for sections 
+        grabSections()
+        
+        for section in coursesSections {
             sectionNames.append(section.name)
             grades.append(Double(section.percentageOfCourse))
 
         }
         
-        let gradesPercentagedEarned = addPercentageEarned(sections: testSections)
+        let gradesPercentagedEarned = addPercentageEarned(sections: coursesSections)
         
         pieChartView.centerText = "100%"
         pieChartView.holeRadiusPercent = 0.35
         
-        setChart(values: testSections, percentagesEarned: gradesPercentagedEarned)
+        setChart(values: coursesSections, percentagesEarned: gradesPercentagedEarned)
         
         self.gradesTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
 //      pieChartView.usePercentValuesEnabled = true
     
     }
+    
+    func grabSections () {
+        let realm = try! Realm()
+        
+        let usernameSearch = realm.objects(Account.self).filter("username = %@ AND password = %a", "tester1", "password")
+        
+        loggedInAccount = usernameSearch[0]
+        
+        let studentOfAccount: Student = loggedInAccount.student!
+        
+        let grabbedCourses = studentOfAccount.courses
+        
+        let grabbedCourse = grabbedCourses[0]
+        
+        for section in grabbedCourse.sections {
+            coursesSections.append(section)
+        }
+
+    }
+
     
     // MARK: - CAShapeLayer - old
     func createSlice (startAngle: CGFloat, endAngle: CGFloat, fill: Bool, color: UIColor, opacity: Float) {
@@ -376,7 +358,7 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate, UITableVie
         
         for i in 0...values.count-1 {
             var sectionGrabbed = section()
-            sectionGrabbed = testSections[i]
+            sectionGrabbed = coursesSections[i]
             var value = sectionGrabbed.percentageOfCourse
 //          var value = sectionGrabbed.percentageOfCourse
             
@@ -406,7 +388,6 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate, UITableVie
         
         pieChartDataSet.colors = colors
         
-//            pieChartView.centerText = "Overall Grade"
     }
     
     func addPercentageEarned (sections:  [section]) -> [Double] {
@@ -439,13 +420,13 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate, UITableVie
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return testSections.count
+        return coursesSections.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = self.gradesTableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
         
-        let grabbedSection = testSections[indexPath.row]
+        let grabbedSection = coursesSections[indexPath.row]
         
         cell.textLabel?.text = grabbedSection.name
         

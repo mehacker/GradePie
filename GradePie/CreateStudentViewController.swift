@@ -17,8 +17,8 @@ class CreateStudentViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    var aStudent = student ()
-    var loggedInAccount = account ()
+    var aStudent = Student ()
+    var loggedInAccount = Account ()
     
 //  var lastEvaluatedKey:[String : AWSDynamoDBAttributeValue]!
     
@@ -38,7 +38,7 @@ class CreateStudentViewController: UIViewController {
         
         view.addSubview(loginButton)
         
-         print(Realm.Configuration.defaultConfiguration.fileURL!)
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
 //        let realm = try! Realm()
 //        
@@ -59,7 +59,7 @@ class CreateStudentViewController: UIViewController {
         let password = passwordTextField.text!
 
             let realm = try! Realm()
-                let usernameSearch = realm.objects(account.self).filter("username = %@ AND password = %a", username, password)
+                let usernameSearch = realm.objects(Account.self).filter("username = %@ AND password = %a", username, password)
 //                let passwordSearch = realm.objects(account.self).filter("password = %@", password)
                 if (usernameSearch.count == 1) {
                     
@@ -114,11 +114,11 @@ class CreateStudentViewController: UIViewController {
     //        })
 
     @IBAction func createStudentAccount(_ sender: Any) {
-        let newAccount = account()
+        let newAccount = Account()
     
         newAccount.username = usernameTextField.text!
         newAccount.password = passwordTextField.text!
-//        newAccount.aStudent = aStudent
+        newAccount.student = aStudent
         
         newAccount.save()
     }
