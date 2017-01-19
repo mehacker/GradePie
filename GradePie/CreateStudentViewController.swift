@@ -39,17 +39,6 @@ class CreateStudentViewController: UIViewController {
         view.addSubview(loginButton)
         
         print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
-//        let realm = try! Realm()
-//        
-//        try! realm.write {
-//            realm.create(account.self, value: ["username" : "tester", "student": aStudent], update: true)
-//        }
-        
-//        let usernameSearch = realm.object(account.self).filter("username = %@ AND password = %a", "tester", "password")
-        
-//        usernameSearch.student = aStudent
-        
     }
     
     //Check login credentials 

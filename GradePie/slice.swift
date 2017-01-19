@@ -62,7 +62,7 @@ class slice: UIView {
         
         path.fill()
         
-        path2.lineWidth = 2
+        path2.lineWidth = 10
         UIColor.blue.setStroke()
         path2.stroke()
         
