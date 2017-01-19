@@ -13,7 +13,7 @@ class course : Object {
     
     dynamic var name = ""
     
-    dynamic var percentageEarned = 0
+    dynamic var percentageEarned : Float = 0.0
     
     var sections = List<section>()
     
@@ -25,6 +25,14 @@ class course : Object {
             }
         }
         return sectionFound
+    }
+    
+    func getOverallGrade () {
+        for section in sections {
+            percentageEarned += section.percentageEarned
+        }
+        
+        percentageEarned = (1 / percentageEarned) * 100
     }
     
 //    func bestGradePossibleForSection(gradesLeft: Int, sectionName: String) -> Float {

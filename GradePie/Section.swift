@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import Realm
 
 class section : Object {
     
@@ -47,9 +48,9 @@ class section : Object {
         return average
     }
     
-    func getPercentageOfCourseEarned ()  -> Float {
+    //Must be used to update realm database
+    func getPercentageOfCourseEarned () {
         percentageEarned = (getAverage()  * percentageOfCourse)/100
-        return percentageEarned
     }
     
     func save () {
