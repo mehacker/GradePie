@@ -77,20 +77,20 @@ class GetInputViewController: UIViewController {
         let percentageOfCourse:Float?  = Float(sectionPercentage.text!)
         
         newSection.percentageOfCourse = percentageOfCourse!
-        
-        let percentageOfCourseEarned:Float?  = Float(percentageEarned.text!)
-        newSection.percentageEarned = percentageOfCourseEarned!
+//      let percentageEarned:Float?  = Float(self.percentageEarned.text!)
+        let percentageEarned:Float?  = Float(10)
+        newSection.percentageEarned = percentageEarned!
         
         let grade = Grade()
-        grade.grade = 50
+        grade.value = 50
         let grade1 = Grade()
-        grade1.grade = 87
+        grade1.value = 87
         let grade2 = Grade()
-        grade2.grade = 100
+        grade2.value = 100
         let grade3 = Grade()
-        grade3.grade = 90
+        grade3.value = 90
         let grade4 = Grade()
-        grade4.grade = 77
+        grade4.value = 77
         
         newSection.grades.append(grade)
         newSection.grades.append(grade1)
@@ -122,6 +122,9 @@ class GetInputViewController: UIViewController {
         let usernameSearch = realm.objects(Account.self).filter("username = %@ AND password = %a", "tester", "password")
         
         loggedInAccount = usernameSearch[0]
+        
+        //Set overallgrade
+        courseToPass.getOverallGrade()
         
         let studentOfAccount = loggedInAccount.student
         

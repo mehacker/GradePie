@@ -29,11 +29,16 @@ class course : Object {
     
     func getOverallGrade () {
         for section in sections {
+            print(section.percentageEarned)
             percentageEarned += section.percentageEarned
         }
-        
-        percentageEarned = (1 / percentageEarned) * 100
     }
+    
+//    func computeGradeWith(percentagedDesired: Float) {
+//        
+//    }
+//    
+
     
 //    func bestGradePossibleForSection(gradesLeft: Int, sectionName: String) -> Float {
 //        var bestGrade: Float = 0.0

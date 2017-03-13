@@ -248,18 +248,13 @@ open class PieChartRenderer: DataRenderer
                             path.addLine(to: center)
                         }
                     }
-                    
+                
                     path.closeSubpath()
-                    
-                    context.setLineWidth(6)
-                     
                     context.beginPath()
-                    context.addPath(path)
+//                    context.addPath(path)
                     context.closePath()
                     
-//                  context.strokePath()
-                    
-                  context.fillPath(using: .evenOdd)
+//                  context.fillPath(using: .evenOdd)
                 }
             }
             
@@ -891,7 +886,7 @@ open class PieChartRenderer: DataRenderer
                     let stripePattern = UIImage(imageLiteralResourceName: "stripes")
                     
                     context.setFillColor(UIColor(patternImage: stripePattern).cgColor)
-//                    context.setFillColor(UIColor.red.cgColor)
+//                  context.setFillColor(UIColor.red.cgColor)
                     
                     let sliceSpaceAngleOuter = visibleAngleCount == 1 ?
                         0.0 :
@@ -921,7 +916,8 @@ open class PieChartRenderer: DataRenderer
                         {
                             var minSpacedRadius = calculateMinimumRadiusForSpacedSlice(
                                 center: center,
-                                radius: radius,
+//                              radius: radius,
+                                radius: 10,
                                 angle: sliceAngle * CGFloat(phaseY),
                                 arcStartPointX: arcStartPointX,
                                 arcStartPointY: arcStartPointY,

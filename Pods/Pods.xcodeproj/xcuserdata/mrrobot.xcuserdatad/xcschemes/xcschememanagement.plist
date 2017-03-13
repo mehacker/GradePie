@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>CircleMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,12 +62,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>44CAD6CE523055ED339E87154473A254</key>
+		<key>2BF6B6B5B2B1A6FCA26B218345916DDD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4A864EE018B139EB145E928DADDABD20</key>
+		<key>44CAD6CE523055ED339E87154473A254</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,17 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>93E14B3B016BD663AE3BA964EAB5AEA5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>95AD455DC7F1A39D4B49A71E8E9920D5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9D0908BA06BA8201EEA846D1E5E6B582</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BB4F32814D7D9E4E78D75DE79C098E51</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,12 +97,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>D316E76D26BECB4A3402BEE0234AF667</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>E396A93E4C79B22B7816E9F02F62ECED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>F307B842FF76B2DE6C55DB67C0885325</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE0EA4A854B31B97AB23A6135FCBFABD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

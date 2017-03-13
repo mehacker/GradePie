@@ -11,63 +11,52 @@ import CoreGraphics
 import Foundation
 import Charts
 import RealmSwift
+import CircleMenu
 
-class CAShapeTestViewController: UIViewController, ChartViewDelegate, UITableViewDelegate, UITableViewDataSource {
+class CAShapeTestViewController: UIViewController, ChartViewDelegate, UITableViewDelegate, UITableViewDataSource, CircleMenuDelegate {
     
+    @IBOutlet weak var circleMenu: CircleMenu!
     @IBOutlet weak var courseName: UILabel!
-    @IBOutlet weak var gradeSlider: UISlider!
     @IBOutlet weak var gradeToAdd: UILabel!
+    @IBOutlet weak var gradeSlider: UISlider!
     @IBOutlet weak var gradesLeftTF: UITextField!
     @IBOutlet weak var pieChartView: PieChartView!
     @IBOutlet weak var gradesTableView: UITableView!
     @IBOutlet weak var sliceView: slice!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var Answer: UILabel!
     
-//  let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 100, height: 100))
     let progressIndicatorView = chartSlice(frame: CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: 100, height: 100)))
-    
-    var courseSections = [section]()
+//  var courseSections = [section]()
     var aCourse  = course()
     var slices = [CALayer]()
-    
     var testGrade = sliceLayer()
-    
     var slicePath3 = UIBezierPath ()
-    
     var currentStudent = Student ()
-    
     var selectedSection = section ()
-    
     var testSections = [section] ()
     var coursesSections = [section] ()
-    
     var loggedInAccount = Account ()
-    
     var isGraphViewShowing = false
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         print(loggedInAccount)
         
 //      createPieGraph(courseSections)
-
-//      aCourse.sections = testSections
         
         gradesTableView.delegate = self
         gradesTableView.dataSource = self
         pieChartView.delegate = self
+        circleMenu.delegate = self
 
         var sectionNames: Array<String> = []
         var grades: Array<Double> = []
         
         //Query database for current course
         grabCourse()
-        
-//        for section in coursesSections {
-//            section.getPercentageOfCourseEarned()
-//            print(section.percentageOfCourse)
-//        }
         
         for section in coursesSections {
             sectionNames.append(section.name)
@@ -79,9 +68,12 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate, UITableVie
         
         aCourse.sections = List<section>(coursesSections)
         aCourse.getOverallGrade()
-        pieChartView.centerText = "%" + String(format : "%.0f", aCourse.percentageEarned)
-        pieChartView.holeRadiusPercent = 0.35
+        pieChartView.centerText = "Current: %" + String(format :"%.0f", aCourse.percentageEarned) + "\n Best: " 
+        pieChartView.holeRadiusPercent = 0.30
+        pieChartView.transparentCircleRadiusPercent = 0
         
+       // addGrade(sectionName: "Tests")
+    
 //      pieChartView.transparentCircleRadiusPercent = 0.50
         
 //      self.pieChartView.rotationEnabled = false
@@ -93,6 +85,17 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate, UITableVie
 //      drawSeondLayer(context: context)
         
 //      pieChartView.usePercentValuesEnabled = true
+        
+//        let button = CircleMenu(
+//            frame: CGRect(x: 200, y: 200, width: 50, height: 50),
+//            normalIcon:"icon_menu",
+//            selectedIcon:"icon_close",
+//            buttonsCount: 4,
+//            duration: 4,
+//            distance: 120)
+//        button.delegate = self
+//        button.layer.cornerRadius = button.frame.size.width / 2.0
+//        self.view.addSubview(button)
      
     }
     
@@ -120,13 +123,44 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate, UITableVie
 
     }
     
+    func addGrade (sectionName: String) {
+        let realm = try! Realm ()
+        
+//        let usernameSearch = realm.objects(Account.self).filter("username = %@ AND password = %a", "tester" , "password")
+//
+//        let studentOfAccount: Student = loggedInAccount.student!
+//        
+//        let grabbedCourses = studentOfAccount.courses
+//        
+//        let grabbedCourse = grabbedCourses[0]
+//        
+//        grabbedCourse.sections
+        
+//        let section : section = realm.objects(Account.self).filter("section =  %@",sectionName)
+//        let newGrade = Grade()
+//        newGrade.value = Float(gradesLeftTF.text!)!
+//        section.grades.append(newGrade)
+//        try! realm.write { }
+        
+        try! realm.write {
+        let sectionSearched = realm.objects(section.self).filter("name = %@", sectionName)
+
+        let sectionFound = sectionSearched[0]
+        let grade = Grade()
+        grade.value = 80
+        sectionFound.addGrade(grade: grade)
+        
+            realm.add(sectionFound, update: true)
+        }
+        
+    }
+    
     //method to turn degrees to radians
     func degree2radian(a:CGFloat)->CGFloat {
         let b = CGFloat(M_PI) * a/180
         return b
     }
 
-    
     func getRandomColor() -> UIColor {
         
         let randomRed:CGFloat = CGFloat(drand48())
@@ -146,7 +180,7 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate, UITableVie
         for i in 0...values.count-1 {
             var sectionGrabbed = section()
             sectionGrabbed = coursesSections[i]
-            var value = sectionGrabbed.percentageOfCourse
+            var value = sectionGrabbed.percentageOfCourse/100
 //          var value = sectionGrabbed.percentageOfCourse
             
             //Convert to a percentage of the chart
@@ -157,6 +191,7 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate, UITableVie
         }
         
         let pieChartDataSet = PieChartDataSet(values: dataEntries, label: "Class Sections")
+//      pieChartDataSet.xValuePosition = .outsideSlice
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
 
         pieChartView.data = pieChartData
@@ -220,27 +255,67 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate, UITableVie
                 print("The percentage earned is", sectionGrabbed.percentageEarned, "%")
                 print("The grades of the section are", sectionGrabbed.grades)
         
-                for aSection in courseSections {
-                if (aSection.name == sectionGrabbed.name) {
-                    selectedSection = aSection
+                for aSection in coursesSections {
+                    if (aSection.name == sectionGrabbed.name) {
+                        self.selectedSection = aSection
+                    }
                 }
-                }
+        
+        print("the selected section is " + selectedSection.name)
+        gradesTableView.reloadData()
                 
-        ////        self.pieChartView.setNeedsDisplay()
+        //        self.pieChartView.setNeedsDisplay()
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return coursesSections.count
+        if (selectedSection.grades.count != 0) {
+            return selectedSection.grades.count
+        }
+        else {
+            return 0
+        }
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = self.gradesTableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
         
-        let grabbedSection = coursesSections[indexPath.row]
-        
-        cell.textLabel?.text = grabbedSection.name
+        let grade = self.selectedSection.grades[indexPath.row]
+        let value = grade.value
+        cell.textLabel?.text = "\(value)"
         
         return cell
+    }
+    
+    func circleMenu(_ circleMenu: CircleMenu, willDisplay button: UIButton, atIndex: Int) {
+        circleMenu.buttonsCount = 4
+        circleMenu.duration = 2
+        circleMenu.distance = 70
+    }
+    
+    func circleMenu(_ circleMenu: CircleMenu, buttonDidSelected button: UIButton, atIndex: Int) {
+        switch atIndex {
+        case 0:
+            let gradesLeft = Int(gradesLeftTF.text!)
+            let mockGrades = selectedSection.grades
+            let copySection = selectedSection
+            print(copySection.findBestGradeWith(gradesLeft: 5))
+//           let bestGrade = self.findBestGrade(grades: mockGrades, gradesLeft: gradesLeft!)
+        case 1:
+            print("Find Grade needed for certain grade in section")
+            let gradeDesired = Int(gradesLeftTF.text!)
+            
+        case 2:
+            print("Second one")
+        case 3:
+            print("Third one")
+        default:
+            print("None of them")
+        }
+    }
+    
+    func findBestGrade(grades: List<Grade>, gradesLeft: Int) -> Int {
+       
+        return 0
     }
     
     override func didReceiveMemoryWarning() {
@@ -258,6 +333,7 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate, UITableVie
 //        
 //    }
     
+    /*
     // MARK: - CAShapeLayer - old
     func createSlice (startAngle: CGFloat, endAngle: CGFloat, fill: Bool, color: UIColor, opacity: Float) {
         let newSlice = CAShapeLayer()
@@ -418,6 +494,7 @@ class CAShapeTestViewController: UIViewController, ChartViewDelegate, UITableVie
             
         }
     }
+ */
     
     //    func addSecondLayer () {
     //        let newSlice = CAShapeLayer()

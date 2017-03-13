@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		138B313381FB45CB35D30BD3 /* Pods_GradePieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC0F3D33A9D6D9F481B3BD6 /* Pods_GradePieUITests.framework */; };
 		A50C6EDF1C51E6520049A64F /* ArcTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50C6EDE1C51E6520049A64F /* ArcTestView.swift */; };
+		A50E37131E4E9DAA00CBAA61 /* MenuCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50E37121E4E9DAA00CBAA61 /* MenuCircle.swift */; };
 		A52479801C41F46300EED494 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = A524797F1C41F46300EED494 /* Section.swift */; };
 		A53363E31C7133BF009C1F83 /* chartSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53363E21C7133BF009C1F83 /* chartSlice.swift */; };
 		A546727E1D7A573F0075A4BC /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A546727D1D7A573F0075A4BC /* Assignment.swift */; };
@@ -87,6 +88,7 @@
 		7B166D80C8518A82A2828C92 /* Pods-GradePieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradePieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GradePieTests/Pods-GradePieTests.release.xcconfig"; sourceTree = "<group>"; };
 		87641F621D445C430EE9C00B /* Pods-GradePie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradePie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GradePie/Pods-GradePie.debug.xcconfig"; sourceTree = "<group>"; };
 		A50C6EDE1C51E6520049A64F /* ArcTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcTestView.swift; sourceTree = "<group>"; };
+		A50E37121E4E9DAA00CBAA61 /* MenuCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCircle.swift; sourceTree = "<group>"; };
 		A524797F1C41F46300EED494 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		A53363E21C7133BF009C1F83 /* chartSlice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chartSlice.swift; sourceTree = "<group>"; };
 		A53ABF391C7AC4B800794C84 /* PieSliceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieSliceLayer.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				A5CB700F1CB753D200F5F0D5 /* View */,
 				A5CB70101CB753DD00F5F0D5 /* Controller */,
 				A5E6D6201DEBAB2400D6D31E /* ChartsTestViewController.swift */,
+				A50E37121E4E9DAA00CBAA61 /* MenuCircle.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				A5BEB0DB1DF9143A0070F905 /* betterPieChartView.swift in Sources */,
 				A57DAEDC1E0B6D1600DB0129 /* Student.swift in Sources */,
 				A5BEB0D21DF12F900070F905 /* CreateStudentViewController.swift in Sources */,
+				A50E37131E4E9DAA00CBAA61 /* MenuCircle.swift in Sources */,
 				A54C804B1CA63CB100A47B8F /* sectionsTable.swift in Sources */,
 				A5BEB0DD1DF9C8D40070F905 /* improvePieChartRenderer.swift in Sources */,
 				A5F22BD11C1CB851000DA956 /* testSlice.swift in Sources */,

@@ -31,7 +31,7 @@ open class PieRadarChartViewBase: ChartViewBase
     /// Sets the minimum offset (padding) around the chart, defaults to 0.0
     open var minOffset = CGFloat(0.0)
     
-    open var secondaryAngles: [CGFloat] = [45.0, 45.0, 45.0, 45.0]
+    open var secondaryAngles: [CGFloat] = [18.0, 45.0, 27.0, 36.0]
 
     /// iOS && OSX only: Enabled multi-touch rotation using two fingers.
     fileprivate var _rotationWithTwoFingers = false

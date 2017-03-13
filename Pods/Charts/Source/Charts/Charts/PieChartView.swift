@@ -28,6 +28,8 @@ open class PieChartView: PieRadarChartViewBase
     /// array that holds the width of each pie-slice in degrees
     fileprivate var _drawAngles = [CGFloat]()
     
+    fileprivate var _maskingAngles = [CGFloat]()
+    
     /// array that holds the absolute angle in degrees of each slice
     fileprivate var _absoluteAngles = [CGFloat]()
     
@@ -298,6 +300,12 @@ open class PieChartView: PieRadarChartViewBase
     open var drawAngles: [CGFloat]
     {
         return _drawAngles
+    }
+    
+    //Added by Nathan for masking layer
+    open var maskingAngles: [CGFloat]
+    {
+        return _maskingAngles
     }
 
     /// - returns: The absolute angles of the different chart slices (where the

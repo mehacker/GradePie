@@ -27,6 +27,7 @@ target 'GradePie' do
     pod 'FBSDKShareKit'
     pod 'FBSDKLoginKit'
     pod 'RealmSwift'
+    pod 'CircleMenu', '~> 2.0.1'
     
 #    post_install do |installer|
 #        installer.pods_project.targets.each do |target|
